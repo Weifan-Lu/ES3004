@@ -71,9 +71,11 @@ parts:
   - caption: "Module 6 — Magnetism"
     chapters:
       - file: lectures/23_earth_magnetism
-        title: "Earth Magnetism & Mineral Magnetism"
-      - file: lectures/24_magnetic_field_tectonics
-        title: "Magnetism & Plate Tectonics"
+        title: "Earth's Field & the Geodynamo"
+      - file: lectures/24_rock_magnetism
+        title: "Rock Magnetism"
+      - file: lectures/25_magnetic_anomalies
+        title: "Magnetic Anomalies & Surveys"
 
   - caption: "Module 7 — Geodynamics and Tectonics: A Synthesis"
     chapters:

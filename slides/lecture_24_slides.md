@@ -2,216 +2,224 @@
 marp: true
 theme: ess314
 paginate: true
-title: "Lecture 24 — Magnetic Field, Magnetism, and Tectonic Plates"
-description: "ESS 314 Geophysics · Spring 2026 · Marine Denolle"
+title: "ESS 314 — Lecture 24"
+description: "Rock Magnetism · ESS 314 Geophysics · Spring 2026 · Marine Denolle"
+header: "ESS 314 — Lecture 24"
 ---
 
 <!-- _class: title -->
 
 # Lecture 24
-## Magnetic Field, Magnetism & Tectonic Plates
-### Anomalies, ensembles, and the floor of the Pacific
+## Rock Magnetism
+### How rocks remember the field that made them
 
 ESS 314 · Spring 2026 · Marine Denolle
 
 ---
 
-## Why this lecture
+## 1. The framing question
 
-> *"… the floor should now consist of strips of normal and reversed material running parallel to the ridge crest."* — Vine & Matthews, **1963**
+> *"If the spreading floor hypothesis is correct, then normally magnetised blocks alternate with reversely magnetised blocks…"*
+> — Vine & Matthews, **Nature** (1963)
 
-- Juan de Fuca Ridge spreads at ~30 mm/yr offshore the Pacific Northwest.
-- The same dipole math from Lecture 23 turns into a **subsurface-imaging tool**.
-- But there's a new complication: the **anomaly shape depends on magnetic latitude**.
+- Ship-towed magnetometer profiles across the Juan de Fuca Ridge show **alternating stripes** of high and low magnetic intensity, symmetric about the ridge axis.
+- A pattern this clean requires that newly-formed basalt **records the field at the moment it cools** and keeps that record for millions of years.
+- *What atomic-scale physics turns a rock into a magnetic tape recorder?*
+
+*Read more → [Lecture 24 §1](../lectures/24_rock_magnetism.html#1-the-framing-question)*
+
+---
+
+## Synthetic Juan de Fuca stripes
+
+![bg right:62% w:96%](../assets/figures/fig_jdf_real_profile.png)
+
+- Half-rate 30 mm yr⁻¹ converts polarity timescale → distance.
+- Smoothed ΔF profile reaches **±350 nT** with FWHM ≈ 6 km.
+- Crustal cross-section: blue blocks = normal-polarity TRM, red = reversed.
 
 ---
 
 ## Learning objectives
 
-1. Define the **total-field anomaly** $\Delta F$ and the linearised approximation $\Delta F \approx \mathbf{B}_\text{source} \cdot \hat{\mathbf{F}}_\text{earth}$.
-2. Predict the anomaly shape over a buried induced dipole as a function of $I$.
-3. Apply the half-width depth rule **$z \approx 2 x_{1/2}$** and propagate noise via $\sigma_z/z \approx (1/3)(\sigma_F / F_\text{max})$.
-4. Read an ensemble cloud in $(z, m)$ space and explain the **$m \propto z^3$** ridge.
-5. Read magnetic stripes offshore the PNW to recover a **spreading rate**, and connect magnetics to **Seattle Fault Zone** hazards.
+By the end of today, students will be able to:
+
+1. Classify minerals into the **five magnetic-ordering categories** and predict $\chi$ and $Q$.
+2. Distinguish **induced** from **remanent** magnetisation and compute the **Königsberger ratio** $Q = M_r / (\chi H)$.
+3. Identify the three principal acquisition mechanisms — **TRM, DRM, CRM** — and the rocks that carry them.
+4. Read a **geomagnetic polarity timescale (GPTS)** ribbon and convert chron ages to seafloor distance.
+5. Use the **Siletzia** post-Eocene rotation as a worked example of inverting paleomagnetic vectors for tectonic motion.
 
 ---
 
-## From observed F to anomaly $\Delta F$
+## 2. Magnetic ordering at the mineral scale
 
-The magnetometer measures $|F|$. After removing IGRF, diurnal, and external:
+![bg right:48% w:96%](../assets/figures/fig_mineral_magnetism.png)
 
-$$\Delta F(\mathbf{r}) \;\approx\; \mathbf{B}_\text{source}(\mathbf{r}) \cdot \hat{\mathbf{F}}_\text{earth}$$
+- The constitutive law $\mathbf{M} = \chi \mathbf{H}$ hides a factor of **10⁵** between minerals.
+- Five categories of electron-spin alignment:
+  - **Diamagnetic** (calcite, quartz): $\chi < 0$
+  - **Paramagnetic** (olivine, pyroxene): $\chi > 0$, small
+  - **Ferromagnetic** (rare in nature: native Fe)
+  - **Ferrimagnetic** (magnetite, pyrrhotite): large $M_r$
+  - **Antiferromagnetic / canted** (hematite): small but stable $M_r$
 
-- Typical anomalies: **1 – 500 nT** against **50 000 nT** ambient field.
-- Linearisation is the magnetic analog of the Bouguer correction in gravity.
-- The anomaly is the projection of source-field perturbation onto **local F̂**.
-
----
-
-## Forward problem — the buried induced dipole
-
-$$\mathbf{m} \;=\; \mathbf{m}_\text{induced} + \mathbf{m}_\text{remanent} \;=\; k V \mathbf{H}_\text{earth} + \mathbf{m}_\text{remanent}$$
-
-For induced-only at the pole (or after RTP):
-
-$$\Delta F(x) \;=\; \frac{\mu_0\,m}{4\pi} \cdot \frac{2 z^2 - x^2}{(x^2 + z^2)^{5/2}}$$
-
-- Peak: $\Delta F_\text{max} = (\mu_0 m / 4\pi)\,(2 / z^3)$
-- Half-width: $x_{1/2} \approx 0.5\,z$
+*Read more → [Lecture 24 §2](../lectures/24_rock_magnetism.html#2-magnetic-ordering-at-the-mineral-scale)*
 
 ---
 
-## Anomaly shape depends on inclination
+## Curie temperatures of common carriers
 
-![w:1100](../assets/figures/fig_dipole_anomaly_shapes.png)
-
-- **Equator** ($I = 0$): symmetric central negative + side positives.
-- **Mid-lat** ($I = 45°$): asymmetric — peak displaced from source.
-- **Pole** ($I = 90°$): symmetric positive peak directly over source.
-
----
-
-## Reduction to pole
-
-![bg right:55% w:95%](../assets/figures/fig_reduction_to_pole.png)
-
-A frequency-domain filter that converts mid-latitude anomalies into the equivalent pole anomaly — making peaks **symmetric and centred over the source**.
-
-- Exact for induced sources with $\mathbf{m} \parallel \mathbf{H}_\text{earth}$.
-- Essential near the magnetic equator; modest improvement at $I = 69°$ (Seattle).
+| Mineral | $T_C$ (°C) | Carrier | PNW context |
+|---|---:|---|---|
+| Magnetite (Fe₃O₄) | 580 | TRM | Cascade basalts, Crescent Fm. |
+| Titanomagnetite | 150–580 | TRM | Young MORB, JdF Ridge |
+| Hematite (αFe₂O₃) | 680 | CRM | Eastern Washington red beds |
+| Pyrrhotite (Fe₇S₈) | 320 | TRM/CRM | Hydrothermal veins |
+| Goethite | 120 | CRM | Soils, weathered crust |
 
 ---
 
-## Half-width depth rule + noise propagation
+## 3. Induced vs. remanent magnetisation
 
-![bg right:60% w:95%](../assets/figures/fig_magnetic_halfwidth.png)
+![bg right:55% w:96%](../assets/figures/fig_induced_vs_remanent.png)
 
-$$z \;\approx\; 2\, x_{1/2}, \qquad \frac{\sigma_z}{z} \;\approx\; \frac{1}{3}\,\frac{\sigma_F}{\Delta F_\text{max}}$$
+- **Induced**: $\mathbf{M}_i = \chi \mathbf{H}$, **disappears when $H \to 0$**.
+- **Remanent**: $\mathbf{M}_r$ persists with no external field — locked in at formation.
+- **Königsberger ratio** $Q = M_r / (\chi H_{\rm Earth})$:
+  - $Q \ll 1$ — magnetisation tracks today's field
+  - $Q \gg 1$ — magnetisation records the *paleofield*
+- $Q$ for fresh MORB ≈ **5–50**; for granite ≈ **0.1–1**.
 
-- Magnetic prefactor (0.5) < gravity prefactor (0.766) — faster decay with depth.
-- Magnetic noise → depth prefactor (1/3) < gravity (1/2) — sharper depths at fixed SNR.
-
----
-
-## SNR rule of thumb
-
-| $\Delta F_\text{max} / \sigma_F$ | $\sigma_z / z$ | Verdict |
-|---:|---:|---|
-| > 50 | < 0.7% | Excellent |
-| 10 – 50 | 0.7 – 3% | Good |
-| < 10 | > 3% | Poor — quote bounds |
-
-Example: $\Delta F_\text{max} = 50$ nT, $\sigma_F = 2$ nT → SNR = 25, $\sigma_z \approx 1.3\%$ of $z$. On a 1.2-km source, $\sigma_z \approx 16$ m.
+*Read more → [Lecture 24 §3](../lectures/24_rock_magnetism.html#3-induced-versus-remanent-magnetisation)*
 
 ---
 
-## Ensemble fit — the $m \propto z^3$ ridge
+## 4. A rock is an ensemble of grains
 
-![bg right:55% w:95%](../assets/figures/fig_magnetic_ensemble.png)
+![bg right:55% w:96%](../assets/figures/fig_rock_as_ensemble.png)
 
-- 31 stations, $\sigma_F = 2$ nT, $\chi^2/N \leq 1.5$.
-- Accepted models trace the theoretical ridge $m \propto z^3$.
-- Steeper than gravity ($M \propto z^2$): magnetic depth-moment trade-off is **tighter**.
-- The half-width measurement breaks the degeneracy.
+- Bulk $\mathbf{M}$ = vector sum over millions of grains.
+- **Single-domain** grains (≲ 0.1 μm) carry the most stable remanence.
+- **Multi-domain** grains lose memory through domain-wall motion.
+- Stability ↑ as grain volume ↑ and temperature ↓ — captured by **Néel relaxation time**:
+  $$\tau = \tau_0 \exp\!\left(\frac{K V}{k_B T}\right)$$
 
----
-
-## Inverse problem — two ambiguities, not one
-
-For gravity: one ambiguity (mass ↔ depth).
-
-For magnetics: **two ambiguities**:
-
-1. $(z, m)$ trade-off, **intensified to $m \propto z^3$**.
-2. Vector ambiguity: $\mathbf{m} = \mathbf{m}_\text{induced} + \mathbf{m}_\text{remanent}$. The remanent direction is set by the field at the time of cooling — possibly different polarity, possibly different latitude.
-
-**Resolution requires more data**: gradiometry, lab samples, or joint inversion with gravity.
+*Read more → [Lecture 24 §4](../lectures/24_rock_magnetism.html#4-a-rock-is-an-ensemble-of-grains)*
 
 ---
 
-## Worked example — Juan de Fuca stripes
+## 5a. TRM — thermoremanent magnetisation
 
-![bg right:60% w:95%](../assets/figures/fig_jdf_stripes.png)
+![bg right:55% w:96%](../assets/figures/fig_trm_curie.png)
 
-- Polarity reversals + spreading → striped pattern.
-- Distance from ridge to a polarity boundary = (half-rate) × (boundary age).
-- Brunhes/Matuyama (0.78 Ma) at $x \approx 23$ km → **half-rate $\approx 30$ mm/yr**.
-- Independent calibration from continental lavas: a **clock** on the seafloor.
+- Lava erupts at ~1100 °C — well above $T_C$. Spins are randomly oriented.
+- As cooling crosses $T_C$ (e.g. 580 °C for magnetite), spins align with the **ambient field at that instant**.
+- Below the **blocking temperature** $T_B < T_C$, that alignment is locked for $\gtrsim 10^9$ yr.
+- **TRM is what records the polarity timescale on the seafloor.**
 
----
-
-## Why magnetics, not gravity or seismics, proved seafloor spreading
-
-- Gravity over a ridge: mass deficit (hot mantle), **no time information**.
-- Seismic over a ridge: slower mantle, **no time information**.
-- **Magnetic stripes encode time** because the polarity timescale is independently calibrated from continental lava flows.
-- A property non-unique in one observable becomes **diagnostic** when joined to an independent stratigraphic clock.
+*Read more → [Lecture 24 §5a](../lectures/24_rock_magnetism.html#5a-thermoremanent-magnetisation-trm)*
 
 ---
 
-## Societal relevance — Seattle Fault Zone
+## 5b. DRM — depositional remanence
 
-- East-west blind reverse fault system beneath downtown Seattle.
-- Mapped by USGS aeromagnetic survey at 300-m line spacing (Blakely et al. 2002).
-- Tertiary volcanic units on the hanging wall → strong magnetic anomalies.
-- Maximum credible event ≈ **M_w 7** in downtown Seattle.
-- Magnetic geometry feeds Washington State seismic hazard maps and building codes.
+![bg right:55% w:96%](../assets/figures/fig_drm_acquisition.png)
 
----
+- Detrital magnetic grains settle through a water column with the ambient field acting as a weak torque.
+- Hydrodynamic and biological forces leave a **biased alignment** preserved at the sediment–water interface.
+- DRM is typically **10×–100× weaker** than TRM but covers the long sedimentary record (deep-sea cores, lakes).
 
-## Research horizon — magnetic methods today
-
-- **Joint magnetic-gravity inversion** for ore deposits (Au, Ni, Li).
-- **UAV-borne magnetics**: 0.05 nT precision at 30 m line spacing.
-- **Cascadia Magnetic Anomaly Reconnaissance (2024-25)**: drone hazard pilot over Bainbridge Island faults.
-- **Magnetotellurics** (next lecture): uses time-varying *external* field as an EM source.
-
-ML surrogates accelerate inversions but are trained on physics-based simulations — the physics is *not* optional.
+*Read more → [Lecture 24 §5b](../lectures/24_rock_magnetism.html#5b-depositional-remanent-magnetisation-drm)*
 
 ---
 
-## AI literacy — the latitude trap
+## 5c. CRM — chemical remanence
 
-LLMs frequently apply the half-width rule **without asking about latitude** — assuming pole geometry.
+- New magnetic minerals grow during weathering, diagenesis, or hydrothermal alteration.
+- As grain volume exceeds the **superparamagnetic threshold**, the field at that moment is locked in.
+- CRM records **secondary** events, not the original cooling age — a source of *paleomagnetic noise* unless cleaned by thermal/AF demagnetisation.
 
-**Activity:**
-1. Sketch an equatorial-latitude anomaly profile by hand.
-2. Hand it to an LLM with no latitude information and ask for the depth.
-3. Did the LLM ask about latitude? Or did it apply the half-width rule directly?
-4. Write a rebuttal that either defends the LLM's question, or proves it wrong by deriving the correct procedure.
-
-The grade is on whether *you* caught the error — not on the LLM's answer.
+*Read more → [Lecture 24 §5c](../lectures/24_rock_magnetism.html#5c-chemical-remanent-magnetisation-crm)*
 
 ---
 
-## Concept check
+## 6. The geomagnetic polarity timescale
 
-1. **Half-width and SNR.** $\Delta F_\text{max} = 80$ nT, $x_{1/2} = 240$ m, $\sigma_F = 4$ nT. Depth, SNR, $\sigma_z/z$?
+![bg right:62% w:96%](../assets/figures/fig_gpts.png)
 
-2. **Half-rate from a stripe.** Matuyama midpoint ($t = 1.78$ Ma) at $x = \pm 17$ km. Half-rate?
+- The field reverses on irregular timescales (10⁴ – 10⁶ yr).
+- The last reversal (**Matuyama → Brunhes**) was **781 ka**.
+- The GPTS, built from ocean stripes + radiometric dating, is the **master clock** for Cenozoic tectonics.
 
-3. **Induced or remanent?** Negative anomaly at a Seattle-like latitude over a small body. Two physical explanations? One follow-up measurement to discriminate.
-
----
-
-## Looking ahead
-
-Lecture 25: **Electromagnetic methods** — magnetotellurics and controlled-source EM.
-
-- Uses **time variation** of Earth's external field as a probe.
-- Sees deep into the Earth (1–100 km) via induced response in conductive rock.
-- The bridge is the magnetic vector potential $\mathbf{A}$ and the full Maxwell equations.
+*Read more → [Lecture 24 §6](../lectures/24_rock_magnetism.html#6-the-geomagnetic-polarity-timescale-gpts)*
 
 ---
 
-<!-- _class: end -->
+## 7. Forward model — Vine-Matthews-Morley
 
-## Suggested reading
+- New crust at the ridge cools through $T_C$ → records the **current** polarity.
+- Spreading at half-rate $u$ carries that crust laterally.
+- Distance from ridge $x = u \cdot t$ ↔ polarity-stripe age.
+- For JdF half-rate $u \approx 30$ mm yr⁻¹: the 781 ka Brunhes/Matuyama boundary sits at $x \approx 23$ km from the ridge — exactly where the field measurement shows the first reversal.
 
-- **Blakely (1995)**, *Potential Theory in Gravity and Magnetic Applications*.
-- **Blakely et al. (2002)**, Seattle Fault aeromagnetics. *GSA Bull.* 114, 169–177.
-- **Cande & Kent (1995)** / **Ogg (2020)**: Geomagnetic polarity timescale.
-- **Vine & Matthews (1963)**, *Nature* 199, 947.
-- **Tauxe et al. (2018)**, *Essentials of Paleomagnetism* (open access).
+*Read more → [Lecture 24 §7](../lectures/24_rock_magnetism.html#7-forward-modelling-the-ridge-stripe-pattern)*
 
-Companion notebook (next step): `notebooks/magnetics_ensemble.ipynb`
+---
+
+## 8. Cascadia worked example — Siletzia rotation
+
+- The Eocene Crescent Formation (Olympic Peninsula, Willapa Hills) carries a **TRM** locked in ~50 Ma.
+- Measured paleomagnetic inclination → paleolatitude **agrees** with today's.
+- Measured **declination** is rotated **~50° clockwise** from north.
+- *Inverse*: Siletzia (the accreted oceanic plateau under western WA / OR) has **rotated clockwise** since accretion — consistent with GPS-tracked block rotations today.
+
+*Read more → [Lecture 24 §8](../lectures/24_rock_magnetism.html#8-inverse-problem-paleolatitudes-and-the-pnw)*
+
+---
+
+## 9. Research Horizon
+
+- **Single-crystal paleointensity** (e.g. on IODP cores) — recovering field strength, not just direction, back to the Cretaceous.
+- **Magnetic stratigraphy** of Cascadia subduction-zone turbidites — tying recurrence intervals to the GPTS.
+- **Anisotropy of magnetic susceptibility (AMS)** as a non-invasive fabric indicator for fault-zone deformation.
+
+*Read more → [Lecture 24 §9](../lectures/24_rock_magnetism.html#9-research-horizon)*
+
+---
+
+## 10. AI Literacy
+
+- LLMs reliably *describe* TRM but routinely **confuse Curie temperature with blocking temperature** (they differ by 50–150 °C and matter for paleointensity).
+- Ask: *"What is the Néel relaxation time and how does it depend on grain volume?"* — verify the **exponential** dependence, not linear.
+- Always check that any generated GPTS dates are referenced to a published timescale (Cande & Kent 1995, Ogg 2020) — chron numbering has been revised.
+
+*Read more → [Lecture 24 §10](../lectures/24_rock_magnetism.html#10-ai-literacy)*
+
+---
+
+## 11. Concept check
+
+1. A basalt sample has $M_r = 5$ A m⁻¹ and $\chi = 0.05$. With $H_{\rm Earth} \approx 40$ A m⁻¹, what is $Q$?
+2. If JdF spreading half-rate were **half** today's value, where would the Brunhes/Matuyama boundary sit?
+3. Why does **hematite** preserve a CRM with high stability despite being antiferromagnetic?
+
+*Read more → [Lecture 24 §11](../lectures/24_rock_magnetism.html#11-concept-checks)*
+
+---
+
+## 12. Looking ahead
+
+- **Lecture 25** — Magnetic anomalies: forward dipole modelling, half-width depth rule, three-scale reading culminating in the Seattle Fault Zone aeromagnetic survey.
+- The polarity record we built today becomes the *target* the next lecture inverts for.
+
+*Read more → [Lecture 25 — Magnetic Anomalies & Surveys](../lectures/25_magnetic_anomalies.html)*
+
+---
+
+<!-- _class: title -->
+
+# Questions?
+
+**Lecture page:** [24_rock_magnetism](../lectures/24_rock_magnetism.html)
+**Reading:** Tauxe 2018 Chs. 6-9 (open access); Hunt, Moskowitz, Banerjee 1995 (AGU).
