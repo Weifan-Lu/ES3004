@@ -75,6 +75,16 @@ The Earth's lithospheric magnetic field — the component of the surface field t
 
 {numref}`fig-emag2-global` shows the global picture. The Pacific Ocean is the most legible part of the map: striped patterns running parallel to mid-ocean ridges record 150 Myr of plate motion, with the youngest crust (faint, near-zero anomaly) at the ridge crests and the oldest crust (strongly striped) along the western Pacific subduction trenches. Continents show a different signature — long-wavelength positive and negative anomalies tracing buried Precambrian shields, large impact structures (Vredefort, Sudbury, Chicxulub), and continental-margin gradient zones where the oceanic-continental contrast is sharp.
 
+Before turning to the map itself, it is worth recalling **why** the survey machinery of Lecture 21 (gravity anomalies) transfers almost verbatim to magnetism: both fields are derivable from a scalar potential satisfying Laplace's equation outside the source region.
+
+```{figure} ../assets/figures/fig_field_potential_gravity_analogy.png
+:name: fig-grav-mag-analogy
+:alt: Two side-by-side panels comparing gravity and magnetism as potential fields. The left panel labelled Gravity (g equals minus gradient of Phi) shows a half-space with a black point mass below a horizontal ground surface, surrounded by concentric blue circular equipotential lines of Phi; above the surface, orange downward-pointing vectors represent g acting on a measurement station. A boxed equation list shows divergence of g equals minus four pi G rho, curl of g equals zero, and Laplacian of Phi equals zero outside the source. The right panel labelled Magnetism (H equals minus gradient of Psi, current free) shows a half-space with a vertical black dipole arrow below the surface, surrounded by orange and dashed-blue lobed equipotential contours of Psi (red plus lobe above, blue minus lobe below). Above the surface, green arrows depict the H field with a characteristic dipolar lobe pattern. A boxed equation list shows divergence of B equals zero, curl of H equals J (zero outside currents), and Laplacian of Psi equals zero outside the source.
+:width: 100%
+
+Gravity and magnetism are both **potential fields** in source-free regions. The gravitational potential $\Phi$ obeys Laplace's equation outside mass concentrations, and the magnetic scalar potential $\Psi$ (with $\mathbf{H} = -\nabla\Psi$) obeys Laplace's equation outside free currents. The same upward- and downward-continuation operators apply to both — which is why the survey machinery of Lecture 21 transfers almost verbatim. The crucial *physical* difference is that mass is a positive scalar source, while magnetisation is a vector — a buried body produces a dipolar pattern that depends on both the body's magnetisation direction and Earth's ambient inducing field.
+```
+
 ```{figure} ../assets/figures/fig_emag2_global.png
 :name: fig-emag2-global
 :alt: Global lithospheric magnetic-anomaly map, Mercator projection, with anomaly intensity Delta F in nanoteslas colour-coded from negative (cool colours) through zero to positive (warm colours), saturating at plus or minus 250 nT. Striped patterns parallel to mid-ocean ridges are visible across all oceans. Continents show long-wavelength patterns: a strong positive anomaly across the Canadian Shield, a complex pattern over Africa and Antarctica, and visible signatures of large impact structures. The Pacific Northwest region is annotated with a small inset showing the Seattle Fault Zone trend.
@@ -166,7 +176,7 @@ The simplest magnetic body that has a closed-form solution is a small sphere or 
 \mathbf{m} = \mathbf{m}_\text{induced} + \mathbf{m}_\text{remanent} = \chi V \mathbf{H}_\text{earth} + \mathbf{m}_\text{remanent},
 ```
 
-where $V$ is the body volume, $\chi$ is the volume magnetic susceptibility (Lecture 24 [](#eq-susc)), $\mathbf{H}_\text{earth}$ is the local ambient field (in A m$^{-1}$), and $\mathbf{m}_\text{remanent}$ is the permanent (e.g. TRM) component. For a freshly intruded volcanic body the two terms can be comparable; for an old plutonic body with low Königsberger ratio the induced term usually dominates. **For the remainder of this section we restrict attention to the induced case**, returning to the vector ambiguity in §6.
+where $V$ is the body volume, $\chi$ is the volume magnetic susceptibility (Lecture 23 [](#eq-susc)), $\mathbf{H}_\text{earth}$ is the local ambient field (in A m$^{-1}$), and $\mathbf{m}_\text{remanent}$ is the permanent (e.g. TRM) component. For a freshly intruded volcanic body the two terms can be comparable; for an old plutonic body with low Königsberger ratio the induced term usually dominates. **For the remainder of this section we restrict attention to the induced case**, returning to the vector ambiguity in §6.
 
 Place the dipole at $(0, z)$ with $z > 0$ measured downward, and the observation at $(x, 0)$ on the surface. The vector from source to observation is $\mathbf{r} = (x, -z)$ with $r = \sqrt{x^2 + z^2}$. The induced moment direction is $\hat{\mathbf{m}} = (\cos I, \sin I)$ — parallel to the inducing field with inclination $I$. The dipole field is
 

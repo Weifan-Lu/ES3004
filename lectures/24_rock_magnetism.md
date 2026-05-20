@@ -49,7 +49,7 @@ By the end of this lecture, students will be able to:
 |---|---|
 | **Course LOs addressed** | LO-1 (observables ↔ Earth properties), LO-2 (forward model from rock magnetisation to ridge stripe pattern), LO-4 (method strengths and uncertainty, including paleomagnetic averaging) |
 | **Learning outcomes practiced** | LO-OUT-A (predict surface signature from a simple source model), LO-OUT-B (apply governing equation to a worked geophysical problem), LO-OUT-C (interpret a measurement as a constraint on subsurface structure with appropriate uncertainty) |
-| **Prior lecture** | [L23 — Earth's Magnetic Field: Fundamentals, the Geodynamo, and Space Weather](23_earth_magnetism.md) |
+| **Prior lecture** | [L23 — Earth's Magnetic Field and the Geodynamo](23_earth_magnetism.md) |
 | **Next lecture** | [L25 — Magnetic Anomalies: Measuring the Crust](25_magnetic_anomalies.md) |
 | **Lab connection** | Companion notebook `magnetics_ensemble.ipynb` — forward model of a polarity-reversal stripe sequence; Lab 8 inverts a Juan de Fuca profile for half-spreading rate. |
 | **Textbook** | Lowrie & Fichtner (2020), Ch. 5.4–5.6 |
@@ -58,7 +58,7 @@ By the end of this lecture, students will be able to:
 
 ## Prerequisites
 
-This lecture builds directly on Lecture 23, especially §2 (the magnetic field, the constitutive relation $\mathbf{B} = \mu_0(1+\chi)\mathbf{H}$, the dipole) and §7 (the geocentric axial dipole equation $\tan I = 2\tan\lambda$). Students should be comfortable with the idea that magnetisation $\mathbf{M}$ is a volumetric density of atomic dipole moments, that susceptibility $\chi$ is the linear-response coefficient, and that paleo-latitude can be recovered from a measured inclination with quantified uncertainty. No new electromagnetism is introduced; the lecture works mostly at the atomic and mineralogical scale.
+This lecture builds directly on Lecture 23, especially section 2 (the three fields $\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$ and the constitutive relation $\mathbf{B} = \mu_0(1+\chi)\mathbf{H}$) and section 3 (the dipole field and the geocentric axial dipole relation $\tan I = 2\tan\lambda$). Students should be comfortable with the idea that magnetisation $\mathbf{M}$ is a volumetric density of atomic dipole moments, that susceptibility $\chi$ is the linear-response coefficient, and that paleo-latitude can be recovered from a measured inclination with quantified uncertainty. No new electromagnetism is introduced; the lecture works mostly at the atomic and mineralogical scale.
 
 ---
 
@@ -114,7 +114,7 @@ The leap from this measured pattern to the Vine–Matthews–Morley interpretati
 
 ## 2. Magnetic ordering at the mineral scale
 
-The constitutive relation $\mathbf{M} = \chi\mathbf{H}$ from Lecture 23 is a phenomenological statement: it says that in a linear medium, the magnetisation is proportional to the applied field, but it does not say *why* one mineral has $\chi \sim -10^{-5}$ and another has $\chi \sim +1$. The factor-of-$10^5$ range across natural minerals is set by how the *electron spins* in the crystal lattice align — both with each other and with an external field. The classification has five members, and it determines which minerals fall in the *induced* regime (where the magnetisation is purely a response to $\mathbf{H}$) versus the *remanent* regime (where the mineral can carry a permanent moment that persists even when $\mathbf{H} = 0$).
+The constitutive relation $\mathbf{M} = \chi\mathbf{H}$ from Lecture 23 section 2 is a phenomenological statement: it says that in a linear medium, the magnetisation is proportional to the applied field, but it does not say *why* one mineral has $\chi \sim -10^{-5}$ and another has $\chi \sim +1$. The factor-of-$10^5$ range across natural minerals is set by how the *electron spins* in the crystal lattice align — both with each other and with an external field. The classification has five members, and it determines which minerals fall in the *induced* regime (where the magnetisation is purely a response to $\mathbf{H}$) versus the *remanent* regime (where the mineral can carry a permanent moment that persists even when $\mathbf{H} = 0$).
 
 ```{figure} ../assets/figures/fig_mineral_magnetism.png
 :name: fig-mineral-mag
@@ -190,10 +190,10 @@ This atomic-scale classification will be the recurring thread for the rest of th
 
 The single most important conceptual distinction in crustal magnetism is between *induced* and *remanent* magnetisation. Both contribute to a rock's bulk magnetic moment, but they have entirely different physical origins and entirely different consequences for what an anomaly survey actually measures.
 
-In the **induced regime**, the mineral has no intrinsic magnetic moment when isolated from any external field, but in the presence of an applied field $\mathbf{H}$ it develops a magnetisation proportional to that field:
+In the **induced regime**, the mineral has no intrinsic magnetic moment when isolated from any external field, but in the presence of an applied field $\mathbf{H}$ it develops a magnetisation proportional to that field, governed by the susceptibility relation $\mathbf{M} = \chi\mathbf{H}$ introduced in [Lecture 23 section 2](23_earth_magnetism.md):
 
 ```{math}
-:label: eq-susc
+:label: eq-susc-ind
 \mathbf{M}_\text{ind} = \chi \, \mathbf{H}.
 ```
 
@@ -218,7 +218,7 @@ The single most useful number for characterising a rock's magnetic behaviour in 
 Q = \frac{|\mathbf{M}_\text{rem}|}{|\mathbf{M}_\text{ind}|}.
 ```
 
-Here $\mathbf{M}_\text{rem}$ is the rock's natural remanent magnetisation (NRM) and $\mathbf{M}_\text{ind}$ is the magnetisation that the rock acquires by induction in Earth's ambient field, $\chi |\mathbf{H}_\text{Earth}|$. When $Q \ll 1$ the rock responds primarily by induction, and its magnetic signature points along Earth's *present-day* field. When $Q \gg 1$ the rock's signal is dominated by its remanent moment, which points along the field that prevailed when the rock formed — possibly tens or hundreds of millions of years ago. This second case is what makes oceanic crust into a recorder of plate motion (§7).
+Here $\mathbf{M}_\text{rem}$ is the rock's natural remanent magnetisation (NRM) and $\mathbf{M}_\text{ind}$ is the magnetisation that the rock acquires by induction in Earth's ambient field, $\chi |\mathbf{H}_\text{earth}|$. When $Q \ll 1$ the rock responds primarily by induction, and its magnetic signature points along Earth's *present-day* field. When $Q \gg 1$ the rock's signal is dominated by its remanent moment, which points along the field that prevailed when the rock formed — possibly tens or hundreds of millions of years ago. This second case is what makes oceanic crust into a recorder of plate motion (§7).
 
 ::::{admonition} What $Q$ means for a magnetic survey
 :class: tip
@@ -453,7 +453,7 @@ By 1968 the magnetic-stripe correlation had been measured on every major spreadi
 
 The forward problem of §7 takes a known spreading rate and a known GPTS and predicts an anomaly profile. The *inverse* problem of paleomagnetism takes a measured remanence direction in an oriented rock sample and recovers the position of the sampling site at the time the remanence was acquired. Two pieces of information are extracted:
 
-- The **inclination** of the remanence vector gives the paleo-latitude via the GAD equation $\tan I = 2\tan\lambda$ from Lecture 23 §7.
+- The **inclination** of the remanence vector gives the paleo-latitude via the GAD equation $\tan I = 2\tan\lambda$ from Lecture 23 section 3.
 - The **declination** of the remanence vector — its angle east of true north as preserved in the present-day orientation of the sample — gives the *rotation* of the sampling block about a vertical axis since the time of remanence acquisition.
 
 A rock that has not moved since it acquired its remanence carries a remanence direction matching the present-day field. A rock that has *rotated* about a vertical axis carries the same inclination but a deflected declination — and the deflection magnitude is a direct readout of the rotation angle.
@@ -526,7 +526,7 @@ The student deliverable is a one-page record showing: (i) the LLM's first answer
 
 ## 12. Looking ahead
 
-Lectures 23 and 24 have built the magnetic toolkit: the dipole field at the surface (L23 §2), the constitutive relation between $\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$, and $\chi$ (L23 §2), and the mechanisms by which crustal rocks carry both induced and remanent magnetisation (L24 §3, §5). Lecture 25 puts these into practice. A buried magnetised body — characterised by its volume, its bulk magnetisation $\mathbf{M}$ (induced + remanent), and its depth — produces a small but measurable anomaly at the surface. Mapping that anomaly, removing the core (IGRF) and external (diurnal) components, and inverting the residual for source geometry is the practical work of *magnetic surveying*. The same machinery is used to map mineral deposits, image active fault zones (the Seattle Fault is one PNW example), locate unexploded ordnance, and produce the global lithospheric anomaly maps that begin Lecture 25.
+Lectures 23 and 24 have built the magnetic toolkit: the dipole field at the surface (L23 section 3), the constitutive relation between $\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$, and $\chi$ (L23 section 2), and the mechanisms by which crustal rocks carry both induced and remanent magnetisation (L24 section 3, section 5). Lecture 25 puts these into practice. A buried magnetised body — characterised by its volume, its bulk magnetisation $\mathbf{M}$ (induced + remanent), and its depth — produces a small but measurable anomaly at the surface. Mapping that anomaly, removing the core (IGRF) and external (diurnal) components, and inverting the residual for source geometry is the practical work of *magnetic surveying*. The same machinery is used to map mineral deposits, image active fault zones (the Seattle Fault is one PNW example), locate unexploded ordnance, and produce the global lithospheric anomaly maps that begin Lecture 25.
 
 ## 13. Further reading
 
