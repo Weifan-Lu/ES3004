@@ -57,6 +57,46 @@ By the end of this lecture, students will be able to:
 
 Students should be comfortable with the vector calculus introduced in the gravity module (Lectures 19–22) — in particular, the idea that a scalar potential generates a vector field by gradient, and that surface measurements can be projected onto local Cartesian components. Familiarity with the inverse-square law and with the ensemble-fit framework from gravity will transfer directly. No prior exposure to electromagnetism beyond an introductory-physics treatment of a bar magnet is required; the constitutive relation between $\mathbf{B}$, $\mathbf{H}$, and $\mathbf{M}$ is introduced from scratch in §2.
 
+::::{dropdown} Notation reference (this lecture)
+:color: info
+:icon: book
+
+This table lists every symbol introduced in Lecture 23. Symbols marked **(L23–L25)** are reused unchanged in Lectures 24 and 25; symbols marked **(local to L23)** appear only in this lecture.
+
+| Symbol | Name | Units / notes |
+|---|---|---|
+| $\mathbf{B}$ | **Magnetic flux density** — what a magnetometer measures (Lorentz-force field). **(L23–L25)** | T; nT $= 10^{-9}$ T |
+| $\mathbf{H}$ | **Auxiliary magnetic field**; produced by free currents alone. **(L23–L25)** | A m$^{-1}$ |
+| $\mathbf{M}$ | **Magnetisation** — volume density of atomic dipole moments. **(L23–L25)** | A m$^{-1}$ |
+| $\mu_0$ | Permeability of free space. **(L23–L25)** | $4\pi\times 10^{-7}$ T m A$^{-1}$ |
+| $\mu$ | Material permeability: $\mu = \mu_0(1+\chi)$. | T m A$^{-1}$ |
+| $\chi$ | **Volume magnetic susceptibility** — linear-response coefficient $\mathbf{M}=\chi\mathbf{H}$. **(L23–L25)** | dimensionless (SI) |
+| $F$ | **Total field intensity** at a station: $F = |\mathbf{B}|$. **(L23–L25)** | nT |
+| $\mathbf{F}$ | Total-field **vector** at a station (same magnitude $F$). | nT |
+| $D$ | **Declination** — horizontal angle of $\mathbf{F}$ east of true north. **(L23–L25)** | degrees |
+| $I$ | **Inclination** — angle of $\mathbf{F}$ below horizontal. **(L23–L25)** | degrees |
+| $X,\,Y,\,Z$ | Local Cartesian components of $\mathbf{F}$ (north / east / **down**). | nT |
+| $H_\text{horiz}$ | Horizontal magnitude $H_\text{horiz} = F\cos I$ (subscripted to avoid clash with $\mathbf{H}$). | nT |
+| $\mathbf{m}$ | **Magnetic dipole moment** — Earth's geomagnetic moment in L23; a buried-body moment in L25. **(L23, L25)** | A m$^2$ |
+| $r$, $\hat{\mathbf{r}}$ | Radial distance from the dipole and its unit vector. | m, — |
+| $\theta$ | Magnetic **colatitude** (angle from the dipole north pole). | rad / degrees |
+| $\lambda$ | Geographic **latitude** (used in $\tan I = 2\tan\lambda$). **(L23, L24)** | degrees |
+| $B_r,\,B_\theta$ | Radial and tangential components of the dipole field. | nT |
+| $n$ | Spherical-harmonic degree (Mauersberger–Lowes spectrum). | integer |
+| $R_n$ | Power per harmonic degree of the surface field. | nT$^2$ |
+| $r_\text{CMB},\,r_\text{surf}$ | Core-mantle-boundary and Earth-surface radii (3 480 km; 6 371 km). | km |
+| $\mathbf{u}$ | Outer-core fluid velocity. | m s$^{-1}$ |
+| $\eta$ | Magnetic diffusivity, $\eta = 1/(\mu_0\sigma)$. | m$^2$ s$^{-1}$ |
+| $\sigma$ | Electrical conductivity of liquid iron ($\sim 10^6$). | S m$^{-1}$ |
+| $R_m$ | Magnetic Reynolds number, $R_m = UL/\eta$. | dimensionless |
+| $Ro$ | Rossby number, $Ro = U/(2\Omega L)$. | dimensionless |
+| $\Omega$ | Earth's rotation rate ($7.27\times 10^{-5}$ rad s$^{-1}$). | rad s$^{-1}$ |
+| $T_C$ | Curie temperature (introduced in detail in L24). **(L23–L25)** | °C |
+
+**Conventions adopted throughout the magnetism module (L23–L25).** Vectors use bold roman ($\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$); unit vectors carry a hat ($\hat{\mathbf{r}}$, $\hat{\mathbf{m}}$, $\hat{\boldsymbol\theta}$). All subscripts use upright text (`\text{...}`) — e.g. $H_\text{horiz}$, $\mathbf{M}_\text{rem}$, $r_\text{CMB}$ — never the older `\rm` form. Angles in degrees are written with the Unicode glyph (`°`, e.g. $I = 68.9°$) rather than `^\circ`. Numbers $\geq 10\,000$ use a thin-space thousands separator (e.g. $50\,000$ nT).
+
+::::
+
 ---
 
 ## 1. The framing question
@@ -164,10 +204,10 @@ $$ (eq-dipole-rtheta)
 
 ```{figure} ../assets/figures/fig_dipole_big.png
 :name: fig-dipole-big
-:alt: Meridional cross-section of an idealised magnetic dipole. A circular boundary in the centre encloses a vertical orange arrow labelled m pointing from the south magnetic pole at the bottom to the north magnetic pole at the top. A dense family of dipole field lines (curved black streamlines with arrowheads) emerges from the north pole, loops outward through space, and re-enters at the south pole. At one surface point on the right, the radial component B-sub-r is drawn as a blue arrow pointing outward and the tangential component B-sub-theta is drawn as an orange arrow tangent to the surface, illustrating the polar decomposition. A small inset box reproduces the two equations B-sub-r equals (mu-zero over four pi) times m times two cosine theta over r cubed, and B-sub-theta equals (mu-zero over four pi) times m times sine theta over r cubed.
+:alt: Meridional cross-section of an idealised magnetic dipole drawn in Earth's true polarity. A circular boundary in the centre encloses a vertical orange arrow labelled m pointing downward, from the magnetic south pole (top, labelled "geographic N / magnetic S") to the magnetic north pole (bottom, labelled "geographic S / magnetic N"). A dense family of dipole field lines (curved black streamlines with arrowheads) emerges from the magnetic north pole at the bottom, loops outward through space, and re-enters at the magnetic south pole at the top. At one surface point in the lower-right quadrant, the radial component B-sub-r is drawn as a blue arrow pointing outward and the tangential component B-sub-theta is drawn as an orange arrow tangent to the surface, illustrating the polar decomposition. A small inset box reproduces the two equations B-sub-r equals (mu-zero over four pi) times m times two cosine theta over r cubed, and B-sub-theta equals (mu-zero over four pi) times m times sine theta over r cubed.
 :width: 80%
 
-The meridional field of an idealised magnetic dipole, with the polar decomposition into $B_r$ and $B_\theta$ marked at a representative surface point. The field falls off as $1/r^3$, and at any latitude $B_r = 2 B_\theta \cot\theta$ — the factor of 2 that returns immediately as $\tan I = 2\tan\lambda$.
+The meridional field of an idealised magnetic dipole, drawn in **Earth's true polarity**: the geographic North Pole hosts the *magnetic south* pole and the geographic South Pole hosts the *magnetic north* pole. This is why the north end of a compass needle is attracted toward geographic North — opposite poles attract. The dipole moment $\mathbf{m}$ therefore points from the geographic north toward the geographic south. The polar decomposition into $B_r$ and $B_\theta$ is marked at a representative surface point. The field falls off as $1/r^3$, and at any latitude $|B_r| = 2 |B_\theta| \cot\theta$ — the factor of 2 that returns immediately as $\tan I = 2\tan\lambda$.
 ```
 
 Two features matter for what follows:

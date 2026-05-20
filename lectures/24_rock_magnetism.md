@@ -60,6 +60,31 @@ By the end of this lecture, students will be able to:
 
 This lecture builds directly on Lecture 23, especially section 2 (the three fields $\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$ and the constitutive relation $\mathbf{B} = \mu_0(1+\chi)\mathbf{H}$) and section 3 (the dipole field and the geocentric axial dipole relation $\tan I = 2\tan\lambda$). Students should be comfortable with the idea that magnetisation $\mathbf{M}$ is a volumetric density of atomic dipole moments, that susceptibility $\chi$ is the linear-response coefficient, and that paleo-latitude can be recovered from a measured inclination with quantified uncertainty. No new electromagnetism is introduced; the lecture works mostly at the atomic and mineralogical scale.
 
+::::{dropdown} Notation reference (this lecture)
+:color: info
+:icon: book
+
+New symbols introduced in Lecture 24. Symbols inherited from Lecture 23 ($\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$, $\mu_0$, $\chi$, $F$, $D$, $I$, $\lambda$) carry the same meaning and units — see the L23 notation table.
+
+| Symbol | Name | Units / notes |
+|---|---|---|
+| $\mathbf{M}_\text{ind}$ | **Induced magnetisation** of a sample in an ambient field: $\mathbf{M}_\text{ind} = \chi\mathbf{H}$ — vanishes when $\mathbf{H}=0$. **(L24, L25)** | A m$^{-1}$ |
+| $\mathbf{M}_\text{rem}$ | **Remanent (permanent) magnetisation**; locked in by acquisition history, persists when $\mathbf{H}=0$. **(L24, L25)** | A m$^{-1}$ |
+| $\mathbf{H}_\text{earth}$ | Local **ambient (Earth) auxiliary field** acting on a sample or buried body. **(L24, L25)** | A m$^{-1}$ |
+| $H_0$ | Magnitude of the ambient field at the moment of remanence acquisition. | A m$^{-1}$ |
+| $Q$ | **Königsberger ratio**: $Q = |\mathbf{M}_\text{rem}|/|\mathbf{M}_\text{ind}|$. **(L24, L25)** | dimensionless |
+| $M_s$ | **Saturation magnetisation** — high-$H$ plateau of the hysteresis loop. | A m$^{-1}$ |
+| $M_r$ | **Remanence** — intercept of the hysteresis loop at $H = 0$. | A m$^{-1}$ |
+| $H_c$ | **Coercive field** (coercivity) — intercept of the hysteresis loop at $M = 0$. | A m$^{-1}$ |
+| $J_s(T)$ | Spontaneous (temperature-dependent) magnetisation of a ferri/ferromagnetic mineral; $J_s(0)$ is its low-$T$ value, used to normalise the Curie curve. | A m$^{-1}$ |
+| $T_C$ | **Curie temperature** — the temperature above which spontaneous order is lost. **(L23–L25)** | °C |
+| $v$ | **Half-spreading rate** at a mid-ocean ridge. | mm yr$^{-1}$ $=$ km Myr$^{-1}$ |
+| $x_B,\,t_B$ | Distance and age of a polarity boundary from the ridge axis: $x_B = v\,t_B$. | km, Myr |
+
+**A note on $M_s$ vs $J_s(T)$.** Both denote a saturation/spontaneous magnetisation. We keep them distinct following the rock-magnetism literature {cite}`tauxe2018essentials`: $M_s$ is the *isothermal* room-temperature hysteresis-loop value, while $J_s(T)$ is the *temperature-dependent* spontaneous magnetisation that vanishes at $T_C$.
+
+::::
+
 ---
 
 ## 1. The Geoscientific Question

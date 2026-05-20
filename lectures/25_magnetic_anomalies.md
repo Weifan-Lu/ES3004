@@ -34,7 +34,7 @@ By the end of this lecture, students will be able to:
 - **[LO-25.1]** Define the total-field magnetic anomaly $\Delta F$ as the residual $F_\text{obs} - F_\text{IGRF}$ after diurnal correction, and explain why $\Delta F$ is approximately the projection of the source field onto the local $\hat{\mathbf{F}}_\text{earth}$ direction.
 - **[LO-25.2]** Use the closed-form expression for a buried induced magnetic dipole to predict the anomaly shape above the source, including the dependence on the inclination $I$ of the inducing field; explain why magnetic anomalies are asymmetric at all latitudes except the pole.
 - **[LO-25.3]** Apply the half-width depth rule $z \approx 2\,x_{1/2}$ for an induced dipole at the magnetic pole (or after reduction-to-pole), and propagate measurement noise $\sigma_F$ to depth uncertainty $\sigma_z / z \approx (1/3)\,\sigma_F / \Delta F_\text{max}$.
-- **[LO-25.4]** Generate and interpret an ensemble-fit cloud in $(z, m)$ parameter space, identify the theoretical ridge $m \propto z^3$ along which depth and moment trade off, and discuss how induced + remanent ambiguity widens the cloud relative to the gravity case.
+- **[LO-25.4]** Generate and interpret an ensemble-fit cloud in $(z, m)$ parameter space, identify the theoretical ridge $m \propto z^3$ along which depth and moment trade off, and discuss how induced ($\mathbf{m}_\text{ind}$) plus remanent ($\mathbf{m}_\text{rem}$) ambiguity widens the cloud relative to the gravity case.
 - **[LO-25.5]** Read a real magnetic-anomaly map at three scales — global (EMAG2), continental (USGS North America), and local (Seattle Fault Zone) — and identify which geological features each scale resolves; describe the role of magnetic data in mapping the Seattle Fault Zone.
 
 ::::
@@ -57,6 +57,39 @@ By the end of this lecture, students will be able to:
 ## Prerequisites
 
 This lecture builds on Lecture 23 (the constitutive relation $\mathbf{B} = \mu_0(1+\chi)\mathbf{H}$, the dipole field, the local (D, I, F) system, the three sources of the surface field) and Lecture 24 (induced vs remanent magnetisation, the Königsberger ratio $Q$). It also leans heavily on the gravity-inversion framework of Lecture 20: the half-width depth rule, the $\chi^2$-misfit ensemble fit, and the depth-moment trade-off ridge. The magnetic case repeats this framework with a faster-decaying source field and an additional vector ambiguity.
+
+::::{dropdown} Notation reference (this lecture)
+:color: info
+:icon: book
+
+New symbols introduced in Lecture 25. Symbols inherited from Lectures 23–24 ($\mathbf{B}$, $\mathbf{H}$, $\mathbf{M}$, $\mu_0$, $\chi$, $F$, $D$, $I$, $\mathbf{M}_\text{ind}$, $\mathbf{M}_\text{rem}$, $\mathbf{H}_\text{earth}$, $Q$, $T_C$) carry the same meaning and units — see the L23 and L24 notation tables.
+
+| Symbol | Name | Units / notes |
+|---|---|---|
+| $F_\text{obs}$ | Total intensity **measured** at a survey station, $F_\text{obs}=|\mathbf{B}|$. | nT |
+| $F_\text{core}$ | Core-field contribution to $F_\text{obs}$ (the geodynamo signal, L23 §4). | nT |
+| $F_\text{lith}$ | **Lithospheric** contribution (the signal of interest for surveying). | nT |
+| $F_\text{ext}$ | External (ionospheric / magnetospheric) contribution. | nT |
+| $F_\text{IGRF}$ | Modelled core field from the IGRF at the survey epoch (subtracted from $F_\text{obs}$). | nT |
+| $F_\text{diurnal}$ | Base-station time-varying trace used to remove the external field. | nT |
+| $\Delta F$ | **Total-field magnetic anomaly**: $\Delta F = F_\text{obs} - F_\text{IGRF} - F_\text{diurnal}$. | nT |
+| $\Delta F_\text{max}$ | Peak amplitude of $\Delta F$ at the surface above the source. | nT |
+| $\sigma_F$ | RMS measurement noise on $\Delta F$ after all corrections. | nT |
+| $\mathbf{m}$ | **Dipole moment of a buried body** (local to L25; distinct from Earth's $\mathbf{m}$ in L23). | A m$^2$ |
+| $\mathbf{m}_\text{ind},\,\mathbf{m}_\text{rem}$ | Induced and remanent components of the body moment: $\mathbf{m} = \chi V \mathbf{H}_\text{earth} + \mathbf{m}_\text{rem}$. | A m$^2$ |
+| $V$ | Volume of the buried body. | m$^3$ |
+| $\mathbf{F}_\text{earth},\,\hat{\mathbf{F}}_\text{earth}$ | Local ambient total-field vector and its unit direction at the survey point. | nT, — |
+| $\mathbf{B}_\text{source}$ | Surface field perturbation produced by a buried magnetised body. | nT |
+| $\mathbf{B}_\text{dipole}$ | Closed-form dipole field of the body — eq. [](#eq-Bdipole). | nT |
+| $\mathbf{r},\,r$ | Vector from source to observation, and its magnitude. | m |
+| $\hat{\mathbf{m}},\,\hat{\mathbf{r}}$ | Unit vectors of $\mathbf{m}$ and $\mathbf{r}$. | — |
+| $x,\,z$ | Horizontal surface coordinate and **depth-below-surface** (positive downward). | m |
+| $x_{1/2}$ | **Half-width** of the anomaly: $\Delta F(x_{1/2}) = \tfrac12\Delta F_\text{max}$. | m |
+| $\sigma_z$ | Propagated depth uncertainty from $\sigma_F$. | m |
+| $\Phi$ | Gravitational scalar potential ($\mathbf{g} = -\nabla\Phi$). | m$^2$ s$^{-2}$ |
+| $\Psi$ | Magnetic scalar potential ($\mathbf{H} = -\nabla\Psi$, in current-free regions). | A |
+
+::::
 
 ---
 
@@ -173,10 +206,10 @@ The simplest magnetic body that has a closed-form solution is a small sphere or 
 
 ```{math}
 :label: eq-m-decomp
-\mathbf{m} = \mathbf{m}_\text{induced} + \mathbf{m}_\text{remanent} = \chi V \mathbf{H}_\text{earth} + \mathbf{m}_\text{remanent},
+\mathbf{m} = \mathbf{m}_\text{ind} + \mathbf{m}_\text{rem} = \chi V \mathbf{H}_\text{earth} + \mathbf{m}_\text{rem},
 ```
 
-where $V$ is the body volume, $\chi$ is the volume magnetic susceptibility (Lecture 23 [](#eq-susc)), $\mathbf{H}_\text{earth}$ is the local ambient field (in A m$^{-1}$), and $\mathbf{m}_\text{remanent}$ is the permanent (e.g. TRM) component. For a freshly intruded volcanic body the two terms can be comparable; for an old plutonic body with low Königsberger ratio the induced term usually dominates. **For the remainder of this section we restrict attention to the induced case**, returning to the vector ambiguity in §6.
+where $V$ is the body volume, $\chi$ is the volume magnetic susceptibility (Lecture 23 [](#eq-susc)), $\mathbf{H}_\text{earth}$ is the local ambient field (in A m$^{-1}$), and $\mathbf{m}_\text{rem}$ is the permanent (e.g. TRM) component — same subscript convention as L24 §3. For a freshly intruded volcanic body the two terms can be comparable; for an old plutonic body with low Königsberger ratio the induced term usually dominates. **For the remainder of this section we restrict attention to the induced case**, returning to the vector ambiguity in §6.
 
 Place the dipole at $(0, z)$ with $z > 0$ measured downward, and the observation at $(x, 0)$ on the surface. The vector from source to observation is $\mathbf{r} = (x, -z)$ with $r = \sqrt{x^2 + z^2}$. The induced moment direction is $\hat{\mathbf{m}} = (\cos I, \sin I)$ — parallel to the inducing field with inclination $I$. The dipole field is
 
@@ -312,11 +345,11 @@ The ridge [](#eq-mzcubed-ridge) has a steeper exponent than the gravity case ($M
 For a gravity survey, the only physical ambiguity in inversion is the trade-off between source mass and depth: a deep heavy source produces the same anomaly as a shallow light one. For a magnetic survey, *two* ambiguities operate together:
 
 1. The same $(z, m)$ trade-off, intensified to $m \propto z^3$ (§5).
-2. An additional *vector* ambiguity in the magnetisation direction: $\mathbf{m} = \mathbf{m}_\text{induced} + \mathbf{m}_\text{remanent}$ [](#eq-m-decomp). The induced component is parallel to $\mathbf{H}_\text{earth}$, but the remanent component can point in *any* direction — its orientation was set when the body last cooled through the Curie temperature, possibly at a different geographic latitude (paleo-latitude, Lecture 23 §7), possibly during a different polarity epoch (the GPTS, Lecture 24 §6).
+2. An additional *vector* ambiguity in the magnetisation direction: $\mathbf{m} = \mathbf{m}_\text{ind} + \mathbf{m}_\text{rem}$ [](#eq-m-decomp). The induced component is parallel to $\mathbf{H}_\text{earth}$, but the remanent component can point in *any* direction — its orientation was set when the body last cooled through the Curie temperature, possibly at a different geographic latitude (paleo-latitude, Lecture 23 §7), possibly during a different polarity epoch (the GPTS, Lecture 24 §6).
 
 The consequence is that a single magnetic-anomaly profile cannot, in general, separate induced from remanent magnetisation. If a body is known to be young and felsic ($Q \ll 1$, Lecture 24 §3), the induced-only assumption is safe. If the body is volcanic and recent ($Q \gg 1$, e.g. fresh basalt), the induced-only assumption fails spectacularly.
 
-**Resolution requires more data**: gradiometry to constrain the direction of $\mathbf{B}_\text{source}$ at multiple stations, laboratory measurements of representative samples for the bulk $\mathbf{M}_\text{remanent}$ and $Q$, or *joint inversion with gravity* (which sees only mass and is blind to remanence). All three approaches are in standard use today, and the third is the cleanest example of multi-physics integration in shallow-Earth geophysics: combining two observables that share the depth-extent of the source but differ in their sensitivity to the source's physical properties.
+**Resolution requires more data**: gradiometry to constrain the direction of $\mathbf{B}_\text{source}$ at multiple stations, laboratory measurements of representative samples for the bulk $\mathbf{M}_\text{rem}$ and $Q$, or *joint inversion with gravity* (which sees only mass and is blind to remanence). All three approaches are in standard use today, and the third is the cleanest example of multi-physics integration in shallow-Earth geophysics: combining two observables that share the depth-extent of the source but differ in their sensitivity to the source's physical properties.
 
 ## 7. Reading real anomaly maps at three scales
 

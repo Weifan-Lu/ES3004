@@ -49,7 +49,10 @@ def main(out: Path) -> None:
     xg = np.linspace(-extent, extent, n)
     yg = np.linspace(-extent, extent, n)
     X, Y = np.meshgrid(xg, yg)
-    Bx, By = dipole_field(X, Y, m_unit=1.0)
+    # Earth's geomagnetic dipole points from geographic N (magnetic S) to
+    # geographic S (magnetic N), so the moment vector m is in the -y
+    # direction here.
+    Bx, By = dipole_field(X, Y, m_unit=-1.0)
 
     # Mask the field inside the sphere so streamlines don't pass through it.
     inside = (X * X + Y * Y) < 1.0
@@ -93,15 +96,19 @@ def main(out: Path) -> None:
     ax.plot([-1, 1], [0, 0], color=COLORS["grey"], linewidth=0.8,
             linestyle="--", zorder=11)
 
-    # Pole labels (north = up; geographic convention).
-    ax.text(0, 1.18, "N", ha="center", va="bottom", fontsize=16,
-            fontweight="bold", color=COLORS["black"], zorder=12)
-    ax.text(0, -1.18, "S", ha="center", va="top", fontsize=16,
-            fontweight="bold", color=COLORS["black"], zorder=12)
+    # Pole labels: geographic north (top) hosts the *magnetic south* pole,
+    # geographic south (bottom) hosts the *magnetic north* pole. This is
+    # why the north end of a compass needle is attracted toward the
+    # geographic North.
+    ax.text(0, 1.25, "geographic N\n(magnetic S)", ha="center", va="bottom",
+            fontsize=12, fontweight="bold", color=COLORS["black"], zorder=12)
+    ax.text(0, -1.25, "geographic S\n(magnetic N)", ha="center", va="top",
+            fontsize=12, fontweight="bold", color=COLORS["black"], zorder=12)
 
-    # Dipole moment arrow inside the sphere.
+    # Dipole moment arrow inside the sphere — points from magnetic S (top)
+    # to magnetic N (bottom), i.e. downward.
     ax.annotate(
-        "", xy=(0, 0.7), xytext=(0, -0.7),
+        "", xy=(0, -0.7), xytext=(0, 0.7),
         arrowprops=dict(arrowstyle="-|>", color=COLORS["vermilion"],
                         lw=2.4, mutation_scale=18),
         zorder=11,
@@ -110,11 +117,15 @@ def main(out: Path) -> None:
             color=COLORS["vermilion"], zorder=12)
 
     # B_r / B_theta decomposition inset at one surface point.
-    # Pick a point at colatitude theta = 45 deg on the sphere.
+    # Pick a point at colatitude theta = 45 deg measured from the magnetic
+    # north pole (which is at the geographic south, i.e. -y here). The
+    # point therefore sits in the lower-right quadrant; with the flipped
+    # dipole, B_r points outward and B_theta points tangentially toward
+    # the magnetic equator, keeping both components positive.
     theta_pt = np.radians(45.0)
     r_pt = 1.0
     px = r_pt * np.sin(theta_pt)
-    py = r_pt * np.cos(theta_pt)
+    py = -r_pt * np.cos(theta_pt)
     # Compute field magnitudes at that point (in dipole units).
     # B_r = (mu m / 4 pi r^3) * 2 cos theta ; B_theta = ... * sin theta.
     # In arbitrary units take the prefactor = 1.
@@ -122,9 +133,11 @@ def main(out: Path) -> None:
     Bt_mag = np.sin(theta_pt)
     arrow_scale = 0.55  # visual scale of the decomposition arrows
 
-    # Radial unit vector at the point.
-    r_hat = np.array([np.sin(theta_pt), np.cos(theta_pt)])
-    t_hat = np.array([np.cos(theta_pt), -np.sin(theta_pt)])  # tangential, pointing toward equator
+    # Radial unit vector at the point (pointing away from origin) and a
+    # tangential unit vector pointing from the point toward the magnetic
+    # equator (which is the geographic equator, y = 0).
+    r_hat = np.array([np.sin(theta_pt), -np.cos(theta_pt)])
+    t_hat = np.array([np.cos(theta_pt), np.sin(theta_pt)])
 
     # Draw decomposition.
     ax.annotate(
@@ -153,7 +166,7 @@ def main(out: Path) -> None:
     )
     ax.text(
         px + Bt_mag * arrow_scale * t_hat[0] + 0.05,
-        py + Bt_mag * arrow_scale * t_hat[1] - 0.18,
+        py + Bt_mag * arrow_scale * t_hat[1] + 0.05,
         r"$B_\theta$", fontsize=14, color=COLORS["orange"], fontweight="bold",
         zorder=15,
     )
