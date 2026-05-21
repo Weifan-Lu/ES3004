@@ -120,32 +120,11 @@ Gravity and magnetism are both **potential fields** in source-free regions. The 
 
 ```{figure} ../assets/figures/fig_emag2_global.png
 :name: fig-emag2-global
-:alt: Global lithospheric magnetic-anomaly map, Mercator projection, with anomaly intensity Delta F in nanoteslas colour-coded from negative (cool colours) through zero to positive (warm colours), saturating at plus or minus 250 nT. Striped patterns parallel to mid-ocean ridges are visible across all oceans. Continents show long-wavelength patterns: a strong positive anomaly across the Canadian Shield, a complex pattern over Africa and Antarctica, and visible signatures of large impact structures. The Pacific Northwest region is annotated with a small inset showing the Seattle Fault Zone trend.
+:alt: Global lithospheric magnetic-anomaly poster from NOAA NCEI / CIRES, showing the EMAG2 v3 grid upward-continued to 4 km altitude on a Mercator projection. Anomaly intensity Delta F in nanoteslas is colour-coded with a diverging red-white-blue scale saturating at plus or minus 250 nT. Striped lineations parallel to mid-ocean ridges are visible across the Pacific, Atlantic, and Indian Oceans, recording 150 million years of seafloor spreading. The continents show long-wavelength patterns: a strong positive anomaly across the Canadian Shield and Greenland, a complex pattern over Africa and Antarctica, and the Mid-Continent Rift visible as a curving band through Minnesota and Iowa. A title strip and a colour-bar legend annotated in nT are integrated into the poster layout, together with a small inset of the polar caps.
 :width: 100%
 
-The global lithospheric magnetic-anomaly grid, EMAG2 v3 {cite}`meyer2017emag2`, compiled from satellite, marine, and airborne measurements after removal of the core (IGRF) and external fields. Anomaly magnitudes are reported in nT against a global ambient field of ~50 000 nT, so the colour scale represents perturbations of order $10^{-3}$ of the ambient. The map carries the fingerprint of 150 Myr of plate motion across the oceans and the full structural history of the continents. Source: NOAA NCEI / CIRES, US Government, public domain.
+The global lithospheric magnetic-anomaly grid, EMAG2 v3 {cite}`meyer2017emag2`, compiled from satellite, marine, and airborne measurements after removal of the core (IGRF) and external fields, and upward-continued to 4 km altitude. Anomaly magnitudes are reported in nT against a global ambient field of ~50 000 nT, so the colour scale represents perturbations of order $10^{-3}$ of the ambient. The map carries the fingerprint of 150 Myr of plate motion across the oceans and the full structural history of the continents. Source: NOAA NCEI / CIRES poster, US Government, public domain — original at <https://www.ngdc.noaa.gov/geomag/data/EMAG2/EMAG2_V3_20170530/>.
 ```
-
-<!--
-FIGURE BRIEF — fig_emag2_global (Phase 2 build)
-  Script: assets/scripts/fig_emag2_global.py
-  Type: Python rendering of a real public-domain dataset
-  Data source: NOAA NCEI EMAG2 v3 grid (Meyer, Saltus & Chulliat 2017)
-    URL: https://www.ncei.noaa.gov/products/earth-magnetic-anomaly-grid-2-arc-minute
-    Format: 2-arc-minute global NetCDF; can also be retrieved as PNG at lower resolution
-    License: public domain (US Government work)
-  Stack: matplotlib + cartopy (Robinson or Mercator) + netCDF4 / xarray
-  Required:
-    - Diverging colormap (RdBu_r or a custom colorblind-safe diverging palette);
-      saturate at ±250 nT for typical lithospheric anomaly range
-    - Coastlines drawn in dark grey
-    - Annotation: small box outlining the Pacific Northwest (44–49° N, 130–120° W)
-      with a label pointing to the Seattle Fault Zone direction
-    - Title strip "EMAG2 v3 — Global Lithospheric Magnetic Anomaly"
-    - mpl.rcParams: base font 13pt; savefig 300dpi
-    - ADA: alt text describes the figure independently of colour
-    - File license: include attribution in caption + .LICENSE.txt sidecar
--->
 
 The lecture works through this picture in three movements. Section 2 defines the magnetic anomaly $\Delta F$ and shows what physical signal it isolates. Sections 3–4 build the forward model for the simplest possible source — an induced dipole buried at depth — and explain why magnetic anomalies are asymmetric in a way that gravity anomalies are not. Sections 5–6 build the inverse problem (half-width depth, ensemble fit, the $m \propto z^3$ ridge, and the additional vector ambiguity from remanence). Section 7 reads three real anomaly maps at three scales — global EMAG2, continental USGS North America, and local Seattle Fault Zone — to illustrate what magnetic surveying is *for*.
 
