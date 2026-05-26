@@ -61,7 +61,7 @@ Here is the conceptual hinge of the lecture. Conduction transports heat continuo
 - Below about $1300\,^\circ\mathrm{C}$, conduction is still the dominant heat-transport mechanism, but the rocks can flow on geological timescales. This isotherm sets the **thermal boundary layer**.
 - Between the two isotherms there is a region that conducts heat like a solid but creeps like a fluid. This region is part of the lithosphere if you are a heat-flow geophysicist but part of the asthenosphere if you are a flexural modeler.
 
-This is not a definitional quibble. It is a real physical reflection of the fact that the lithosphere is defined by *behavior*, and the behavior of rocks depends on which timescale and which physical process you ask about. We will return to this in Beat B of §6.
+This is not a definitional quibble. It is a real physical reflection of the fact that the lithosphere is defined by *behavior*, and the behavior of rocks depends on which timescale and which physical process you ask about. We will return to this in Round 2 of §6.
 
 ```{admonition} A brief word on rheology
 :class: note
@@ -203,7 +203,7 @@ plt.savefig("oceanic_age_map.png", dpi=200, bbox_inches="tight")
 :alt: Global map showing seafloor age in millions of years. Bright yellow bands mark mid-ocean ridges where new crust forms; dark purple-black areas in the northwest Pacific mark the oldest oceanic crust around 180 Ma. The pattern is symmetric about each ridge, with the Atlantic showing narrow age stripes from slow spreading and the Pacific showing wider stripes from fast spreading.
 :width: 100%
 
-Global seafloor age. The brightest bands are mid-ocean ridge axes (age $\approx 0$); the darkest areas are the oldest oceanic crust (NW Pacific, $\sim 180$ Ma) — older crust has already been subducted. The width of each color band encodes the spreading rate: narrow bands in the slow-spreading Atlantic, wide bands in the fast-spreading Pacific.
+Global seafloor age from the Müller/Seton 2020 grid. The brightest bands are mid-ocean ridge axes (age $\approx 0$); the darkest areas are the oldest oceanic crust (NW Pacific, $\sim 180$ Ma) — older crust has already been subducted. The width of each color band encodes the spreading rate: narrow bands in the slow-spreading Atlantic, wide bands in the fast-spreading Pacific. Data: {cite:t}`Seton2020`, *G-Cubed* 21, [doi:10.1029/2020GC009214](https://doi.org/10.1029/2020GC009214) (open license; cite when used). Produced by Code Block A in §4.
 ```
 
 Three teaching points carry across every dataset you will ever touch.
@@ -246,13 +246,13 @@ plt.savefig("crust10_moho.png", dpi=200, bbox_inches="tight")
 :alt: Map of North American crustal thickness color-coded from about 10 km (deep blue, oceanic crust offshore) to about 55 km (yellow, beneath the Rocky Mountains). Labeled features include the Canadian Shield with crust around 45 km, the Rockies at maximum thickness, the Basin and Range with thinned crust, and the Appalachians with moderate thickness.
 :width: 100%
 
-North American Moho thickness from CRUST1.0 (regional crop). Oceans show the canonical $\sim 10$ km oceanic Moho; the Canadian Shield craton sits at $\sim 45$ km; the Rockies (with their tectonic root) reach $\sim 50$+ km; the Basin and Range, extended by Cenozoic rifting, has been thinned to $\sim 28$–$30$ km.
+North American Moho thickness from CRUST1.0 ({cite:t}`Laske2013`), regional crop. Oceans show the canonical $\sim 10$ km oceanic Moho; the Canadian Shield craton sits at $\sim 45$ km; the Rockies (with their tectonic root) reach $\sim 50$+ km; the Basin and Range, extended by Cenozoic rifting, has been thinned to $\sim 28$–$30$ km. Data: CRUST1.0 ({cite:t}`Laske2013`), <https://igppweb.ucsd.edu/~gabi/crust1.html>. Produced by Code Block B in §4.
 ```
 
 Two teaching points specific to this dataset:
 
 1. **Discrete grids are small enough to inspect by hand.** The full CRUST1.0 grid is $360 \times 180 = 64{,}800$ cells. You could in principle print it. Don't, but knowing the size matters for picking the right tools.
-2. **Continental crustal thickness varies by a factor of two across one continent.** Oceanic crust does not. This will be Beat B of our active-learning comparison in §6.
+2. **Continental crustal thickness varies by a factor of two across one continent.** Oceanic crust does not. This will be Round 2 of our predict-then-reveal sequence in §6.
 
 ### 4.3 Code Block C — A bathymetric transect across the Mid-Atlantic Ridge
 
@@ -322,11 +322,11 @@ Two specific subproblems we will see in this and later lectures:
 
 ---
 
-## 6. Comparison Matrix and Active-Learning Beats
+## 6. Comparison Matrix and Three Predict-Then-Reveal Rounds
 
-This is the core of the lecture. We are going to build a side-by-side comparison of oceanic and continental lithosphere across eleven attributes. You will predict each row before we reveal it. Predict first; copy the answer afterward. The comparison is delivered in three beats.
+This is the core of the lecture. We are going to build a side-by-side comparison of oceanic and continental lithosphere across eleven attributes. You will predict each row before we reveal it. Predict first; copy the answer afterward. The comparison is delivered in three rounds.
 
-### 6.1 Beat A — Composition, density, and the consequences for subduction
+### 6.1 Round 1 — Composition, density, and the consequences for subduction
 
 ```{admonition} Predict
 :class: tip
@@ -365,7 +365,7 @@ Now the subtle and important point. **The mantle lithosphere beneath old contine
 
 Subduction is therefore not just a thermal-buoyancy story. It is a *thermal-and-chemical* buoyancy story. Oceanic lithosphere is dense enough to subduct because its mantle component is fertile and its crust is mafic; continental lithosphere is buoyant enough to resist subduction because its mantle component is depleted and its crust is felsic. This is the answer to the prediction question. Write it down.
 
-### 6.2 Beat B — Thickness, seismic structure, and "what is the lithosphere?"
+### 6.2 Round 2 — Thickness, seismic structure, and "what is the lithosphere?"
 
 ```{admonition} Predict
 :class: tip
@@ -412,9 +412,9 @@ These are not measurement errors. They are *real, observed disagreements* that h
 
 Under oceans, why do these definitions mostly agree? Because oceanic lithosphere is young, simple, and globally homogeneous. The thermal field has not had time to equilibrate into something that decouples from the mechanical behavior, and there is no buoyant chemical layer at the bottom that could outlast the thermal cooling. The lithosphere base under oceans is essentially the thermal boundary layer, full stop. Under continents — especially old continents — the lithosphere base is a four-way disagreement.
 
-This is the answer to Beat B. Write it in your matrix.
+This is the answer to Round 2. Write it in your matrix.
 
-### 6.3 Beat C — Heat flow, gravity, magnetics, age structure
+### 6.3 Round 3 — Heat flow, gravity, magnetics, age structure
 
 ```{admonition} Predict
 :class: tip
@@ -539,17 +539,17 @@ Every student in this room is sitting on lithosphere of a particular and unusual
 
 ```{figure} ../assets/figures/F13_siletzia_potential_fields.png
 :name: F13_siletzia
-:alt: Two side-by-side maps of the Pacific Northwest showing geophysical anomalies attributed to Siletzia. Panel a shows a Bouguer gravity high (peach band) running roughly north–south along the forearc from southern British Columbia to southern Oregon. Panel b shows the corresponding aeromagnetic anomaly, with a central positive band along the Siletzia axis flanked by negative anomalies on both sides, characteristic of a magnetically stratified accreted oceanic block.
+:alt: Two side-by-side maps of the Puget Lowland (lat 46.5–49 N, lon -124.5 to -121 E) showing geophysical anomalies attributed to Siletzia. Panel a (left) is the USGS styled isostatic-residual gravity image: a strong north–south gravity high (warm colors) crosses the forearc through the Puget Lowland, flanked by gravity lows over the Cascade volcanic arc to the east and the Coast/Olympic ranges to the west. Panel b (right) is the Bankey et al. (2002) high-pass-500-km magnetic anomaly: a complex pattern of paired positive and negative anomalies coincides spatially with the gravity high, the dipolar signature of a magnetically stratified accreted oceanic block.
 :width: 100%
 
-The geophysical signature of Siletzia in the Pacific Northwest forearc (schematic, after Anderson et al. 2024, *Tectonics*). **(a)** A regional Bouguer gravity high marks the high-density basaltic basement. **(b)** The aeromagnetic anomaly is dipolar — a central positive flanked by negative lows — reflecting the magnetically stratified internal structure of the accreted plateau.
+Real-data geophysical signature of Siletzia in the Puget Lowland, built from two public-domain USGS grids. **(a)** Isostatic residual gravity (Kucks 1999 / USGS Open-File DDS-9 compilation; ``USgrv_iso_SDD_geog.tif`` from <https://mrdata.usgs.gov/geophysics/gravity/>), shown using the official USGS color stretch (linear over -225 to +105 mGal). The bright N–S band along the forearc is the high-density basaltic basement of Siletzia. **(b)** High-pass-500-km magnetic anomaly ({cite:t}`bankey2002nam`; ``USmag_hp500`` from <https://mrdata.usgs.gov/magnetic/>) plotted in nT with a diverging colormap. The paired positive/negative anomalies along the Siletzia axis are the dipolar signature of magnetically stratified extrusives. Both grids are US Government works (public domain). For the published interpretation and 2-D potential-field modeling, see {cite:t}`Anderson2024`, *Tectonics* 43, [doi:10.1029/2022TC007720](https://doi.org/10.1029/2022TC007720), open access via the USGS Publications Warehouse (<https://pubs.usgs.gov/publication/70251370>). Produced by ``assets/scripts/fig_26_siletzia_potential_fields.py``.
 ```
 
 Why does this matter for a Seattle resident in 2026? Two reasons.
 
 1. **The Siletzia–North America boundary is a tectonic suture.** Active faults like the Seattle Fault Zone reactivate weaknesses inherited from the original Eocene accretion. The seismic hazard of the Puget Lowland is not just a Cascadia-megathrust problem; it includes upper-plate faults that exist because Siletzia is welded onto a different kind of continental basement.
 
-2. **You can see Siletzia from your laptop.** The figure above is a schematic, but Anderson et al. (2024) is open-access through the USGS Publications Warehouse and uses the same tools that you have just learned to use in §4. The Bouguer gravity map of the Puget Lowland is *downloadable*. So is the aeromagnetic grid. Every result in that paper is reproducible by a student with `xarray`, `numpy`, `matplotlib`, and an afternoon.
+2. **You can see Siletzia from your laptop.** The figure above is built from grids you can download yourself in three minutes — the USGS isostatic residual gravity and Bankey-2002 high-pass magnetic compilations — using the same workflow you practiced in §4. {cite:t}`Anderson2024` is open-access through the USGS Publications Warehouse and uses the same kinds of grids for their published interpretation. Every result in that paper is reproducible by a student with `xarray`, `numpy`, `matplotlib`, `rasterio`, and an afternoon.
 
 The lithosphere lecture is what lets you ask the right questions when you read a paper like that. Every attribute in our comparison matrix has a clear and concrete meaning over Siletzia: composition (mafic), density (high → gravity high), thickness ($\sim 30$ km in the forearc), seismic structure ($V_p \approx 6.5$ km/s consistent with basaltic basement), magnetics (dipolar pattern from stratified extrusives), age (Eocene, $\sim 50$ Ma), geodynamic role (accreted plateau, not subducted). The framework you build here is the framework you use to read the next paper.
 

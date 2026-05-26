@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schemas/iso19139fra/gmd/gmd.xsd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:map="urn:brgm:mapping" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:gco="http://www.isotc211.org/2005/gco">
+	<geosoft xmlns="http://www.geosoft.com/schema/geo">
+		<dataset version="1">
+			<title>USmag_hp500</title>
+			<file_format>Geosoft Grid</file_format>
+			<metadata_created_by>Anderson, Eric D.</metadata_created_by>
+			<metadata_creation_date>2012-08-15</metadata_creation_date>
+			<georeference>
+				<dataextents>
+					<extent2d minx="-2295000" miny="2497000" maxx="2642000" maxy="5477000"/>
+				</dataextents>
+				<projection type="TRANSVERSE_MERCATOR_SPHERICAL" name="*DNAG / *dnag" projection="*dnag" ellipsoid="*STM1987" datum="*DNAG" radius="6371204" eccentricity="0">
+					<parameters scale="0.926" false_east="0" false_north="0" lat_origin="0" lon_origin="-100"/>
+					<units name="m" unit_scale="1"/>
+				</projection>
+			</georeference>
+		</dataset>
+	</geosoft>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>USmag_hp500</gco:CharacterString>
+					</gmd:title>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:resourceFormat>
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString>Geosoft Grid</gco:CharacterString>
+					</gmd:name>
+				</gmd:MD_Format>
+			</gmd:resourceFormat>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>-133.653426455819</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>-62.3088130975546</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>21.8831722854947</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>53.1899471572691</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString>Anderson, Eric D.</gco:CharacterString>
+			</gmd:individualName>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>2012-8-15</gco:Date>
+	</gmd:dateStamp>
+	<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:codeSpace>
+						<gco:CharacterString>Geosoft</gco:CharacterString>
+					</gmd:codeSpace>
+					<gmd:code>
+						<gco:CharacterString>&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;projection type=&amp;quot;TRANSVERSE_MERCATOR_SPHERICAL&amp;quot; name=&amp;quot;*DNAG / *dnag&amp;quot; projection=&amp;quot;*dnag&amp;quot; ellipsoid=&amp;quot;*STM1987&amp;quot; datum=&amp;quot;*DNAG&amp;quot; radius=&amp;quot;6371204&amp;quot; eccentricity=&amp;quot;0&amp;quot; xmlns=&amp;quot;http://www.geosoft.com/schema/geo&amp;quot;&amp;gt;
+	&amp;lt;parameters scale=&amp;quot;0.926&amp;quot; false_east=&amp;quot;0&amp;quot; false_north=&amp;quot;0&amp;quot; lat_origin=&amp;quot;0&amp;quot; lon_origin=&amp;quot;-100&amp;quot;/&amp;gt;
+	&amp;lt;units name=&amp;quot;m&amp;quot; unit_scale=&amp;quot;1&amp;quot;/&amp;gt;
+&amp;lt;/projection&amp;gt;
+</gco:CharacterString>
+					</gmd:code>
+					<gmd:version>
+						<gco:CharacterString>1</gco:CharacterString>
+					</gmd:version>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+	</gmd:referenceSystemInfo>
+	<dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows Server 2008 R2 Version 6.1 (Build 7601) Service Pack 1; ESRI ArcGIS 10.0.2.3200</envirDesc><dataLang><languageCode value="eng" country="USA"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">USmag_hp500</resTitle><presForm><PresFormCd value="005"></PresFormCd></presForm></idCitation><descKeys><thesaName uuidref="723f6998-058e-11dc-8314-0800200c9a66"></thesaName><keyword Sync="TRUE">002</keyword></descKeys><spatRpType><SpatRepTypCd value="002"></SpatRepTypCd></spatRpType></dataIdInfo><mdLang><languageCode value="eng"></languageCode></mdLang><mdChar><CharSetCd value="004"></CharSetCd></mdChar><Esri><DataProperties><itemProps><itemName Sync="TRUE">USmag_hp500</itemName><itemLocation><linkage Sync="TRUE">file://C:\Eric\To_peter\USmag_hp500\ESRI\USmag_hp500</linkage><protocol Sync="TRUE">Local Area Network</protocol></itemLocation><imsContentType Sync="TRUE">002</imsContentType><nativeExtBox><westBL Sync="TRUE">-2295500.000000</westBL><eastBL Sync="TRUE">2642500.000000</eastBL><southBL Sync="TRUE">2496500.000000</southBL><northBL Sync="TRUE">5477500.000000</northBL><exTypeCode Sync="TRUE">1</exTypeCode></nativeExtBox></itemProps><RasterProperties><General><PixelDepth Sync="TRUE">32</PixelDepth><HasColormap Sync="TRUE">FALSE</HasColormap><CompressionType Sync="TRUE">None</CompressionType><NumBands Sync="TRUE">1</NumBands><Format Sync="TRUE">GRID</Format><HasPyramids Sync="TRUE">TRUE</HasPyramids><SourceType Sync="TRUE">continuous</SourceType><PixelType Sync="TRUE">floating point</PixelType><NoDataValue Sync="TRUE">-1e+032</NoDataValue></General></RasterProperties><lineage><Process ToolSource="C:\ArcGIS\Desktop10.0\ArcToolbox\Toolboxes\Data Management Tools.tbx\CopyRaster" Date="20120815" Time="143527">CopyRaster C:\Eric\To_peter\USmag_hp500\USmag_hp500.grd C:\Eric\To_peter\USmag_hp500\ESRI\USmag_hp500 # # # NONE NONE #</Process></lineage></DataProperties><SyncDate>20120815</SyncDate><SyncTime>14352700</SyncTime><ModDate>20120815</ModDate><ModTime>14352700</ModTime></Esri><distInfo><distFormat><formatName Sync="TRUE">Raster Dataset</formatName></distFormat></distInfo><mdHrLv><ScopeCd value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><spatRepInfo><Georect><cellGeo><CellGeoCd Sync="TRUE" value="002"></CellGeoCd></cellGeo><numDims Sync="TRUE">2</numDims><tranParaAv Sync="TRUE">1</tranParaAv><chkPtAv Sync="TRUE">0</chkPtAv><cornerPts><pos Sync="TRUE">-2295500.000000 2496500.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">-2295500.000000 5477500.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">2642500.000000 5477500.000000</pos></cornerPts><cornerPts><pos Sync="TRUE">2642500.000000 2496500.000000</pos></cornerPts><centerPt><pos Sync="TRUE">173500.000000 3987000.000000</pos></centerPt><axisDimension type="002"><dimSize Sync="TRUE">4938</dimSize><dimResol><value Sync="TRUE">1000.000000</value></dimResol></axisDimension><axisDimension type="001"><dimSize Sync="TRUE">2981</dimSize><dimResol><value Sync="TRUE">1000.000000</value></dimResol></axisDimension><ptInPixel><PixOrientCd Sync="TRUE" value="001"></PixOrientCd></ptInPixel></Georect></spatRepInfo><contInfo><ImgDesc><contentTyp><ContentTypCd Sync="TRUE" value="003"></ContentTypCd></contentTyp><covDim><Band><dimDescrp Sync="TRUE">Band_1</dimDescrp><maxVal Sync="TRUE">13218.685547</maxVal><minVal Sync="TRUE">-5033.906738</minVal><bitsPerVal Sync="TRUE">32</bitsPerVal></Band></covDim></ImgDesc></contInfo><mdDateSt Sync="TRUE">20120815</mdDateSt></gmd:MD_Metadata>

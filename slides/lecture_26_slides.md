@@ -172,11 +172,11 @@ ETOPO1 / NOAA NGDC — virtual GMT dataset.
 <!-- _class: section -->
 
 # §6 — Comparison Matrix
-## Predict, then reveal. Three beats.
+## Predict, then reveal. Three rounds.
 
 ---
 
-## Beat A — Composition, density, subduction (predict)
+## Round 1 — Composition, density, subduction (predict)
 
 **Before the reveal, predict in your notebook:**
 
@@ -189,7 +189,7 @@ ETOPO1 / NOAA NGDC — virtual GMT dataset.
 
 ---
 
-## Beat A — Reveal
+## Round 1 — Reveal
 
 | Attribute | Oceanic | Continental |
 |-----------|---------|-------------|
@@ -201,7 +201,7 @@ ETOPO1 / NOAA NGDC — virtual GMT dataset.
 
 ---
 
-## Beat B — Thickness & seismic structure (predict)
+## Round 2 — Thickness & seismic structure (predict)
 
 Predict $V_p(z)$, Moho depth, total lithospheric thickness for:
 
@@ -213,7 +213,7 @@ Sketch a depth–velocity panel for each. Five minutes.
 
 ---
 
-## Beat B — Reveal: oceanic vs. continental $V_p$
+## Round 2 — Reveal: oceanic vs. continental $V_p$
 
 ![w:900](../assets/figures/F11_continental_vs_oceanic_vp.png)
 
@@ -221,7 +221,7 @@ Sharp shallow oceanic Moho. Deeper gradational continental Moho. **Strong LVZ un
 
 ---
 
-## Beat B — The key figure
+## Round 2 — The key figure
 
 ![w:1050](../assets/figures/F6_boundary_layers_key.png)
 
@@ -229,7 +229,7 @@ Sharp shallow oceanic Moho. Deeper gradational continental Moho. **Strong LVZ un
 
 ---
 
-## Beat C — Heat flow, gravity, magnetics, age (predict)
+## Round 3 — Heat flow, gravity, magnetics, age (predict)
 
 Predict (numbers if you can, signs if you can't):
 
@@ -244,7 +244,7 @@ Three minutes.
 
 ---
 
-## Beat C — Reveal
+## Round 3 — Reveal
 
 | | Oceanic | Continental |
 |---|---|---|
