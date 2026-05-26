@@ -77,18 +77,18 @@ parts:
       - file: lectures/25_magnetic_anomalies
         title: "Magnetic Anomalies & Surveys"
 
-  - caption: "Module 7 — Geodynamics and Tectonics: A Synthesis"
+  - caption: "Module 7 — Tectonics, Lithosphere, and the Cooling Earth"
     chapters:
-      - file: lectures/25_heat_geodynamics
-        title: "Heat & Geodynamics"
+      - file: lectures/26_lithosphere_oceanic_continental
+        title: "L26 — Lithosphere: Oceanic vs. Continental"
       - file: lectures/26_divergent_margins
-        title: "Divergent Margins"
+        title: "L27 — Divergent Margins"
       - file: lectures/27_convergent_margins
-        title: "Convergent Margins"
+        title: "L28 — Convergent Margins"
       - file: lectures/28_transform_intraplate
-        title: "Transform & Intraplate"
+        title: "L29 — Transform & Intraplate"
       - file: lectures/29_synthesis
-        title: "Synthesis"
+        title: "L30 — Synthesis"
 
   - caption: "Labs"
     chapters:
@@ -159,6 +159,8 @@ parts:
         title: "Session 9 — Inversion & the Climate Problem"
       - file: discussions/session_10
         title: "Session 10 — What Have We Learned?"
+      - file: discussions/session_lithosphere
+        title: "Workshop — Lithosphere Comparison (L26)"
 
   - caption: "AI Skills & Skill Threads"
     chapters:
