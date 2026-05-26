@@ -1,7 +1,7 @@
 """
 buggy_refraction_picker.py
 
-Lab 6, Part 3 — The Debugger Pattern.
+Lab 7, Part 3 — The Debugger Pattern.
 
 This script analyzes a synthetic two-layer seismic refraction dataset.
 It is meant to estimate the velocities V1 and V2 of the upper and lower
@@ -114,9 +114,9 @@ ax.plot(x_fit, (x_fit / V2 + t_i) * 1000, "--", color="#009E73",
 
 ax.set_xlabel("Receiver offset x (m)")
 ax.set_ylabel("First-arrival time t (ms)")
-ax.set_title("Lab 6 Part 3 — Buggy refraction picker")
+ax.set_title("Lab 7 Part 3 — Buggy refraction picker")
 ax.legend(loc="upper left")
 ax.grid(alpha=0.3)
 fig.tight_layout()
-fig.savefig("lab6_buggy_output.png", dpi=120, bbox_inches="tight")
+fig.savefig("lab7_buggy_output.png", dpi=120, bbox_inches="tight")
 plt.show()

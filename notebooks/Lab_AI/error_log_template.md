@@ -15,7 +15,7 @@ evidence of my fact-checking practice.
 ```yaml
 date: YYYY-MM-DD
 tool: [name + version if known]
-session_link: ai_logs/lab6_session_NN.md
+session_link: ai_logs/lab7_session_NN.md
 topic: [seismic refraction / earthquake location / NMO / gravity / etc.]
 ```
 

@@ -104,7 +104,7 @@ parts:
       #   title: "Lab 5: Earthquake Location"
       # - file: notebooks/Lab6/Lab6-FirstnameLastname
       #   title: "Lab 6: Gravity"
-      - file: notebooks/Lab_AI/Lab6-AI-Literacy
+      - file: notebooks/Lab_AI/Lab7-AI-Literacy
         title: "Lab AI: AI as a Geophysics Collaborator"
         sections:
           - file: notebooks/Lab_AI/README

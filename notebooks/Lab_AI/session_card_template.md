@@ -1,6 +1,6 @@
 # AI Session Card — Template
 
-Copy this template into `ai_logs/lab6_session_NN.md` (one file per
+Copy this template into `ai_logs/lab7_session_NN.md` (one file per
 session) and fill in the bracketed sections. The session cards
 together form a portfolio artifact you will reference in your final
 project's reproducibility statement.
@@ -8,7 +8,7 @@ project's reproducibility statement.
 ---
 
 ```yaml
-session_id: lab6_session_NN
+session_id: lab7_session_NN
 date: YYYY-MM-DD
 tool: [ChatGPT-4 / Claude 3 / Copilot / other — include version if known]
 duration_minutes: NN

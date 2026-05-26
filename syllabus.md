@@ -182,7 +182,7 @@ Shading key: **Discussion section** · *Holiday* · Lab on Fridays
 | # | Date | Topic |
 |---|---|---|
 | 29 | Thu 5/7 | Earth's Gravity |
-| 30 | Fri 5/8 | *Lab 6: AI Literacy (remote / async)* |
+| 30 | Fri 5/8 | *Lab 7: AI Literacy (remote / async)* |
 | 31 | Mon 5/11 | Gravity II — Isostasy |
 | 32 | Tue 5/12 | Using Gravity to Detect Anomalies I |
 | 33 | Wed 5/13 | **Discussion — Explaining geophysics to someone who doesn't care (yet)** |
