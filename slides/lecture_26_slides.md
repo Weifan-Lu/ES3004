@@ -8,7 +8,7 @@ footer: 'Module 7 · Tectonics, Lithosphere, and the Cooling Earth'
 math: katex
 ---
 
-<!-- _class: title -->
+<!-- _class: title-slide -->
 
 # Lithosphere: Oceanic vs. Continental
 
@@ -17,6 +17,16 @@ math: katex
 #### Module 7: Tectonics, Lithosphere, and the Cooling Earth
 
 University of Washington · Earth & Space Sciences
+
+---
+
+<!-- _class: fig-full -->
+
+# A planet of two crusts
+
+![Global Moho depth from CRUST1.0 (Laske et al. 2013) — oceans ~7–10 km, continents 30–45 km, cratonic roots and orogens >55 km.](../assets/figures/F0_global_moho.png)
+
+**CRUST1.0 Moho depth (Laske et al. 2013)** — the single map that frames the whole lecture: oceanic crust ~7–10 km, continental crust 30–45 km, cratonic and orogenic roots >55 km. *Same data, two regimes.*
 
 ---
 

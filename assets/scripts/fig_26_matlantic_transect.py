@@ -70,18 +70,24 @@ def main() -> None:
                     color=COLORS["lightgrey"], alpha=0.6, zorder=1)
     ax.plot(lon, depth_km, color=COLORS["blue"], lw=1.2, zorder=2)
 
-    # Mark the Mid-Atlantic Ridge axis (shallowest point in central Atlantic)
-    centre = (lon > -45) & (lon < -25)
-    if centre.any():
-        mar_lon = lon[centre][np.argmin(depth_km[centre])]
-        mar_depth = depth_km[centre].min()
-        ax.annotate(
-            "Mid-Atlantic Ridge",
-            xy=(mar_lon, mar_depth),
-            xytext=(mar_lon - 5, mar_depth - 1.2),
-            arrowprops=dict(arrowstyle="->", color=COLORS["vermilion"], lw=1),
-            color=COLORS["vermilion"], fontsize=11,
-        )
+    # Mark the Mid-Atlantic Ridge axis. At 30°N the spreading centre sits
+    # near -41.5°E (between the Atlantis and Kane fracture zones); the
+    # shallow spikes on the flanks are seamounts, not the axis.
+    MAR_LON = -41.5
+    i_mar = int(np.argmin(np.abs(lon - MAR_LON)))
+    mar_lon = lon[i_mar]
+    mar_depth = depth_km[i_mar]
+    ax.annotate(
+        "Mid-Atlantic Ridge axis",
+        xy=(mar_lon, mar_depth),
+        xytext=(mar_lon - 8, mar_depth - 1.4),
+        arrowprops=dict(arrowstyle="->", color=COLORS["vermilion"], lw=1.2),
+        color=COLORS["vermilion"], fontsize=11,
+    )
+    # Label the shallow flank features as seamounts (not the ridge)
+    ax.text(0.985, 0.04, "shallow spikes on the flanks ≈ seamounts",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=9, color=COLORS["grey"], style="italic")
 
     ax.set_ylim(6.5, -0.5)  # depth axis: deep at bottom, NO invert_yaxis
     ax.set_xlim(LON_W, LON_E)
