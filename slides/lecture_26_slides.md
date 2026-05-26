@@ -278,13 +278,19 @@ The geodynamic role of each follows from these attribute differences.
 
 ## PNW anchor: Siletzia
 
-![bg right:45% w:600](../assets/figures/F13_siletzia_potential_fields.png)
-
 - Eocene oceanic plateau accreted to N. America $\sim 50$ Ma
 - Forms the **basement of the Cascadia forearc**
 - Identifiable from gravity, magnetics, and seismic
 - The **Seattle Fault Zone reactivates the Siletzia–N. America suture**
 - Anderson et al. 2024 — open access via USGS
+
+*Read more → [Lecture 26 §9](../lectures/26_lithosphere_oceanic_continental.html#societal-relevance-siletzia-and-cascadia)*
+
+---
+
+<!-- _class: figure-slide -->
+
+![bg fit](../assets/figures/F13_siletzia_potential_fields.png)
 
 ---
 
