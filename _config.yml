@@ -61,6 +61,7 @@ sphinx:
       - "lectures/04_wavefronts_rays.md"
       - "correction-lectures-magnetism/**"
       - "new-lectures/**"
+      - "new-lecture/**"
       # Private instructor materials — never build or publish
       - "notebooks/Lab_AI/answer_key_and_ta_guide.md"
       - "**/answer_key*.md"

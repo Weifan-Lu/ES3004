@@ -12,6 +12,10 @@ keywords: [mid-ocean ridge, continental rift, East African Rift, magnetic stripe
 
 # Ridges and Rifts
 
+:::{seealso}
+📊 **Lecture slides** — <a href="https://uw-geophysics-edu.github.io/ess314/slides/lecture_27_slides.html" target="_blank">open in new tab ↗</a>
+:::
+
 ```{admonition} Learning Objectives
 :class: tip
 
@@ -30,6 +34,14 @@ By the end of this lecture, students will be able to:
 ## 1. The Geoscientific Question
 
 A mid-ocean ridge is a 60,000-km-long submarine mountain chain that produces dense basaltic oceanic crust at a remarkably steady rate. A continental rift is a topographic depression filled with terrestrial sediments, normal-faulted continental crust, and patchy alkaline volcanism. The two look nothing alike — different elevations, different rocks, different volcanism, different gravity, different seismicity. And yet they are connected by a single physical process: extension of the lithosphere.
+
+```{figure} ../assets/figures/F1_seafloor_age_map.png
+:name: f27-global-ridges
+:alt: Global map of seafloor age. Bright yellow bands trace every active mid-ocean ridge on Earth — the Mid-Atlantic Ridge running pole-to-pole, the East Pacific Rise, the Southwest Indian Ridge, the Juan de Fuca system off the Pacific Northwest. Dark purple-black patches in the northwest Pacific are the oldest oceanic crust at roughly 180 Ma. The width of each colour band records the spreading rate.
+:width: 100%
+
+**Every active mid-ocean ridge on Earth, in one map.** Seafloor age from the Müller/Seton 2020 grid {cite:p}`Seton2020`: ridges appear as the bright yellow zero-age axes. Slow ridges (Mid-Atlantic, Southwest Indian) generate narrow age bands; fast ridges (East Pacific Rise) generate wide bands. Compare the linear ridge geometry here with the broad, fragmented continental-rift systems shown next — same physical process (lithospheric extension), very different surface expression.
+```
 
 The East African Rift system today shows us every stage of that connection. In southern Tanzania the lithosphere is in the earliest stages of rifting. In the Main Ethiopian Rift the crust has thinned to about 25 km and magmatic segments have begun to organize. At Afar the rift floor has subsided below sea level and dykes are accommodating most of the extension. In the Red Sea and Gulf of Aden the process has run to completion — there is oceanic crust on the floor and the spreading is a magnetic-stripe record of the past few million years. The same rift system, sampled along its length, contains the whole story from stable continent to mature ridge.
 

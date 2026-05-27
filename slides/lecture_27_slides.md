@@ -41,6 +41,14 @@ University of Washington · Earth & Space Sciences
 
 ---
 
+## Every active mid-ocean ridge on Earth
+
+![w:1080 Global seafloor-age map: bright yellow zero-age bands trace the Mid-Atlantic Ridge, East Pacific Rise, Southwest Indian Ridge, and Juan de Fuca system; deep purple-black patches in the northwest Pacific mark the oldest oceanic crust at ~180 Ma](../assets/figures/F1_seafloor_age_map.png)
+
+<span style="font-size:0.75em">Müller / Seton 2020 grid. Narrow stripes = slow ridges (Atlantic). Wide stripes = fast ridges (Pacific). The Earth records 180 Myr of extension in one image.</span>
+
+---
+
 ## The East African Rift system
 
 ![w:680 The East African Rift system map showing plates, rift axes, plate motion arrows, and volcanic centres, with rifting-continuum stage markers from Malawi (incipient) to Gulf of Aden (full spreading)](../assets/figures/F6_ear_system_map.png)
