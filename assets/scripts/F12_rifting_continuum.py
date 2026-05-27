@@ -153,16 +153,17 @@ STAGES = [
 def draw_cross_section(ax, stage, lat_y_top=0.65, lat_y_bot=0.05):
     """Draw the cross-section sketch for a single stage."""
     # All cross-sections are in lat_y_top → lat_y_bot strip of the axes
-    # (using axes-fraction coordinates so each subplot scales uniformly)
-
-    # x range −1..+1 in axes fraction
-    xline = np.linspace(-1, 1, 200)
+    # (using axes-fraction coordinates so each subplot scales uniformly).
+    # xline spans the visible axes fraction 0..1, with the rift axis at 0.5
+    # so each panel is symmetric about the ridge / rift centre.
+    xline = np.linspace(0, 1, 200)
+    xc = xline - 0.5  # distance from the (centred) rift axis
 
     # Topography (only for continental-like stages 1-4)
     if stage["rift_topo"] >= 0:
         topo = stage["rift_topo"] / 6 * (
-            np.exp(-(xline ** 2) / 0.4)) - stage["valley_depth"] / 6 * (
-            np.exp(-(xline ** 2) / 0.03))
+            np.exp(-(xc ** 2) / 0.10)) - stage["valley_depth"] / 6 * (
+            np.exp(-(xc ** 2) / 0.0075))
         topo_scaled = topo * 0.06
         surface_y = lat_y_top + topo_scaled
     else:
@@ -170,7 +171,7 @@ def draw_cross_section(ax, stage, lat_y_top=0.65, lat_y_bot=0.05):
         # depth in km; flank depth larger
         flank = abs(stage["rift_topo"])
         axial = flank - 0.6 if stage["valley_depth"] > 0 else flank - 0.3
-        topo = -(axial + (flank - axial) * (1 - np.exp(-(xline ** 2) / 0.4)))
+        topo = -(axial + (flank - axial) * (1 - np.exp(-(xc ** 2) / 0.10)))
         # Map km depth to negative offset (water shows above surface_y)
         topo_scaled = topo * 0.04
         surface_y = lat_y_top + topo_scaled
@@ -178,7 +179,7 @@ def draw_cross_section(ax, stage, lat_y_top=0.65, lat_y_bot=0.05):
     # Moho line
     moho_axis = stage["moho_axis"]
     moho_off = stage["moho_off"]
-    moho_km = moho_off - (moho_off - moho_axis) * np.exp(-(xline ** 2) / 0.15)
+    moho_km = moho_off - (moho_off - moho_axis) * np.exp(-(xc ** 2) / 0.0375)
     # Vertical scale: 0 km depth at lat_y_top, 300 km depth at lat_y_bot
     span_y = lat_y_top - lat_y_bot
     moho_y = lat_y_top - (moho_km / 300.0) * span_y
@@ -186,7 +187,7 @@ def draw_cross_section(ax, stage, lat_y_top=0.65, lat_y_bot=0.05):
     # LAB line
     lab_axis = stage["lab_axis"]
     lab_off = stage["lab_off"]
-    lab_km = lab_off - (lab_off - lab_axis) * np.exp(-(xline ** 2) / 0.20)
+    lab_km = lab_off - (lab_off - lab_axis) * np.exp(-(xc ** 2) / 0.05)
     lab_y = lat_y_top - (lab_km / 300.0) * span_y
 
     # Crust fill (between surface and Moho)
@@ -210,14 +211,14 @@ def draw_cross_section(ax, stage, lat_y_top=0.65, lat_y_bot=0.05):
 
     # Magmatic features
     if stage["magma"] == "continuous AMC":
-        # Narrow axial melt lens
+        # Narrow axial melt lens, centred at axes-fraction x = 0.5
         ax.add_patch(mpatches.Rectangle(
-            (-0.04, surface_y[100] - 0.018), 0.08, 0.012,
+            (0.46, surface_y[100] - 0.018), 0.08, 0.012,
             facecolor=PALETTE["verm"], edgecolor="none",
             transform=ax.transAxes, zorder=4))
     elif stage["magma"] in ("dyke-dominated", "bimodal", "episodic"):
-        # A small vertical dyke at the axis
-        ax.plot([0, 0],
+        # A small vertical dyke at the axis (x = 0.5)
+        ax.plot([0.5, 0.5],
                  [surface_y[100], moho_y[100]],
                  color=PALETTE["verm"], lw=2.0, alpha=0.85,
                  transform=ax.transAxes, zorder=4)
@@ -256,7 +257,7 @@ def make_figure():
                               gridspec_kw=dict(wspace=0.08))
 
     for ax, stage in zip(axes, STAGES):
-        ax.set_xlim(-1, 1)
+        ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
         ax.set_xticks([])
         ax.set_yticks([])
