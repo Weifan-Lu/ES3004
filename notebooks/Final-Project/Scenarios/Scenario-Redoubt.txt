@@ -1,0 +1,9 @@
+### REDOUBT VOLCANO SCENARIO ###
+As a USGS-employed geophysicist, you have been selected to perform a geophysical study of Mount Redoubt (also called Redoubt Volcano), a stratovolcano in the Aleutian Arc of Alaska. Redoubt is a highly active volcano, with at least four major eruptions in the last century. The volcano’s most recent major eruption was in 2009, monitored closely by the Alaska Volcano Observatory (AVO).
+
+Mount Redoubt has a high capacity to cause damage to its surroundings during both eruptions and lahars (which can happen even without an eruption), due to its proximity to oil storage facilities, shipping and fishing areas, and trans-Pacific flight routes. One of the recent eruptions from Redoubt is estimated to have caused $160 million in damages, and forced a plane into an emergency landing in Anchorage after volcanic ash caused total engine failure. (Scary!) Because of this, Mount Redoubt is worth monitoring and checking in on. Your job is to 
+	(1) image the subsurface, and 
+	(2) check for any signs of renewed volcanism (like rising magma). 
+Make your judgment on whether or not there are signs that eruptive activity could resume in the future, explicitly state why you believe your ideas to be correct, and explain your reasoning.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
