@@ -1,0 +1,10 @@
+### Yellowstone Scenario ###
+As a geophysicist employed at the Yellowstone Volcano Observatory, you have been instructed to perform a geophysical study of Yellowstone, a hotspot supervolcano occupying some part of three American states: Montana, Wyoming, and Idaho. The present Yellowstone caldera was formed 630,000 years ago during a supereruption, but smaller magmatic eruptions have occurred as recently as 70,000 years ago. 
+
+The most recent activity, and the one that concerns you the most, is an explosion at Biscuit Basin in the summer of 2024. This explosion sparked fear in the public, and some assumed it was a sign of renewed volcanism at Yellowstone. While it is unlikely to be renewed volcanism, your job is to 
+	(1) image the subsurface, 
+	(2) check for any magma moving close to the surface, and 
+	(3) look for areas where more steam and other gasses might be trapped that could lead to another explosion like the one at Biscuit Basin. 
+Make your judgement on signs of renewed volcanism, explicitly state why you believe your judgment to be correct, and explain. Make your judgement on the likelihood of more explosions, explicitly state why you think more explosions are or aren’t likely, and explain your reasoning.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
