@@ -1,0 +1,9 @@
+### MT ST HELENS SCENARIO ###
+As a PNSN-employed geophysicist, you have been selected to perform a geophysical study of Mt. St. Helens, a stratovolcano in the Cascade Range in Washington. Mt. St. Helens is one of the most active volcanoes in the Cascade Range, and has erupted the most recently, with a major eruption in 1980 followed by near-continuous activity until 2008, which built the current lava dome. 
+
+Mt. St. Helens is considered to be a high threat volcano, due to its close proximity to population centers and large eruptions. This volcano also has a high lahar risk, as it is glaciated and covered in snow for much of the year; rising magma or major landslides could cause a lahar even without an eruption. Because of this level of threat, and due to a mild increase in background seismicity in the last year, this volcano must be monitored and evaluated. Your job is to 
+	(1) image the subsurface and 
+	(2) check for signs of renewed volcanism below Mt. St. Helens. 
+Make your judgment on whether or not there are signs that eruptive activity could resume in the future, explicitly state why you believe your ideas to be correct, and explain.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
