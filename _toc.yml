@@ -81,8 +81,8 @@ parts:
     chapters:
       - file: lectures/26_lithosphere_oceanic_continental
         title: "L26 — Lithosphere: Oceanic vs. Continental"
-      - file: lectures/26_divergent_margins
-        title: "L27 — Divergent Margins"
+      - file: lectures/27_ridges_and_rifts
+        title: "L27 — Ridges and Rifts"
       - file: lectures/27_convergent_margins
         title: "L28 — Convergent Margins"
       - file: lectures/28_transform_intraplate
