@@ -1,0 +1,10 @@
+### LASSEN PEAK SCENARIO ###
+As a geophysicist employed at the USGS, you have been selected to perform a geophysical study of Lassen Peak, a lava dome volcano in the Cascade Range in California. The current lava dome formed about 27,000 years ago, and within the past 1,000 years the Lassen Peak has produced 6 lava domes and at least one cinder cone. The volcanic “center” or magmatic system has produced several small shield volcanoes, lava domes, and several cinder cones. The area also supports a large hydrothermal system called ‘Bumpass Hell’ with many different hydrothermal features.
+
+Lassen Peak is also one of the most recently active volcanoes in the Cascades, with a large explosive eruption in 1915, which spread ash fall as far as 200 miles east of the volcano. Due to its proximity to population centers and relatively recent activity, this volcano is considered a threat worth monitoring. Your job is to 
+	(1) image the subsurface, 
+	(2) look for any signs of trapped steam and other gasses (hydrothermal areas) in the subsurface, and 
+	(3) assess Lassen Peak’s capacity to generate another large explosive eruption in the future. 
+Make your judgement on the capacity to generate another large explosive eruption in the future, explicitly state why you believe your judgment to be correct, and explain. Make your judgement on areas of hydrothermal activity, explicitly state why you believe your judgment to be correct, and explain.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
