@@ -1,0 +1,10 @@
+### MOUNT SPURR SCENARIO ###
+As a USGS-employed geophysicist, you have been selected to perform a geophysical study of Mount Spurr, a stratovolcano in the Aleutian Arc of Alaska. The current volcano cone at Mount Spurr was formed inside of a caldera crater of an ancestral Mount Spurr, and most of the recent volcanic activity has focused at a smaller peak called Crater Peak, which has been a prominent source of many tephra deposits in the area. 
+
+Mount Spurr has erupted multiple times in the last century, with major eruptions in 1953 and 1992. Recent activity at Mount Spurr has caused the Alaska Volcano Observatory (AVO) to elevate its Level of Concern color code to yellow. Both due to its proximity to the city of Anchorage and major aviation routes, an eruption from Mount Spurr could be very disruptive. Because of this, your job is to 
+	(1) image the subsurface, 
+	(2) investigate signs of rising magma or increased hydrothermal activity, and 	
+  (3) assess the likelihood of an imminent eruption at Mount Spurr. 
+Make your judgment on whether or not there are signs that an eruption is imminent, explicitly state why you believe your ideas to be correct, and explain your reasoning.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
