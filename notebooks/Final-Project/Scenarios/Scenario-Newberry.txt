@@ -1,0 +1,10 @@
+### NEWBERRY VOLCANO SCENARIO ###
+As a geophysicist employed by the Generic Geothermal Resource Company, you have been selected to perform a geophysical study of Newberry Volcano, a shield-shaped stratovolcano in the Cascade Range in Oregon. The current caldera formed about 75,000 years ago during a major explosive eruption, and the most recent eruption was approximately 1,300 years ago. Hot springs in the caldera are active.
+
+While Newberry Volcano is quiet now, it has a very high capacity to cause damage– any eruption of a similar style to the previous eruptions could bury most of central Oregon. However, you are mostly interested in the area for the geothermal energy resources*. Your job is NOT to recommend a specific site to drill for geothermal resources. Rather, your job is to 
+	(1) image the subsurface, 
+	(2) investigate general areas where magma might be more shallow (of interest due to the altered geothermal gradient), and 
+	(3) look for areas with hydrothermal activity due to easier access to geothermal resources. 
+Make your judgement on the general areas where geothermal energy resources would be more accessible, explicitly state why you believe your ideas to be correct, and explain your reasoning.
+
+For the upper layer of your seismic imaging: what are the most likely rock types for the upper layer? You don’t need to cite specific formations, but state a generic rock or deposit type (pyroclastic flow deposits, tuff, rhyolite, granite, basalt, glacial till, etc.). Combine your judgment on this (which should primarily be based on the measured velocities) with information from a geologic map (provided to you on Canvas). Again, you do not need to cite any specific formations or map units, just a generic rock type.
