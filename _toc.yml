@@ -83,7 +83,7 @@ parts:
         title: "L26 — Lithosphere: Oceanic vs. Continental"
       - file: lectures/27_ridges_and_rifts
         title: "L27 — Ridges and Rifts"
-      - file: lectures/27_convergent_margins
+      - file: lectures/28_convergent_margins
         title: "L28 — Convergent Margins"
       - file: lectures/28_transform_intraplate
         title: "L29 — Transform & Intraplate"
@@ -119,6 +119,8 @@ parts:
             title: "Session Card (Template)"
           - file: notebooks/Lab_AI/error_log_template
             title: "AI Error Log (Template)"
+      - file: notebooks/subduction_parameter_space
+        title: "Notebook: Subduction Parameter Space (L28)"
       # - file: notebooks/Lab7-Magnetics
       #   title: "Lab 7: Magnetics"
 

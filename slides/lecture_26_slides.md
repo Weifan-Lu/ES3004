@@ -1,331 +1,182 @@
 ---
 marp: true
-theme: ess314
-size: 16:9
+theme: default
 paginate: true
-header: 'ESS 314 — L26 Lithosphere'
-footer: 'Module 7 · Tectonics, Lithosphere, and the Cooling Earth'
-math: katex
+math: mathjax
+title: "ESS 314 — Lecture 26: Lithosphere"
+footer: "ESS 314 · Lecture 26"
+style: |
+  section {
+    font-size: 26px;
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+  h1 { color: #0072B2; }
+  h2 { color: #0072B2; border-bottom: 2px solid #56B4E9; padding-bottom: 6px; }
+  section img { display: block; margin: 0.2em auto; }
+  .takeaway { color: #0072B2; font-weight: 700; }
+  section.lead h1 { font-size: 1.7em; }
+  section.lead { text-align: center; }
+  strong { color: #D55E00; }
+  ul { line-height: 1.45; }
 ---
 
-<!-- _class: title-slide -->
+<!-- _class: lead -->
+<!-- _paginate: false -->
+<!-- _footer: "" -->
 
 # Lithosphere: Oceanic vs. Continental
 
-### ESS 314 — Lecture 26
+### ESS 314 · Geophysics · Lecture 26
+#### with plate-boundary kinematics
 
-#### Module 7: Tectonics, Lithosphere, and the Cooling Earth
-
-University of Washington · Earth & Space Sciences
-
----
-
-<!-- _class: fig-full -->
-
-# A planet of two crusts
-
-![Global Moho depth from CRUST1.0 (Laske et al. 2013) — oceans ~7–10 km, continents 30–45 km, cratonic roots and orogens >55 km.](../assets/figures/F0_global_moho.png)
-
-**CRUST1.0 Moho depth (Laske et al. 2013)** — the single map that frames the whole lecture: oceanic crust ~7–10 km, continental crust 30–45 km, cratonic and orogenic roots >55 km. *Same data, two regimes.*
+Marine Denolle — University of Washington
 
 ---
 
-## By the end of this lecture, you will be able to…
+## By the end of this lecture
 
-- Derive the **half-space cooling (HSC) model** of oceanic lithosphere from the 1D heat equation and predict bathymetry and heat flow as a function of age.
-- Identify the **five definitions of the lithosphere base** — mechanical, thermal, seismic, elastic, chemical — and explain why they disagree under cratons.
-- **Download, plot, and interpret** open geophysical datasets (Müller seafloor age, ETOPO1 bathymetry, CRUST1.0 Moho) using a reproducible Python workflow.
-- Construct a side-by-side **eleven-attribute comparison** of oceanic and continental lithosphere.
-
----
-
-## The geoscientific question
-
-> *What do we mean by "the lithosphere," and why does the answer change depending on which observable we use?*
-
-- Ask a seismologist: one answer.
-- Ask a flexural modeler: a different answer.
-- Ask a heat-flow analyst: a third.
-- Under oceans they mostly agree.
-- **Under old cratons they can be 50 km apart.**
-
-The rest of this lecture is built around resolving — or not resolving — this ambiguity.
+- **Derive** the half-space cooling model and predict bathymetry and heat flow from seafloor age
+- **Identify** the five definitions of the lithosphere base — and why they disagree
+- **Build** the oceanic vs. continental comparison across eleven attributes
+- **Classify** plate boundaries and balance plate-motion vectors with circuit closure
 
 ---
 
-## Two boundary layers, not one
+## What *is* the lithosphere?
 
-- **Mechanical boundary layer:** lithosphere as the cold, *strong* outer shell that cannot creep on tectonic timescales. Roughly bounded by the $600\,^\circ\mathrm{C}$ isotherm.
-- **Thermal boundary layer:** lithosphere as the part of the mantle where conduction dominates over convection. Roughly bounded by the $1300\,^\circ\mathrm{C}$ isotherm.
-- Between the two: rocks conduct heat like a solid but creep like a fluid.
+- A rigid outer shell — but where does it *end*?
+- Seismic, thermal, elastic, mechanical, chemical definitions
+- Under oceans they agree; under old cratons they differ by **200 km**
+- Module 7 uses **every method in the course at once**
 
-This is the conceptual hinge of the lecture. The two definitions are real, and they disagree.
-
----
-
-## Governing equation: half-space cooling
-
-Boundary conditions: $T(0,t) = T_s$, $T(z, 0) = T_m$, $T(\infty, t) = T_m$.
-
-$$
-\frac{\partial T}{\partial t} = \kappa \frac{\partial^2 T}{\partial z^2}
-$$
-
-$$
-T(z, t) = T_s + (T_m - T_s)\, \operatorname{erf}\!\left( \frac{z}{2 \sqrt{\kappa t}} \right)
-$$
-
-Thermal boundary layer thickness grows as $\sqrt{\kappa t}$.
+> *What do we mean by "the lithosphere," and why does the answer change with the observable we use?*
 
 ---
 
-## Bathymetry and heat flow
+## Oceanic lithosphere = a cooling boundary layer
 
-By Airy isostasy:
-
-$$
-d(t) = d_0 + \frac{2\, \rho_m\, \alpha\, (T_m - T_s)}{\rho_m - \rho_w} \sqrt{\frac{\kappa t}{\pi}}
-$$
-
-Numerical form:
-$$d(t) \approx 2500 + 350\sqrt{t}\ \text{m, } t \text{ in Ma}$$
-
-From Fourier's law:
-$$q(t) = \frac{k\, (T_m - T_s)}{\sqrt{\pi \kappa t}}$$
-
-Both: $\sqrt{t}$ and $1/\sqrt{t}$ dependence. One of the cleanest predictions in geophysics.
+- Hot mantle rises at the ridge, cools as it spreads away
+- Cold layer thickens with age, $\propto \sqrt{\kappa t}$
+- **Mechanical** boundary layer ($\sim 600^\circ$C) vs **thermal** ($\sim 1300^\circ$C)
+- The gap between them is *why* "lithosphere" is ambiguous
 
 ---
 
-## Half-space cooling vs. plate model
+## Key equations — half-space cooling
 
-![w:1000](../assets/figures/F4_plate_vs_hsc_schematic.png)
+$$ T(z,t) = T_s + (T_m - T_s)\,\operatorname{erf}\!\left(\frac{z}{2\sqrt{\kappa t}}\right) $$
 
-HSC: lithosphere thickens forever. **Plate model:** finite $L_p \approx 95$ km.
+$$ d(t) \approx 2500 + 350\sqrt{t} \quad (\text{m},\ t \text{ in Ma}) \qquad q(t) = \frac{k\,(T_m - T_s)}{\sqrt{\pi \kappa t}} $$
 
----
-
-## Data: depth vs. age
-
-![w:760](../assets/figures/F3_depth_vs_age.png)
-
-Past **~70 Ma**, HSC overpredicts subsidence — plate model fits better.
+- Bathymetry **deepens as** $\sqrt{t}$; heat flow **decays as** $1/\sqrt{t}$
 
 ---
 
-<!-- _class: section -->
+## HSC vs. the plate model
 
-# §4 — Working With Real Data: Code Block A (seafloor age)
+![w:870](../assets/figures/F5_model_comparison_3panel.png)
 
-```python
-import xarray as xr
-url = ("https://www.earthbyte.org/webdav/ftp/Data_Collections/"
-       "Muller_etal_2019_Tectonics/Muller_etal_2019_Agegrids/"
-       "Muller_etal_2019_Tectonics_v2.0_netCDF/"
-       "Muller_etal_2019_Tectonics_v2.0_AgeGrid-0.nc")
-ds = xr.open_dataset(url)
-print(ds)                  # ALWAYS inspect first
-ds["z"].plot(cmap="magma_r", vmin=0, vmax=180)
-```
-
-![bg right:45% w:600](../assets/figures/F1_seafloor_age_map.png)
-
-- Cite Seton et al. 2020, G-Cubed
-- `xarray` reads netCDF directly from URL
+<span class="takeaway">Takeaway —</span> HSC fits young seafloor; the **plate model** is needed past ~70 Ma, where depth and heat flow flatten.
 
 ---
 
-## Code Block B — CRUST1.0 Moho
+## The lithosphere is *not one thing*
 
-```python
-import numpy as np
-moho = np.loadtxt("xyzcoords.moho.txt")
-moho_grid = moho[:, 2].reshape((180, 360))
-plt.imshow(moho_grid, extent=[-180, 180, -90, 90],
-           cmap="viridis", vmin=5, vmax=60)
-```
+![w:760](../assets/figures/F6_boundary_layers_key.png)
 
-![bg right:50% w:680](../assets/figures/F12_north_america_moho.png)
-
-- Cite Laske et al. 2013, EGU
-- 1° XYZ ASCII — small, inspect-friendly
+<span class="takeaway">Takeaway —</span> Under cratons, four "lithosphere bases" disagree by **~200 km**. The base is a *behaviour*, not a surface.
 
 ---
 
-## Code Block C — Atlantic bathymetric transect
+## Real data is one `xarray` call away
 
-```python
-import pygmt, numpy as np
-points = np.column_stack([np.linspace(-75, -10, 500),
-                          np.full(500, 30.0)])
-track = pygmt.grdtrack(points=points, grid="@earth_relief_05m")
-plt.plot(track[:,0], track["depth_m"]/1000)
-plt.ylim(6, -1)    # NEVER invert_yaxis — set_ylim instead
-```
+![w:820](../assets/figures/F1_seafloor_age_map.png)
 
-![bg right:55% w:760](../assets/figures/F2_matlantic_transect.png)
-
-ETOPO1 / NOAA NGDC — virtual GMT dataset.
+<span class="takeaway">Takeaway —</span> Müller/Seton age grid — inspect metadata first, plot, **cite the data**.
 
 ---
 
-<!-- _class: section -->
+## Oceanic vs. continental: structure
 
-# §6 — Comparison Matrix
-## Predict, then reveal. Three rounds.
+![w:840](../assets/figures/F11_continental_vs_oceanic_vp.png)
 
----
-
-## Round 1 — Composition, density, subduction (predict)
-
-**Before the reveal, predict in your notebook:**
-
-1. Dominant rock type — oceanic? continental?
-2. Which lithosphere is denser?
-3. Which subducts? Which doesn't?
-4. Sketch a density profile for each, surface to 250 km.
-
-**Five minutes. Write it down.**
+<span class="takeaway">Takeaway —</span> Oceanic: thin, mafic, sharp ~11 km Moho. Continental: thick, felsic, gradational ~40 km Moho.
 
 ---
 
-## Round 1 — Reveal
+## The comparison in one breath
 
-| Attribute | Oceanic | Continental |
-|-----------|---------|-------------|
-| Composition (bulk) | **mafic** (basalt + gabbro) | **felsic-to-intermediate** |
-| Crustal layering | Layer 1 sed, 2 basalt/dyke, 3 gabbro | Upper, middle, lower crust |
-| Density | $\rho_c \sim 2.9$, $\rho_m \sim 3.3$ g/cm³ | $\rho_c \sim 2.7$, $\rho_m \sim 3.2$–$3.3$ |
-
-**The subtle point:** cratonic mantle is **chemically depleted** — slightly *less dense* than oceanic mantle lithosphere despite being colder. Cratons are stable because of *thermal + chemical* buoyancy.
+- **Oceanic:** young, homogeneous, dense → *recycled*
+- **Continental:** ancient, heterogeneous, buoyant → *preserved*
+- Density **and** chemistry decide who subducts
+- Eleven attributes, one story: **conveyor vs. raft**
 
 ---
 
-## Round 2 — Thickness & seismic structure (predict)
+## Three kinematic classes of boundary
 
-Predict $V_p(z)$, Moho depth, total lithospheric thickness for:
+![w:880](../assets/figures/F14_plate_boundary_types.png)
 
-1. **100 Ma Pacific** seafloor
-2. **Canadian Shield** craton
-3. **East African Rift**
-
-Sketch a depth–velocity panel for each. Five minutes.
+<span class="takeaway">Takeaway —</span> Divergent / convergent / transform — set entirely by the **relative-velocity vector**.
 
 ---
 
-## Round 2 — Reveal: oceanic vs. continental $V_p$
+## Relative velocity is frame-independent
 
-![w:900](../assets/figures/F11_continental_vs_oceanic_vp.png)
+![w:560](../assets/figures/F15_reference_frame.png)
 
-Sharp shallow oceanic Moho. Deeper gradational continental Moho. **Strong LVZ under oceans; weak or absent under cratons.**
-
----
-
-## Round 2 — The key figure
-
-![w:1050](../assets/figures/F6_boundary_layers_key.png)
-
-**Four "lithosphere bases," all different.** That is the lecture's thesis.
+<span class="takeaway">Takeaway —</span> Fix either plate — $_A\mathbf{v}_B$ is the invariant. Watch **half-rate vs. full-rate** for spreading.
 
 ---
 
-## Round 3 — Heat flow, gravity, magnetics, age (predict)
+## Transform faults vs. fracture zones
 
-Predict (numbers if you can, signs if you can't):
+![w:720](../assets/figures/F16_ridge_transform_fz.png)
 
-1. Heat flow at **100 Ma Pacific** seafloor
-2. Heat flow on the **Canadian Shield**
-3. Bouguer gravity over a **5-km ocean basin**
-4. Bouguer gravity over the **Himalayas**
-5. Magnetic pattern over the **Juan de Fuca Plate**
-6. Magnetic pattern over the **North American craton**
-
-Three minutes.
+<span class="takeaway">Takeaway —</span> Only the segment **between ridge tips** is active. Slip sense is *opposite* to the ridge offset.
 
 ---
 
-## Round 3 — Reveal
+## Circuit closure recovers the unknown
 
-| | Oceanic | Continental |
-|---|---|---|
-| Heat flow | ridges $\sim 250$ mW/m²; old crust $\sim 50$ | $50$–$80$ (cratons $30$–$45$); ~40% radiogenic |
-| Gravity | Bouguer high over basins; free-air ~0 over ridges | Bouguer strongly **negative** over orogens |
-| Magnetics | **Vine–Matthews stripes** | Terrane-mapped, basement-controlled |
-| Age range | $0$–$180$ Ma | $0$–$4000$ Ma |
-| Geodynamic role | Conveyor belt — born, recycled | **Stable rafts** — resist subduction |
+![w:850](../assets/figures/F17_circuit_closure.png)
+
+<span class="takeaway">Takeaway —</span> Rigid plates close the loop: $_A\mathbf{v}_B + {}_B\mathbf{v}_C + {}_C\mathbf{v}_A = \mathbf{0}$. (Polarity is *not* fixed by kinematics.)
 
 ---
 
-## The two-sentence summary
+## You are sitting on Siletzia
 
-> *Oceanic lithosphere is **globally homogeneous and young** — its attributes are predictable from a single thermal-cooling parameter.*
->
-> *Continental lithosphere is **heterogeneous and preserves Earth history** — its attributes record four billion years of accretion, deformation, and chemical evolution.*
+![w:820](../assets/figures/F13_siletzia_potential_fields.png)
 
-The geodynamic role of each follows from these attribute differences.
+<span class="takeaway">Takeaway —</span> An accreted Eocene oceanic plateau — gravity high + magnetic stripes — that shapes Puget Lowland hazard.
 
 ---
 
-## Research horizon
+## AI literacy — grade the derivation
 
-- **Richards et al. 2018** — modern reassessment of the global thermal models. Plate model with $T_p \sim 1330\,^\circ\mathrm{C}$, $L_p \sim 130$ km. Residuals require small-scale convection.
-- **Holdt et al. 2025** — most recent global re-fit. Current best-fit plate-cooling parameters.
-- **Levin et al. 2023** — the cratonic LAB is not a sharp boundary but a **layer of frozen-in scattering structures**.
-
-> *If the LAB beneath cratons is a gradient, what does that mean for the rigid-plate assumption of plate tectonics?* — return to this in L30.
-
----
-
-## PNW anchor: Siletzia
-
-- Eocene oceanic plateau accreted to N. America $\sim 50$ Ma
-- Forms the **basement of the Cascadia forearc**
-- Identifiable from gravity, magnetics, and seismic
-- The **Seattle Fault Zone reactivates the Siletzia–N. America suture**
-- Anderson et al. 2024 — open access via USGS
-
-*Read more → [Lecture 26 §9](../lectures/26_lithosphere_oceanic_continental.html#societal-relevance-siletzia-and-cascadia)*
+- Prompt an AI to derive the HSC bathymetry model from the heat equation
+- **Check:** boundary conditions · isostasy · the $\sqrt{t}$ prefactor · the 70-Ma limit
+- A *plausible* derivation can be wrong on any of these
+- **An AI is a reasoning partner, not an oracle**
 
 ---
 
-<!-- _class: figure-slide -->
+## Concept check
 
-![bg fit](../assets/figures/F13_siletzia_potential_fields.png)
+1. HSC ocean depth at $t = 25$ Ma? Surface heat flow at the same age?
+2. Why do four "lithosphere bases" disagree beneath a craton?
+3. Classify a boundary whose relative velocity makes $20^\circ$ with the strike.
+4. Confirm circuit closure for the 3-4-5 triangle of the triple junction.
 
----
-
-## AI literacy — derive HSC with an AI assistant
-
-**Prompt:**
-
-> *Derive the half-space cooling model of seafloor bathymetry from the 1D heat equation. Show all steps. Use Airy isostasy. Show the numerical prefactor.*
-
-**Your job: grade against this rubric.**
-
-| Pass | Fail |
-|------|------|
-| Correct boundary conditions | Unphysical BCs or skipped derivation |
-| Correct isostatic integral | Confuses $\alpha$ with $\rho$ |
-| Numerical prefactor $\sim 350$ m·Ma$^{-1/2}$ | Drops $\pi$ or factor of 2 |
-| Notes HSC fails past 70 Ma | Claims HSC is exact |
-
-**AI is a reasoning partner, not an oracle.**
+*Worked vector algebra: `notebooks/plate_motion_vectors.ipynb`*
 
 ---
 
-## Concept checks
+<!-- _class: lead -->
+<!-- _footer: "" -->
 
-1. **HSC numerical:** Predict ocean depth and heat flow at $t = 25$ Ma.
-2. **Plate-model asymptote:** Show that the plate model reduces to HSC for $t \ll \tau$.
-3. **The lithosphere is not one thing:** $T_e = 90$ km, seismic LAB at 200 km, thermal LAB at 270 km — are these inconsistent? Two sentences.
-4. **Siletzia:** Predict gravity, magnetic, and heat-flow signatures from the matrix. Compare to Anderson 2024.
+## Next: Ridges and Rifts (L27)
 
----
-
-<!-- _class: closing -->
-
-## Next time: L27 — Ridges and Rifts
-
-We follow the oceanic lithosphere back to where it is born, and ask why continental rifts look so different from mid-ocean ridges.
-
-#### Further reading: Richards 2018, Holdt 2025, Levin 2023, Anderson 2024
+where the oceanic lithosphere of this lecture is **born**
