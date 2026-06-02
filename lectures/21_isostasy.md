@@ -120,7 +120,7 @@ A continental craton has $T_{e} \approx 80$ km and supports loads regionally; an
 ## 3. Mathematical Framework
 
 ```{admonition} Notation used throughout this lecture
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|

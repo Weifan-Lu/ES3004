@@ -203,7 +203,7 @@ symbols — $\mathbf{G}$ and $\mathbf{m}$ — recur throughout inverse
 theory. Memorise them.
 
 :::{admonition} Notation
-:class: note
+:class: note dropdown
 
 - $\mathbf{d}$: data vector, length $M$, containing one travel time
   per observed ray.
@@ -947,8 +947,8 @@ of the frontier as of 2021–2026.
   tomography at the global scale. Subsequent iterations by the same
   group (Bozdağ, Peter, Tromp et al.) have extended the approach
   to higher frequency and larger earthquake datasets; see the review
-  in Tromp 2020 (Nature Reviews Earth & Environment,
-  https://doi.org/10.1038/s43017-019-0008-9) for full context.
+  in Tromp 2019 (Nature Reviews Earth & Environment,
+  https://doi.org/10.1038/s43017-019-0003-8) for full context.
 
 - **Finite-frequency and banana-doughnut kernels.** Dahlen et al.
   (2000) and Tromp et al. (2005) showed that at finite frequency the

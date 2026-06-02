@@ -186,7 +186,7 @@ the path effect and isolate a number that scales with rupture size.
 ## 3. Mathematical framework: a hierarchy of magnitudes
 
 ::::{admonition} Notation
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |--------|---------|-------|

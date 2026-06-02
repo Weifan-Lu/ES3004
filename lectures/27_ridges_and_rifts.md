@@ -17,7 +17,7 @@ keywords: [mid-ocean ridge, continental rift, East African Rift, magnetic stripe
 :::
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 
 By the end of this lecture, students will be able to:
 
@@ -115,7 +115,7 @@ The rifting continuum is the *beginning* of the Wilson cycle — the long-period
 ### 3.1 Notation
 
 ```{admonition} Notation
-:class: important
+:class: important dropdown
 
 | Symbol | Meaning | Typical value |
 |--------|---------|---------------|
@@ -224,9 +224,9 @@ This is the fourth canonical data-access block of the course. The earlier three 
 
 ```python
 # Pick spreading rate from the EMAG2 global magnetic anomaly grid.
-# Provenance: Maus, S. (2009). EMAG2: Earth Magnetic Anomaly Grid
-#   (2-arc-minute resolution). NOAA NCEI. doi:10.7289/V5MW2F2P.
-#   Public domain — US federal data.
+# Provenance: Meyer, B., Saltus, R., and Chulliat, A. (2017). EMAG2v3: Earth
+#   Magnetic Anomaly Grid (2-arc-minute resolution), Version 3. NOAA NCEI.
+#   DOI: 10.7289/V5H70CVX. Public domain — US federal data.
 
 import xarray as xr
 import numpy as np
@@ -271,7 +271,7 @@ The output of this workflow on the deployed sandbox synthetic, and a sample of w
 :alt: Two-panel figure. Top panel shows the predicted polarity-reversal stripes from the Cande and Kent 1995 GPTS, symmetric about the ridge axis at zero. Black bars mark normal-polarity intervals; white gaps mark reversed-polarity intervals. The pattern is roughly symmetric. Bottom panel shows a magnetic anomaly profile along a 600-km swath across the Juan de Fuca Ridge axis at 47 degrees north. The anomaly oscillates between approximately plus 250 and minus 150 nT, with prominent positive peaks at the axis and at roughly plus/minus 90 km, plus/minus 145 km, and plus/minus 220 km. Pink triangle markers from scipy.signal.find_peaks show automatic peak detections at major positive anomalies. An inset box reports the inverted half-spreading rate as 2.17 cm/yr against the reported Juan de Fuca rate of 2.85 cm/yr.
 :width: 90%
 
-Magnetic anomaly across the Juan de Fuca Ridge. (a) Predicted polarity stripes from the Cande & Kent 1995 GPTS at 2.85 cm/yr half-rate. (b) The magnetic anomaly profile with `find_peaks()` detections; the inverted half-rate from the first four matched chrons is 2.17 cm/yr against the reported 2.85 cm/yr — a 25% underestimate driven by the peak-detection threshold catching the Brunhes chron centre near the axis and pairing it with the C2An Gauss peak. A real-EMAG2 run with tuned prominence usually recovers the spreading rate to better than 10%. Stripe data: NOAA EMAG2v3 (Maus 2009; public domain) when network access is available; the deployed figure uses a synthetic Cande & Kent 1995 stripe sequence as fallback.
+Magnetic anomaly across the Juan de Fuca Ridge. (a) Predicted polarity stripes from the Cande & Kent 1995 GPTS at 2.85 cm/yr half-rate. (b) The magnetic anomaly profile with `find_peaks()` detections; the inverted half-rate from the first four matched chrons is 2.17 cm/yr against the reported 2.85 cm/yr — a 25% underestimate driven by the peak-detection threshold catching the Brunhes chron centre near the axis and pairing it with the C2An Gauss peak. A real-EMAG2 run with tuned prominence usually recovers the spreading rate to better than 10%. Stripe data: NOAA EMAG2v3 (Meyer et al. 2017; public domain) when network access is available; the deployed figure uses a synthetic Cande & Kent 1995 stripe sequence as fallback.
 ```
 
 Two teaching points carry through.
@@ -393,7 +393,7 @@ The takeaway from this section returns to the L26 principle: geophysics is the m
 
 Three open-access pointers for students who want to take the lecture further.
 
-1. **Bell et al. 2022** (*Frontiers in Earth Science* 10:970131, CC-BY 4.0). A modern review of seismic imaging of magma and crystal mush systems at mid-ocean ridges, hotspots, and continental rift volcanoes, with a database of 277 imaging studies. The headline result is that *most* mid-ocean ridge magma is in crystal-mush state at melt fractions below 15%; only a small fraction is in mobile axial melt lenses at any given time. This reshaped the mid-2010s textbook picture of mid-ocean ridge magmatism.
+1. **Paulatto et al. 2022** (*Frontiers in Earth Science* 10:970131, CC-BY 4.0). A modern review of seismic imaging of magma and crystal mush systems at mid-ocean ridges, hotspots, and continental rift volcanoes, with a database of 277 imaging studies. The headline result is that *most* mid-ocean ridge magma is in crystal-mush state at melt fractions below 15%; only a small fraction is in mobile axial melt lenses at any given time. This reshaped the mid-2010s textbook picture of mid-ocean ridge magmatism.
 2. **Biggs et al. 2021** (*Nature Communications* 12:6881, CC-BY 4.0). A comprehensive review of volcanic activity and hazard in the East African Rift, written explicitly as a synthesis for both researchers and African geoscience capacity-building. The supplementary material includes a complete inventory of every confirmed volcanic centre in the EAR with deformation episodes back to 2002. Figure 1 of this paper is the canonical EAR system map referenced as F6 of this lecture.
 3. **La Rosa et al. 2025** (*Solid Earth* 16:929–945, CC-BY 4.0). Cross-scale strain analysis in the Afar rift combining automatic fault mapping from digital elevation models with geodetic surface displacement. Provides the current best-constrained estimates of how strain partitions between faulting and dyke intrusion in the most magmatically active segment of the EAR.
 
@@ -416,7 +416,7 @@ The Juan de Fuca Ridge sits 250 km off the Washington and Oregon coasts. It is t
 :alt: Two-panel figure. Panel a is a scatter plot of depth to AMC reflector versus full spreading rate from 0 to 170 mm per year. Slow-spreading ridges (blue circles, MAR and SWIR) have AMC depths from 2.5 to 6.5 km below seafloor at spreading rates of 10-40 mm per year. Intermediate ridges (green squares, JdF and GSC) cluster at 1.5 to 4 km depth at 40-80 mm per year. Fast ridges (vermilion triangles, EPR and Pacific–Antarctic) have shallow AMCs at 0.8 to 2.6 km depth at 80-160 mm per year. A trend line shows AMC depth declining exponentially with spreading rate. The Juan de Fuca Ridge is highlighted with a pink circle at 57 mm per year and 2.3 km depth. Panel b shows axial P-wave velocity profiles for a slow ridge (blue solid line, 25 mm per year) and a fast ridge (vermilion dashed line, 110 mm per year), each with a velocity inversion marking the AMC at 3 km and 1.7 km depth respectively.
 :width: 92%
 
-Axial magma chamber depth as a function of spreading rate. Slow-spreading ridges have deep, episodic magma bodies (when they have any); fast-spreading ridges have shallow, continuous axial melt lenses. The Juan de Fuca Ridge (highlighted) is intermediate-spreading and falls between the two end-members, with the additional complication that the Cobb hotspot interacts with the ridge axis at Axial Seamount. Trend after Bell et al. 2022 (*Frontiers in Earth Science* 10:970131, CC-BY 4.0).
+Axial magma chamber depth as a function of spreading rate. Slow-spreading ridges have deep, episodic magma bodies (when they have any); fast-spreading ridges have shallow, continuous axial melt lenses. The Juan de Fuca Ridge (highlighted) is intermediate-spreading and falls between the two end-members, with the additional complication that the Cobb hotspot interacts with the ridge axis at Axial Seamount. Trend after Paulatto et al. 2022 (*Frontiers in Earth Science* 10:970131, CC-BY 4.0).
 ```
 
 The Juan de Fuca Ridge is also globally distinctive for a different reason: Axial Seamount, the hotspot-influenced volcano at the ridge axis at 45.95°N, is the only fully cabled mid-ocean ridge observatory in the world. The Ocean Observatories Initiative (OOI) Regional Cabled Array has continuously monitored Axial Seamount since 2014, with real-time bottom-pressure sensors, hydrophones, broadband seismometers, and chemical sensors at the volcanic summit. Axial erupted in 2015 — the *only* mid-ocean ridge eruption ever recorded in real time by a cabled geophysical network in advance, during, and after the event. The pressure data showed the volcano inflating in the months before the eruption and deflating during it; the seismometers recorded thousands of small earthquakes accompanying dyke propagation; the hydrothermal vent chemistry shifted as the magmatic plumbing changed. None of this would have been possible without the cabled array.
@@ -430,7 +430,7 @@ The continental-scale gravity field puts the Pacific Northwest in tectonic conte
 :alt: Bouguer gravity anomaly map of the conterminous United States from −130 to −65 degrees longitude and 22 to 52 degrees latitude. The Basin and Range and Rocky Mountains show strong negative anomalies down to about minus 250 mGal across the western interior. A positive anomaly labelled Siletzia / Cascadia sits along the Washington and Oregon coast. The interior craton shows mild positive values. A localised positive anomaly labelled Midcontinent Rift sits in the upper Midwest. The Appalachians show a moderate negative anomaly along the east coast. Strong positive anomalies appear offshore in the Gulf of Mexico and Atlantic.
 :width: 92%
 
-Bouguer gravity anomaly of the conterminous United States. The western interior is dominated by the active extensional Basin & Range and the over-thickened Rocky Mountain crust (both strong negatives). The Midcontinent Rift is visible as a localised positive (failed rift, stage 4 → endpoint). Siletzia along the Pacific NW coast appears as a positive against the Cordilleran low — directly relevant to L26 §9 and the Cascadia anchor here. For the research-grade open-license map see USGS Fact Sheet 78-95 (Phillips et al. 1993; public domain).
+Bouguer gravity anomaly of the conterminous United States. The western interior is dominated by the active extensional Basin & Range and the over-thickened Rocky Mountain crust (both strong negatives). The Midcontinent Rift is visible as a localised positive (failed rift, stage 4 → endpoint). Siletzia along the Pacific NW coast appears as a positive against the Cordilleran low — directly relevant to L26 §9 and the Cascadia anchor here. For the research-grade open-license map see Phillips et al. (1993; public domain). DOI: 10.3133/ds9.
 ```
 
 ---
@@ -477,13 +477,14 @@ Try these before the next class meeting; we will go over them in discussion.
 
 Open-access references are preferred and prioritised:
 
-- **Bell, S. W., Forsyth, D. W., Toomey, D. R., et al.** (2022). Advances in seismic imaging of magma and crystal mush. *Frontiers in Earth Science* 10, 970131. DOI: [10.3389/feart.2022.970131](https://doi.org/10.3389/feart.2022.970131). **CC-BY 4.0.**
+- **Paulatto, M., Hooft, E. E. E., Chrapkiewicz, K., Heath, B., Toomey, D. R., and Morgan, J. V.** (2022). Advances in seismic imaging of magma and crystal mush. *Frontiers in Earth Science* 10, 970131. DOI: [10.3389/feart.2022.970131](https://doi.org/10.3389/feart.2022.970131). **CC-BY 4.0.**
 - **Biggs, J., Ayele, A., Fischer, T. P., et al.** (2021). Volcanic activity and hazard in the East African Rift Zone. *Nature Communications* 12, 6881. DOI: [10.1038/s41467-021-27166-y](https://doi.org/10.1038/s41467-021-27166-y). **CC-BY 4.0.**
 - **La Rosa, A., Gayrin, P., Brune, S., et al.** (2025). Cross-scale strain analysis in the Afar rift (East Africa) from automatic fault mapping and geodesy. *Solid Earth* 16, 929–945. DOI: [10.5194/se-16-929-2025](https://doi.org/10.5194/se-16-929-2025). **CC-BY 4.0.**
 - **Wright, T. J., Ebinger, C., Biggs, J., et al.** (2006). Magma-maintained rift segmentation at continental rupture in the 2005 Afar dyking episode. *Nature* 442, 291–294. DOI: [10.1038/nature04978](https://doi.org/10.1038/nature04978). (Cite-only; foundational.)
 - **McKenzie, D.** (1978). Some remarks on the development of sedimentary basins. *Earth and Planetary Science Letters* 40, 25–32. DOI: [10.1016/0012-821X(78)90071-7](https://doi.org/10.1016/0012-821X(78)90071-7). (Cite-only; foundational.)
 - **Vine, F. J. and Matthews, D. H.** (1963). Magnetic anomalies over oceanic ridges. *Nature* 199, 947–949. DOI: [10.1038/199947a0](https://doi.org/10.1038/199947a0). (Cite-only; foundational.)
 - **Cande, S. C. and Kent, D. V.** (1995). Revised calibration of the geomagnetic polarity timescale for the Late Cretaceous and Cenozoic. *Journal of Geophysical Research* 100(B4), 6093–6095. DOI: [10.1029/94JB03098](https://doi.org/10.1029/94JB03098). Source of the GPTS used in Code Block D.
-- **Maus, S.** (2009). EMAG2: Earth Magnetic Anomaly Grid (2-arc-minute resolution). NOAA NCEI. DOI: [10.7289/V5MW2F2P](https://doi.org/10.7289/V5MW2F2P). Public domain — source dataset for Code Block D.
+- **Maus, S.** (2009). EMAG2: Earth Magnetic Anomaly Grid (2-arc-minute resolution), Version 2. NOAA NCEI. DOI: [10.7289/V5MW2F2P](https://doi.org/10.7289/V5MW2F2P). Public domain — v2 lineage reference.
+- **Meyer, B., Saltus, R., and Chulliat, A.** (2017). EMAG2v3: Earth Magnetic Anomaly Grid (2-arc-minute resolution), Version 3. NOAA NCEI. DOI: [10.7289/V5H70CVX](https://doi.org/10.7289/V5H70CVX). Public domain — source dataset for Code Block D (the v3 grid the code fetches).
 - **Sandwell, D. T., Müller, R. D., Smith, W. H. F., Garcia, E., and Francis, R.** (2014). New global marine gravity model from CryoSat-2 and Jason-1 reveals buried tectonic structure. *Science* 346, 65–67. DOI: [10.1126/science.1258213](https://doi.org/10.1126/science.1258213). Source dataset for the F2 gravity profile overlay; freely distributed at https://topex.ucsd.edu/marine_grav/.
-- **Phillips, J. D., Duval, J. S., and Ambroziak, R. A.** (1993). National geophysical data grids; gamma-ray, gravity, magnetic and topographic data for the conterminous United States. *USGS Fact Sheet 78-95* and USGS Digital Data Series DDS-9. Public domain — source map for F11.
+- **Phillips, J. D., Duval, J. S., and Ambroziak, R. A.** (1993). National geophysical data grids; gamma-ray, gravity, magnetic, and topographic data for the conterminous United States. *U.S. Geological Survey Digital Data Series DDS-9*. DOI: [10.3133/ds9](https://doi.org/10.3133/ds9). Public domain — source map for F11.

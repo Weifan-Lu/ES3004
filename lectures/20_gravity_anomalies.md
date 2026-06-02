@@ -103,7 +103,7 @@ For a small set of geometries — sphere, horizontal cylinder, vertical cylinder
 ## 3. Mathematical Framework
 
 ```{admonition} Notation used throughout this lecture
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|
@@ -388,7 +388,7 @@ Three open-access threads bring this lecture into contact with current research.
 
 **Deep-learning-assisted gravity interpretation.** A 2023 review by Linsel *et al.* in *Geophysics* (open-access preprint at <https://arxiv.org/abs/2306.04036>) discusses convolutional neural networks for fault-edge detection in gridded gravity and magnetic data, framing the approach as a high-throughput first pass that reduces — but does not eliminate — the need for human interpretation.
 
-**Joint gravity–geodynamics inversion.** Steinberger *et al.* (2022, *Earth and Planetary Science Letters* 591, 117602; open access at <https://doi.org/10.1016/j.epsl.2022.117602>) use mantle-convection-derived density predictions as a forward operator for global gravity inversion, demonstrating that long-wavelength gravity contains information about *flow*, not only density. The result is a useful corrective to the often-implicit assumption that a measured anomaly maps to a *static* density distribution.
+**Joint gravity–geodynamics inversion.** Steinberger *et al.* (2022, *Earth and Planetary Science Letters* 591, 117602; open access at <https://doi.org/10.1016/j.epsl.2022.117602> *(⚠ DOI returns 404 — verify manually)*) use mantle-convection-derived density predictions as a forward operator for global gravity inversion, demonstrating that long-wavelength gravity contains information about *flow*, not only density. The result is a useful corrective to the often-implicit assumption that a measured anomaly maps to a *static* density distribution.
 
 ---
 
@@ -419,4 +419,4 @@ A useful open-access entry point on the broader topic is the *Geophysics Reprodu
 - Brocher, T. M., Wells, R. E., Lamb, A. P. & Weaver, C. S. (2017). Evidence for distributed clockwise rotation of the crust in the northwestern United States from fault geometries and focal mechanisms. *Tectonics* 36, 787–818. <https://doi.org/10.1002/2016TC004223> (open access).
 - USGS national gravity data and Bouguer-anomaly maps (public domain): <https://mrdata.usgs.gov/services/gravity>.
 - Frankel, A. *et al.* (2018). Broadband synthetic seismograms for magnitude-9 earthquakes on the Cascadia megathrust based on 3D simulations and stochastic synthetics. *USGS Open-File Report 2018-1149*. Public domain. <https://pubs.usgs.gov/of/2018/1149/>.
-- Steinberger, B. *et al.* (2022). On the relation between long-wavelength geoid, density, and dynamic topography. *Earth Planet. Sci. Lett.* 591, 117602. <https://doi.org/10.1016/j.epsl.2022.117602> (open access).
+- Steinberger, B. *et al.* (2022). On the relation between long-wavelength geoid, density, and dynamic topography. *Earth Planet. Sci. Lett.* 591, 117602. <https://doi.org/10.1016/j.epsl.2022.117602> *(⚠ DOI returns 404 — verify manually)* (open access).

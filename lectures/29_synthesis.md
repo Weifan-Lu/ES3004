@@ -1,7 +1,7 @@
 # Putting It Together: Geophysics as a Tool for Earth Structure
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Synthesize seismic, gravity, magnetic, and thermal observations
 - Multi-method geophysical interpretation
 - Frontiers in geophysics

@@ -7,7 +7,7 @@ authors:
 date: 2026
 module: 7
 lecture: 26
-keywords: [lithosphere, oceanic, continental, half-space cooling, plate model, LAB, Moho, Siletzia, Cascadia]
+keywords: [lithosphere, oceanic, continental, half-space cooling, plate model, LAB, Moho, Siletzia, Cascadia, plate boundary, relative plate motion, transform fault, fracture zone, triple junction, circuit closure]
 ---
 
 # Lithosphere: Oceanic vs. Continental
@@ -17,7 +17,7 @@ keywords: [lithosphere, oceanic, continental, half-space cooling, plate model, L
 :::
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 
 By the end of this lecture, students will be able to:
 
@@ -25,6 +25,7 @@ By the end of this lecture, students will be able to:
 - **[LO-2, LO-3]** Identify the five distinct definitions of the lithosphere base — mechanical, thermal, seismic, elastic, and chemical — and explain why they disagree, particularly beneath old continental cratons.
 - **[LO-3]** Download, plot, and interpret three open geophysical datasets (Müller/Seton seafloor age, ETOPO1 bathymetry, CRUST1.0 Moho) using a reproducible Python workflow.
 - **[LO-4]** Construct a side-by-side comparison of oceanic and continental lithosphere across eleven attributes (composition, layering, density, thickness, seismic structure, heat flow, gravity, magnetics, age, geodynamic role) and use the comparison to argue for or against the rigidity assumption of plate tectonics.
+- **[LO-2, LO-OUT-B]** Classify a plate boundary as divergent, convergent, or transform from the relative-velocity vector, and apply vector addition and three-plate circuit closure to determine an unknown relative motion.
 
 **Prerequisites:** Stress, strain, and the equation of motion (L03); seismic refraction (L08); gravity and isostasy (L19–L21); magnetics (L23–L25). Familiarity with `numpy`, `matplotlib`, and `xarray` is assumed for the data-access blocks; students who have completed Lab 7 (AI as Collaborator) will recognize the open-data workflow.
 ```
@@ -41,7 +42,7 @@ Module 7 is the synthesis module of the course. Rather than introducing a new me
 
 > *What do we mean by "the lithosphere," and why does the answer change depending on which observable we use?*
 
-Oceanic and continental lithosphere are the two case studies, and the comparison between them is where the rest of the lecture lives.
+Oceanic and continental lithosphere are the two case studies, and the comparison between them occupies the first part of the lecture. The comparison ends with a statement about *motion* — oceanic lithosphere is recycled, continental lithosphere persists — and that motion is the subject of the second part: the kinematics of plate boundaries, where the rigid plates that the lithosphere forms move relative to one another.
 
 ---
 
@@ -61,7 +62,7 @@ Here is the conceptual hinge of the lecture. Conduction transports heat continuo
 - Below about $1300\,^\circ\mathrm{C}$, conduction is still the dominant heat-transport mechanism, but the rocks can flow on geological timescales. This isotherm sets the **thermal boundary layer**.
 - Between the two isotherms there is a region that conducts heat like a solid but creeps like a fluid. This region is part of the lithosphere if you are a heat-flow geophysicist but part of the asthenosphere if you are a flexural modeler.
 
-This is not a definitional quibble. It is a real physical reflection of the fact that the lithosphere is defined by *behavior*, and the behavior of rocks depends on which timescale and which physical process you ask about. We will return to this in Round 2 of §6.
+This is not a definitional quibble. It is a real physical reflection of the fact that the lithosphere is defined by *behavior*, and the behavior of rocks depends on which timescale and which physical process you ask about. The consequences are developed in the comparison of §6.
 
 ```{admonition} A brief word on rheology
 :class: note
@@ -76,7 +77,7 @@ The transition from elastic to viscous behavior is the subject of an expanded ve
 ### 3.1 Notation
 
 ```{admonition} Notation
-:class: important
+:class: important dropdown
 
 | Symbol | Meaning | Typical value (oceanic) |
 |--------|---------|-------------------------|
@@ -252,7 +253,7 @@ North American Moho thickness from CRUST1.0 ({cite:t}`Laske2013`), regional crop
 Two teaching points specific to this dataset:
 
 1. **Discrete grids are small enough to inspect by hand.** The full CRUST1.0 grid is $360 \times 180 = 64{,}800$ cells. You could in principle print it. Don't, but knowing the size matters for picking the right tools.
-2. **Continental crustal thickness varies by a factor of two across one continent.** Oceanic crust does not. This will be Round 2 of our predict-then-reveal sequence in §6.
+2. **Continental crustal thickness varies by a factor of two across one continent.** Oceanic crust does not. This contrast returns in the comparison of §6.
 
 ### 4.3 Code Block C — A bathymetric transect across the Mid-Atlantic Ridge
 
@@ -322,26 +323,13 @@ Two specific subproblems we will see in this and later lectures:
 
 ---
 
-## 6. Comparison Matrix and Three Predict-Then-Reveal Rounds
+## 6. Comparison: Oceanic vs. Continental Lithosphere
 
-This is the core of the lecture. We are going to build a side-by-side comparison of oceanic and continental lithosphere across eleven attributes. You will predict each row before we reveal it. Predict first; copy the answer afterward. The comparison is delivered in three rounds.
+This section assembles a side-by-side comparison of oceanic and continental lithosphere across eleven attributes. It is built up in three parts — composition and density; thickness and seismic structure; and the heat-flow, gravity, magnetic, and age signatures — and then collected into a single table. The comparison is the evidence base for the geodynamic claim that closes the section: oceanic lithosphere is recycled, continental lithosphere persists.
 
-### 6.1 Round 1 — Composition, density, and the consequences for subduction
+### 6.1 Composition, density, and the consequences for subduction
 
-```{admonition} Predict
-:class: tip
-
-Before we go any further, predict the following:
-
-1. What is the dominant rock type of oceanic crust? Of continental crust?
-2. Which lithosphere is denser? Why?
-3. Given (2), which lithosphere subducts at convergent margins, and which does not?
-4. Sketch a density profile for each lithosphere from the surface down to 250 km.
-
-Take five minutes. Write your answers down. We will compare them.
-```
-
-Now the reveal.
+The oceanic and continental crustal columns are most cleanly contrasted through their seismic velocity profiles, which record the change in composition with depth.
 
 ```{figure} ../assets/figures/F7_oceanic_vp_profile.png
 :name: F7_oceanic_vp
@@ -359,27 +347,15 @@ Oceanic crustal velocity profile from seafloor seismic refraction. Layer 1: pela
 Continental crustal velocity profile from refraction and receiver-function synthesis. Layered but gradational: granitic upper crust, amphibolite-grade middle crust, mafic granulite lower crust, $\sim 40$ km Moho. The bulk composition is felsic-to-intermediate (andesitic average) — fundamentally different from the oceanic stack.
 ```
 
-The composition difference drives every other contrast we will see. Oceanic crust is mafic basalt and gabbro all the way down. Continental crust is granitic at the top, intermediate in the middle, mafic at the base — and only mafic at the bottom because the felsic upper crust *floats* on a mafic root. Density follows mineralogy: oceanic crust averages about $2.9$ g/cm³, continental crust about $2.7$ g/cm³. Mantle lithosphere underneath is peridotite in both cases, around $3.3$ g/cm³.
+The composition difference drives every other contrast in the comparison. Oceanic crust is mafic basalt and gabbro all the way down. Continental crust is granitic at the top, intermediate in the middle, mafic at the base — and only mafic at the bottom because the felsic upper crust *floats* on a mafic root. Density follows mineralogy: oceanic crust averages about $2.9$ g/cm³, continental crust about $2.7$ g/cm³. Mantle lithosphere underneath is peridotite in both cases, around $3.3$ g/cm³.
 
-Now the subtle and important point. **The mantle lithosphere beneath old continental cratons is *chemically depleted* relative to oceanic mantle lithosphere.** Repeated episodes of melt extraction over billions of years have removed iron-rich basaltic components, leaving a residual harzburgite that is slightly less dense than the underlying fertile asthenospheric mantle. This is the *Jordan tectosphere* hypothesis: cratonic mantle lithosphere is buoyant enough to resist sinking even when it is colder and older than the surrounding mantle. It is also the reason cratons are stable for billions of years and oceanic plates are recycled in 200 million.
+A subtler and equally important point concerns the mantle lithosphere. **The mantle lithosphere beneath old continental cratons is *chemically depleted* relative to oceanic mantle lithosphere.** Repeated episodes of melt extraction over billions of years have removed iron-rich basaltic components, leaving a residual harzburgite that is slightly less dense than the underlying fertile asthenospheric mantle. This is the *Jordan tectosphere* hypothesis: cratonic mantle lithosphere is buoyant enough to resist sinking even when it is colder and older than the surrounding mantle. It is also the reason cratons are stable for billions of years and oceanic plates are recycled in 200 million.
 
-Subduction is therefore not just a thermal-buoyancy story. It is a *thermal-and-chemical* buoyancy story. Oceanic lithosphere is dense enough to subduct because its mantle component is fertile and its crust is mafic; continental lithosphere is buoyant enough to resist subduction because its mantle component is depleted and its crust is felsic. This is the answer to the prediction question. Write it down.
+Subduction is therefore not just a thermal-buoyancy story. It is a *thermal-and-chemical* buoyancy story. Oceanic lithosphere is dense enough to subduct because its mantle component is fertile and its crust is mafic; continental lithosphere is buoyant enough to resist subduction because its mantle component is depleted and its crust is felsic.
 
-### 6.2 Round 2 — Thickness, seismic structure, and "what is the lithosphere?"
+### 6.2 Thickness, seismic structure, and "what is the lithosphere?"
 
-```{admonition} Predict
-:class: tip
-
-Predict the seismic $V_p$ profile, the depth to Moho, and the total lithospheric thickness for each of the following locations:
-
-1. Pacific seafloor, 100 Ma old, far from any ridge or subduction zone.
-2. Canadian Shield craton, Archean rocks at the surface.
-3. East African Rift, active continental rifting today.
-
-Take five minutes. Sketch a depth–velocity panel for each.
-```
-
-The reveal is the second key conceptual figure of the lecture.
+The seismic structure makes the thickness contrast concrete.
 
 ```{figure} ../assets/figures/F11_continental_vs_oceanic_vp.png
 :name: F11_vp_comparison
@@ -389,7 +365,7 @@ The reveal is the second key conceptual figure of the lecture.
 Continental vs. oceanic $V_p$ profiles, side by side. Oceanic Moho is sharp and shallow ($\sim 11$ km below sea level), and the asthenospheric LVZ ($\sim 60$ km) is unambiguous. Continental Moho is deeper ($\sim 40$ km) and often gradational. The continental LVZ is much weaker, and often absent entirely beneath cratons.
 ```
 
-And then the figure that anchors the whole lecture.
+The next figure anchors the central thesis of the lecture.
 
 ```{figure} ../assets/figures/F6_boundary_layers_key.png
 :name: F6_boundary_layers
@@ -399,7 +375,7 @@ And then the figure that anchors the whole lecture.
 **The thesis of the lecture.** Under oceans (a), the mechanical and thermal boundary layers track each other closely as the lithosphere thickens with age, and the plate model imposes a maximum thickness of $\sim 125$ km. Under old cratons (b), four different definitions of the "lithosphere base" disagree by 200 km. *They should agree. They don't.* The lithosphere is not one thing.
 ```
 
-Look at panel (b) carefully. The Moho is at 45 km — that is the crust–mantle boundary, set by composition. Above the Moho is felsic-to-mafic crust; below it is peridotite mantle. There is no ambiguity about *that* boundary.
+Consider panel (b) carefully. The Moho is at 45 km — that is the crust–mantle boundary, set by composition. Above the Moho is felsic-to-mafic crust; below it is peridotite mantle. There is no ambiguity about *that* boundary.
 
 But where does the *lithosphere* end?
 
@@ -412,30 +388,13 @@ These are not measurement errors. They are *real, observed disagreements* that h
 
 Under oceans, why do these definitions mostly agree? Because oceanic lithosphere is young, simple, and globally homogeneous. The thermal field has not had time to equilibrate into something that decouples from the mechanical behavior, and there is no buoyant chemical layer at the bottom that could outlast the thermal cooling. The lithosphere base under oceans is essentially the thermal boundary layer, full stop. Under continents — especially old continents — the lithosphere base is a four-way disagreement.
 
-This is the answer to Round 2. Write it in your matrix.
+### 6.3 Heat flow, gravity, magnetics, and age structure
 
-### 6.3 Round 3 — Heat flow, gravity, magnetics, age structure
-
-```{admonition} Predict
-:class: tip
-
-Predict the following measurements:
-
-1. Surface heat flow at 100 Ma seafloor in the central Pacific.
-2. Surface heat flow on the Canadian Shield.
-3. Bouguer gravity anomaly over a 5-km-deep ocean basin.
-4. Bouguer gravity anomaly over the Himalayas.
-5. The dominant magnetic-anomaly pattern over the Juan de Fuca Plate.
-6. The dominant magnetic-anomaly pattern over the North American craton.
-
-Three minutes. Numbers if you can; signs if you can't.
-```
-
-The reveals come quickly here. Heat flow at 100 Ma seafloor, from Equation {eq}`eq:hsc-heatflow`, is about $48\ \mathrm{mW\,m^{-2}}$. On the Canadian Shield it is $30$–$45\ \mathrm{mW\,m^{-2}}$ — *lower* than the old oceanic value, despite the much thicker crust. Why? Because cratons have low radiogenic heat production: the bulk of their continental crust is too far from the surface to contribute much, and the cratonic root has been depleted in heat-producing elements over billions of years.
+The remaining attributes follow the same logic. Heat flow at 100 Ma seafloor, from Equation {eq}`eq:hsc-heatflow`, is about $48\ \mathrm{mW\,m^{-2}}$. On the Canadian Shield it is $30$–$45\ \mathrm{mW\,m^{-2}}$ — *lower* than the old oceanic value, despite the much thicker crust. Why? Because cratons have low radiogenic heat production: the bulk of their continental crust is too far from the surface to contribute much, and the cratonic root has been depleted in heat-producing elements over billions of years.
 
 Bouguer gravity over a 5-km ocean basin is strongly *positive* — about $+200$–$300$ mGal — because we have removed the gravitational effect of seawater density between the survey and the dense oceanic crust below. Bouguer gravity over the Himalayas is strongly *negative* — about $-500$ mGal — because the crustal root extends to 65–70 km depth and the dense mantle that would normally be there is replaced by lighter crust.
 
-Magnetic signatures: the Juan de Fuca Plate shows the textbook Vine–Matthews–Morley striped pattern, with sub-parallel positive and negative anomalies recording every reversal of the Earth's field over the past 10 Ma. The North American craton shows a complex aeromagnetic pattern tied to basement terranes, batholiths, and ancient deformation — a *map of geologic structure*, not a *record of time*.
+Magnetic signatures separate the two cases sharply. The Juan de Fuca Plate shows the textbook Vine–Matthews–Morley striped pattern, with sub-parallel positive and negative anomalies recording every reversal of the Earth's field over the past 10 Ma. The North American craton shows a complex aeromagnetic pattern tied to basement terranes, batholiths, and ancient deformation — a *map of geologic structure*, not a *record of time*.
 
 These results synthesize naturally into a coherent comparison.
 
@@ -493,11 +452,87 @@ The completed comparison matrix tells a coherent two-sentence story:
 
 > *Oceanic lithosphere is globally homogeneous and young — its attributes are predictable from a single thermal-cooling parameter. Continental lithosphere is heterogeneous and preserves Earth history — its attributes record four billion years of accretion, deformation, and chemical evolution.*
 
-The geodynamic role of each follows mechanically from these attribute differences. Oceanic lithosphere is dense enough, thin enough, and young enough to be recycled at trenches. Continental lithosphere is buoyant enough, thick enough, and chemically distinct enough to outlast multiple supercontinent cycles. This is the closing point of the lecture, and it sets up Module 7's remaining lectures: ridges and rifts (L27) where lithosphere is born, transforms (L28) where it slides past itself, subduction zones (L29) where it dies, and geodynamics (L30) where we put the whole conveyor in a global heat budget.
+The geodynamic role of each follows mechanically from these attribute differences. Oceanic lithosphere is dense enough, thin enough, and young enough to be recycled at trenches. Continental lithosphere is buoyant enough, thick enough, and chemically distinct enough to outlast multiple supercontinent cycles. The geodynamic roles this comparison identifies — oceanic lithosphere as a mobile conveyor, continental lithosphere as a stable raft — raise the next question directly: how do the rigid plates these lithospheres form move relative to one another? That kinematic framework is the subject of §7, and it is the foundation for the remaining lectures of Module 7: ridges and rifts (L27) where lithosphere is born, convergent margins (L28) where it is consumed, transforms and intraplate deformation (L29), and synthesis (L30) where the whole conveyor is placed in a global heat budget.
 
 ---
 
-## 7. Course Connections
+## 7. Plate Boundaries and Relative Motion
+
+The comparison of §6 ended with a kinematic claim: oceanic lithosphere is a mobile conveyor, continental lithosphere a stable raft. Both statements are about *motion* — plates moving apart, plates colliding, plates sliding past one another. This section makes that motion quantitative. The organizing idea is that almost everything observable about a plate boundary follows from a single vector: the velocity of one plate relative to the other.
+
+### 7.1 Three kinematic classes of boundary
+
+A plate boundary is classified not by how it looks but by the orientation of the relative-velocity vector across it ({numref}`F14_boundary_types`). If the relative velocity points away from the boundary, the plates separate and new lithosphere is created — a **divergent** boundary (a mid-ocean ridge or a continental rift). If it points toward the boundary, lithosphere is consumed — a **convergent** boundary (a subduction zone or a continental collision). If it is parallel to the boundary, lithosphere is neither created nor destroyed and the plates slide past one another — a **transform** boundary. These three classes exhaust every possibility, because a vector can only point away from, toward, or along a line.
+
+```{figure} ../assets/figures/F14_plate_boundary_types.png
+:name: F14_boundary_types
+:alt: Three map-view panels of plate boundaries. Panel a divergent: two plates with arrows pointing apart and a red ridge axis between them. Panel b convergent: arrows pointing toward each other with subduction teeth on the overriding plate. Panel c transform: arrows antiparallel along a vertical boundary, plates sliding past one another.
+:width: 100%
+
+The three kinematic classes of plate boundary, classified by the orientation of the relative-velocity vector (map view). **(a)** Divergent: the relative velocity points away from the boundary, the plates separate, and new lithosphere forms at a ridge axis. **(b)** Convergent: the relative velocity points toward the boundary and lithosphere is consumed; the overriding plate carries subduction teeth. **(c)** Transform: the relative velocity is parallel to the boundary and lithosphere is conserved as the plates slide past one another.
+```
+
+```{admonition} Notation — relative-velocity subscripts
+:class: important dropdown
+
+Throughout this section, $_{A}\mathbf{v}_{B}$ denotes the velocity of plate B *measured relative to* plate A (the left subscript is the reference plate, the right subscript is the moving plate). By definition $_{A}\mathbf{v}_{B} = -\,_{B}\mathbf{v}_{A}$: the velocity of B relative to A is equal and opposite to the velocity of A relative to B.
+```
+
+### 7.2 Relative velocity and the choice of reference frame
+
+Plate velocities are always relative. A statement such as "the plate moves at 4 cm/yr" is incomplete until the reference is named — relative to the adjacent plate, relative to the deep mantle, or relative to a fixed hotspot. The physically meaningful quantity at a boundary is the velocity of one plate relative to the other, and that quantity does not depend on which plate is treated as fixed ({numref}`F15_reference_frame`).
+
+```{figure} ../assets/figures/F15_reference_frame.png
+:name: F15_reference_frame
+:alt: Two stacked panels. Top: Plate A fixed on the left, Plate B on the right with an arrow pointing right labeled full rate. Bottom: Plate B fixed on the right, Plate A on the left with an arrow pointing left at the same rate. A caption notes the relative velocity is identical in both frames.
+:width: 85%
+
+Relative velocity is independent of the reference frame. **(top)** With Plate A held fixed, Plate B moves at the full relative rate. **(bottom)** With Plate B held fixed, Plate A moves at the same rate in the opposite direction. The relative-velocity vector $_{A}\mathbf{v}_{B}$ is the physical invariant; only the choice of fixed plate changes. For seafloor spreading, each flank moves at the *half-rate* relative to the ridge axis, and the *full rate* is the plate-to-plate relative velocity — the quantity recorded by the symmetric magnetic-anomaly stripes of L25.
+```
+
+The half-rate / full-rate distinction is the most common bookkeeping error in spreading problems. A ridge spreading at a full rate of 4 cm/yr adds 2 cm/yr of new crust to each flank; the symmetric Vine–Matthews stripes on either side of the ridge each migrate away at the half-rate, while the two plates separate at the full rate.
+
+### 7.3 Transform faults and fracture zones
+
+A transform boundary that links two offset segments of a mid-ocean ridge produces one of the most instructive geometries in plate tectonics ({numref}`F16_ridge_transform_fz`). The key result, due to {cite:t}`Wilson1965`, is that the sense of slip on the transform is *opposite* to the apparent offset of the ridge, and that the seismically active fault occupies only the segment *between* the two ridge tips.
+
+```{figure} ../assets/figures/F16_ridge_transform_fz.png
+:name: F16_ridge_transform_fz
+:alt: Map view of two offset ridge segments X-prime and Y-prime connected along a line W-X-Y-Z. Plate B on the left moves left, Plate A on the right moves right. The segment X-Y between the ridge tips is marked as an active transform with earthquake stars; the outboard segments W-X and Y-Z are dashed and labeled as aseismic fracture zones.
+:width: 95%
+
+Ridge–transform–fracture zone geometry. Two ridge segments, X′ and Y′, are offset along the line W–X–Y–Z. The plate boundary runs down ridge X′, along the segment X–Y, and down ridge Y′ (heavy line). Only the segment X–Y *between* the ridge tips is an active **transform fault**: across it the two plates move in opposite directions, so it is seismically active (stars). The outboard segments W–X and Y–Z are fossil **fracture zones** — crust on both sides belongs to the same plate and moves in the same direction, so they are aseismic topographic scars. The sense of slip on the transform is opposite to the apparent offset of the ridge: the fault is the active expression of two plates separating, not a marker that was cut and displaced.
+```
+
+The distinction between the active transform and the inactive fracture zone is observational, not cosmetic. Earthquakes locate on the segment between the ridge tips and nowhere else along the line; the fracture-zone extensions are bathymetric scars that record the strike of past transform motion but no longer slip, because the crust on both sides was generated at the same ridge and now moves together. This is the reasoning that allowed transform faults to be recognized as a distinct boundary class — and the first-motion studies that confirmed the predicted slip direction were among the earliest direct tests of plate tectonics.
+
+### 7.4 Vector addition and three-plate circuits
+
+Where three plates meet at a point — a *triple junction* — their relative velocities are not independent. Because each plate is treated as rigid, the relative velocities must sum to zero around the three-plate circuit:
+
+$$
+{}_{A}\mathbf{v}_{B} + {}_{B}\mathbf{v}_{C} + {}_{C}\mathbf{v}_{A} = \mathbf{0}.
+$$ (eq:circuit-closure)
+
+This is *circuit closure*. It is the single most useful tool in plate kinematics, because it lets the relative motion across one boundary be recovered from measurements on the other two ({numref}`F17_circuit_closure`). The recovery is most valuable at convergent boundaries: subduction destroys the seafloor record that would otherwise give the convergence rate directly, so the rate must be reconstructed from the spreading and transform boundaries elsewhere in the circuit.
+
+```{figure} ../assets/figures/F17_circuit_closure.png
+:name: F17_circuit_closure
+:alt: Two panels. Panel a is a map of a triple junction with Plate A in the lower-left, Plate B upper-left, Plate C right. The A-B and A-C boundaries are transforms with strike-slip arrows labeled 4 and 3; the B-C boundary is a trench with teeth and an unknown convergence rate. Panel b is a velocity triangle showing B-v-A equals 4 west, A-v-C equals 3 north, and the resultant B-v-C equals 5 along the hypotenuse, with a right-angle marker.
+:width: 100%
+
+Three-plate circuit closure in a transform–transform–trench configuration (the geometry of the Mendocino Triple Junction, where the Pacific, Juan de Fuca, and North American plates meet). **(a)** Plate A meets Plates B and C along two transform boundaries; Plates B and C meet along a convergent boundary (trench). The relative velocities on the two transforms are known (rates 4 and 3); the convergence rate $_{B}\mathbf{v}_{C}$ across the trench is unknown. **(b)** Because each plate is rigid, the relative velocities form a closed vector circuit, $_{B}\mathbf{v}_{C} = {}_{B}\mathbf{v}_{A} + {}_{A}\mathbf{v}_{C}$. With the two transform velocities at right angles, the convergence has magnitude 5 — a 3-4-5 triangle that students can verify by inspection.
+```
+
+Two cautions accompany circuit closure. First, it assumes each plate is perfectly rigid; the circuit fails to close wherever a plate deforms internally, and the misclosure is itself a measurement of that internal deformation. Second, kinematics alone fixes the *relative motion* across a convergent boundary but not the *polarity* of subduction — which plate descends and which overrides. That choice depends on the nature of the lithosphere on each side (the buoyancy contrast established in §6.1), not on the velocity vectors, and it cannot be read off the circuit.
+
+```{seealso}
+The worked vector-algebra examples for this section — the ridge–transform offset problem of {numref}`F16_ridge_transform_fz`, the 3-4-5 triple-junction closure of {numref}`F17_circuit_closure`, and a fully worked Mendocino circuit using real Pacific–Juan de Fuca–North America rates — are carried out interactively in the companion notebook **`notebooks/plate_motion_vectors.ipynb`**. The notebook treats the relative velocities as `numpy` vectors and confirms closure numerically.
+```
+
+---
+
+## 8. Course Connections
 
 ```{admonition} Where this lecture connects
 :class: seealso
@@ -506,16 +541,16 @@ The geodynamic role of each follows mechanically from these attribute difference
 - **L08–L09 (Refraction):** Source of the oceanic $V_p$ profile in Figure F7 and the synthetic record section in Figure F8.
 - **L11–L12 (Whole Earth & Tomography):** Source of the seismic LAB depth estimates used in Figure F6.
 - **L19–L21 (Gravity & Isostasy):** Source of the effective elastic thickness $T_e$ used in Figure F6.
-- **L23–L25 (Magnetics):** Vine–Matthews stripes on the Juan de Fuca Plate; Layer 2A is the primary magnetic source.
-- **L27 (Ridges and Rifts):** Picks up the oceanic-lithosphere story at $t = 0$; we will follow up with the geophysical signatures of mid-ocean ridges and continental rifts.
-- **L28 (Transforms):** Sliding interfaces between lithospheric plates.
-- **L29 (Subduction Zones):** Where oceanic lithosphere is recycled.
+- **L23–L25 (Magnetics):** Vine–Matthews stripes on the Juan de Fuca Plate record the full spreading rate of §7.2; Layer 2A is the primary magnetic source.
+- **L27 (Ridges and Rifts):** Picks up the oceanic-lithosphere story at $t = 0$ and the divergent boundaries of §7; the geophysical signatures of mid-ocean ridges and continental rifts.
+- **L28 (Convergent Margins):** Where oceanic lithosphere is consumed. The subduction-zone framework builds directly on the convergent boundaries and circuit closure of §7.
+- **L29 (Transforms & Intraplate):** Sliding interfaces between plates (§7.3) and deformation within plate interiors, where the rigid-plate assumption of §7.4 breaks down.
 - **L30 (Plate Tectonics and Geodynamics):** Course capstone — the whole-Earth heat budget that makes all of this work.
 ```
 
 ---
 
-## 8. Research Horizon
+## 9. Research Horizon
 
 The thermal-cooling models that anchored this lecture were established between 1967 and 1977 (Davis & Lister; McKenzie; Parsons & Sclater). They have not been replaced in fifty years; they have been refined. Three recent papers are useful entry points if you want to take this lecture further:
 
@@ -533,7 +568,7 @@ The thermal-cooling models that anchored this lecture were established between 1
 
 ---
 
-## 9. Societal Relevance: Siletzia and Cascadia
+## 10. Societal Relevance: Siletzia and Cascadia
 
 Every student in this room is sitting on lithosphere of a particular and unusual kind. Beneath Seattle and Portland, the continental basement is not the Proterozoic-and-younger North American craton. It is **Siletzia** — an Eocene oceanic plateau that was accreted to the North American margin around 50 Ma and now forms the basement of the entire Cascadia forearc from southern Vancouver Island to southern Oregon.
 
@@ -551,7 +586,7 @@ Why does this matter for a Seattle resident in 2026? Two reasons.
 
 2. **You can see Siletzia from your laptop.** The figure above is built from grids you can download yourself in three minutes — the USGS isostatic residual gravity and Bankey-2002 high-pass magnetic compilations — using the same workflow you practiced in §4. {cite:t}`Anderson2024` is open-access through the USGS Publications Warehouse and uses the same kinds of grids for their published interpretation. Every result in that paper is reproducible by a student with `xarray`, `numpy`, `matplotlib`, `rasterio`, and an afternoon.
 
-The lithosphere lecture is what lets you ask the right questions when you read a paper like that. Every attribute in our comparison matrix has a clear and concrete meaning over Siletzia: composition (mafic), density (high → gravity high), thickness ($\sim 30$ km in the forearc), seismic structure ($V_p \approx 6.5$ km/s consistent with basaltic basement), magnetics (dipolar pattern from stratified extrusives), age (Eocene, $\sim 50$ Ma), geodynamic role (accreted plateau, not subducted). The framework you build here is the framework you use to read the next paper.
+The lithosphere lecture is what lets you ask the right questions when you read a paper like that. Every attribute in our comparison matrix has a clear and concrete meaning over Siletzia: composition (mafic), density (high → gravity high), thickness ($\sim 30$ km in the forearc), seismic structure ($V_p \approx 6.5$ km/s consistent with basaltic basement), magnetics (dipolar pattern from stratified extrusives), age (Eocene, $\sim 50$ Ma), geodynamic role (accreted plateau, not subducted). The framework you build here is the framework you use to read the next paper. The plate boundary just offshore — the Cascadia subduction zone, where the Juan de Fuca Plate descends beneath North America — is the subject of L28.
 
 ---
 
@@ -588,13 +623,14 @@ Open-access references — all linkable; we recommend at least one of each:
 - **Holdt, M. J. W., White, N., Hoggard, M. J., & Watson, A. J.** (2025). Revised oceanic plate cooling models. *JGR Solid Earth*. DOI: [10.1029/2024JB029890](https://doi.org/10.1029/2024JB029890).
 - **Levin, V., Long, M. D., Servali, A., & Crawford, T.** (2023). Defining continental lithosphere as a layer with abundant frozen-in structures that scatter seismic waves. *JGR Solid Earth* 128. DOI: [10.1029/2022JB026309](https://doi.org/10.1029/2022JB026309).
 - **Anderson, M. L., Wells, R. E., Frankel, A. D. et al.** (2024). Deep structure of Siletzia in the Puget Lowland: Imaging an obducted plateau and accretionary thrust belt with potential fields. *Tectonics* 43. DOI: [10.1029/2022TC007720](https://doi.org/10.1029/2022TC007720). Open access via USGS Pubs Warehouse.
+- **Wilson, J. T.** (1965). A new class of faults and their bearing on continental drift. *Nature* 207, 343–347. DOI: [10.1038/207343a0](https://doi.org/10.1038/207343a0) — the paper that defined the transform fault.
 - **Van der Hilst, R.** (2004). MIT OCW 12.201 *Essentials of Geophysics*, Chapter 5 (Geodynamics): half-space cooling, plate model, isostasy. [Open-access lecture notes](https://ocw.mit.edu/courses/12-201-essentials-of-geophysics-fall-2004/).
 - **Seton, M. et al.** (2020). A global dataset of present-day oceanic crustal age and seafloor spreading parameters. *G-Cubed* 21. DOI: [10.1029/2020GC009214](https://doi.org/10.1029/2020GC009214) — the source dataset for Code Block A.
 - **Laske, G., Masters, G., Ma, Z. & Pasyanos, M.** (2013). Update on CRUST1.0 — a 1-degree global model of Earth's crust. EGU Abstract 2658. [Data and documentation](https://igppweb.ucsd.edu/~gabi/crust1.html) — the source dataset for Code Block B.
 
 ---
 
-```{admonition} Concept checks for §6
+```{admonition} Concept checks
 :class: note
 
 Try these before the next class meeting; we will go over them in discussion.
@@ -602,5 +638,7 @@ Try these before the next class meeting; we will go over them in discussion.
 1. **HSC numerical practice.** Compute the predicted ocean depth at $t = 25$ Ma using the HSC numerical form (Eq. {eq}`eq:hsc-numerical`). What is the predicted surface heat flow at the same age?
 2. **Plate-model asymptote.** Show analytically that the plate-model depth (Eq. {eq}`eq:plate-depth`) reduces to the HSC form for $t \ll \tau$. (Hint: Taylor-expand the exponential.)
 3. **The lithosphere is not one thing.** A geophysicist measuring effective elastic thickness $T_e$ in a continental craton finds $T_e = 90$ km. A seismologist using S-to-P receiver functions at the same location finds a LAB at $\sim 200$ km. A heat-flow analyst, using surface heat flow and a xenolith-constrained geotherm, infers the thermal LAB at $\sim 270$ km. Are these three measurements *inconsistent*? Explain in two sentences.
-4. **Siletzia.** Using only the comparison matrix from §6.3, predict the gravity signature, the magnetic signature, and the heat flow over Siletzia *before* you look at a published figure. Then compare to Anderson et al. 2024. Where did your predictions match? Where did they fail?
+4. **Siletzia.** Using only the comparison matrix from §6, predict the gravity signature, the magnetic signature, and the heat flow over Siletzia *before* you look at a published figure. Then compare to Anderson et al. 2024. Where did your predictions match? Where did they fail?
+5. **Boundary classification.** Two plates share a boundary along which the relative-velocity vector makes an angle of $20^\circ$ with the boundary strike. Is the boundary best described as divergent, convergent, or transform, and what does the small perpendicular component imply physically?
+6. **Circuit closure.** At the triple junction of {numref}`F17_circuit_closure`, the transform rates are $_{B}\mathbf{v}_{A} = 4$ and $_{A}\mathbf{v}_{C} = 3$ at right angles. Confirm that the convergence rate across the trench is $5$, and state in one sentence why subduction polarity cannot be determined from these vectors alone. (Full working in `notebooks/plate_motion_vectors.ipynb`.)
 ```

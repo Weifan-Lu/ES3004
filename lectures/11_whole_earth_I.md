@@ -1,7 +1,7 @@
 # Whole Earth Structure I
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Understand the layered structure of the Earth (crust, mantle, core)
 - Use seismic travel times to infer deep structure
 - Introduce major seismic discontinuities

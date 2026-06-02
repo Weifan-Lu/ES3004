@@ -1,0 +1,89 @@
+Unverifiable DOIs — ESS 314 Lectures (audit completed 2026-06-01)
+=================================================================
+These DOIs could not be verified after automated CrossRef + doi.org resolution checks.
+Each citation has been flagged inline in the lecture file with *(⚠ ...)*.
+
+STATUS KEY:
+  WRONG  = DOI resolves but leads to a completely different paper
+  DEAD   = DOI returns HTTP 404 everywhere
+  ERRAT  = DOI resolves to the Erratum, not the original article
+
+--------------------------------------------------------------------
+FILE: lectures/02_what_is_geophysics.md
+--------------------------------------------------------------------
+WRONG  10.1029/2023JB027856
+       Lehmann, F. et al. (2024). Uncertainty quantification for full waveform
+       inversion with neural operators. JGR Solid Earth 129.
+       [DOI currently resolves to: Savage 2024, rotation of microplates in SW US]
+
+DEAD   10.1029/2022JB024690
+       Fichtner, A. et al. (2022). Fiber-optic observations for tomography.
+       JGR Solid Earth 127.
+
+--------------------------------------------------------------------
+FILE: lectures/03_seismic_waves_basics.md
+--------------------------------------------------------------------
+DEAD   10.1146/annurev-earth-071522-122118
+       Bodin, T. et al. (2023). Seismic anisotropy / waveform modeling.
+       Annual Review of Earth and Planetary Sciences.
+
+WRONG  10.1093/gji/ggad186
+       Viens, L. et al. (2023). Retrieving near-surface VS structure from
+       ambient noise recorded on urban DAS arrays. GJI 235(1).
+       [DOI currently resolves to: González et al. 2023, "Acoustic signature of
+       impermeable barriers in porous media", GJI 234(3):2095–2113]
+
+--------------------------------------------------------------------
+FILE: lectures/04_seismic_wave_types.md
+--------------------------------------------------------------------
+DEAD   10.1038/s43017-022-00374-y
+       Brenguier, F. et al. (2023). Noise-based monitoring of volcanoes and
+       faults. Nature Reviews Earth & Environment 4, 312–326.
+
+--------------------------------------------------------------------
+FILE: lectures/05_wavefronts_rays.md
+--------------------------------------------------------------------
+DEAD   10.1029/2023RG000801
+       Fichtner, A. et al. (2024). Full-waveform inversion and adjoint
+       tomography. Reviews of Geophysics.
+
+--------------------------------------------------------------------
+FILE: lectures/06_seismic_refraction_I.md
+--------------------------------------------------------------------
+DEAD   10.1190/geo2022-0286.1
+       Yuan et al. (2023). Machine-learning first-break picking on DAS data.
+       Geophysics.
+
+--------------------------------------------------------------------
+FILE: lectures/09_seismic_reflections_I.md
+--------------------------------------------------------------------
+ERRAT  10.1111/1365-2478.13095
+       Birnie, C. et al. (2021). Analysis and application of unsupervised deep
+       learning for seismic noise attenuation. Geophysical Prospecting 69(8).
+       [DOI resolves to the 2021 Erratum in GP 69(5):1138–1143, not the article]
+
+--------------------------------------------------------------------
+FILE: lectures/19_earths_gravity.md
+--------------------------------------------------------------------
+DEAD   10.1007/s10712-023-09765-0
+       Pail, R., Bingham, R., Braitenberg, C. et al. (2023). Recent advances
+       in the static gravity field modelling. Surveys in Geophysics 44, 1453–1517.
+
+--------------------------------------------------------------------
+FILE: lectures/20_gravity_anomalies.md
+--------------------------------------------------------------------
+DEAD   10.1016/j.epsl.2022.117602
+       Steinberger, B. et al. (2022). On the relation between long-wavelength
+       geoid, density, and dynamic topography. EPSL 591, 117602.
+
+--------------------------------------------------------------------
+SEARCH STRATEGIES ALREADY EXHAUSTED (no correct DOI found):
+  - CrossRef title + author filtered queries
+  - doi.org brute-force of adjacent handle ranges
+  - GJI handle scan ggad184–ggad320
+  - JGR handle scans around each broken handle
+  - EPSL article-number scan 117580–117615
+  - NatRevEE handle scan s43017-022-003xx-y
+  - Springer SurvGeophys scan around 09765
+  - SEG Geophysics scan geo2022-0280 to geo2022-0295
+--------------------------------------------------------------------

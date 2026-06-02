@@ -102,7 +102,7 @@ The same source emits P, S, and surface waves at the same instant. The reason di
 ## 3. The mathematical framework: travel times as a forward operator
 
 ```{admonition} Notation
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|

@@ -123,7 +123,7 @@ The physical reason for two distinct wave types traces back to the two independe
 ### 3.1 Notation
 
 :::{admonition} Notation
-:class: note
+:class: note dropdown
 | Symbol | Quantity | Units | Type |
 |--------|----------|-------|------|
 | $\mathbf{u}$ | Displacement vector | m | vector |
@@ -394,9 +394,9 @@ This Poisson's ratio is extremely close to the incompressible limit of 0.5. The 
 
 **Distributed Acoustic Sensing (DAS) and urban surface wave tomography.** DAS converts fiber-optic telecommunication cables into dense seismic arrays with channel spacing of a few meters over tens of kilometers. Cheng et al. (2023, *JGR: Solid Earth*, doi:10.1029/2023JB026957) used dark fiber in the Imperial Valley (California) to perform ambient-noise surface wave tomography at basin scale, retrieving $V_S$ structure down to several hundred meters with lateral resolution of ~100 m. The physics is the same dispersion analysis described in §3.6 — each frequency samples a different depth through the Rayleigh wave sensitivity kernel — but the data density from DAS is orders of magnitude beyond conventional seismometer networks. Emily Wilbur, the TA for this course, uses DAS in her own research on shallow structure in the Pacific Northwest.
 
-**Machine-learning seismic phase identification.** Deep-learning models such as PhaseNet and EQTransformer now achieve near-human accuracy in automatically identifying P- and S-wave arrivals on continuous seismic records. These models exploit the same physical differences described in §3.2: P-waves produce primarily vertical motion with higher-frequency content, while S-waves produce stronger horizontal motion at lower frequencies. Münchmeyer et al. (2022, *Seismological Research Letters*, doi:10.1785/0220210324) benchmarked seven such models on a common dataset and found that transformer-based architectures achieve the best generalization across different tectonic settings. The relevance for this course: the physics that distinguishes wave types is the same physics embedded (implicitly) in the training data of these models.
+**Machine-learning seismic phase identification.** Deep-learning models such as PhaseNet and EQTransformer now achieve near-human accuracy in automatically identifying P- and S-wave arrivals on continuous seismic records. These models exploit the same physical differences described in §3.2: P-waves produce primarily vertical motion with higher-frequency content, while S-waves produce stronger horizontal motion at lower frequencies. Münchmeyer et al. (2022, *Journal of Geophysical Research: Solid Earth*, doi:10.1029/2021JB023499) benchmarked seven such models on a common dataset and found that transformer-based architectures achieve the best generalization across different tectonic settings. The relevance for this course: the physics that distinguishes wave types is the same physics embedded (implicitly) in the training data of these models.
 
-**Vp/Vs monitoring for volcanic unrest.** Temporal changes in $V_P/V_S$ beneath active volcanoes serve as precursors to eruption. An increase in $V_P/V_S$ can indicate rising pore fluid pressure or the arrival of new melt into a magma reservoir — both increase $V_P/V_S$ by the mechanisms described in §3.4. Brenguier et al. (2023, *Nature Reviews Earth & Environment*, doi:10.1038/s43017-022-00374-y) reviewed how ambient noise monitoring recovers temporal velocity changes at sub-percent precision, enabling detection of pre-eruptive inflation. The same $\mu = 0$ physics that prevents S-waves from entering the outer core also produces anomalously high $V_P/V_S$ in partially molten zones beneath volcanoes.
+**Vp/Vs monitoring for volcanic unrest.** Temporal changes in $V_P/V_S$ beneath active volcanoes serve as precursors to eruption. An increase in $V_P/V_S$ can indicate rising pore fluid pressure or the arrival of new melt into a magma reservoir — both increase $V_P/V_S$ by the mechanisms described in §3.4. Brenguier et al. (2023, *Nature Reviews Earth & Environment*, doi:10.1038/s43017-022-00374-y *(⚠ DOI returns 404 — verify manually)*) reviewed how ambient noise monitoring recovers temporal velocity changes at sub-percent precision, enabling detection of pre-eruptive inflation. The same $\mu = 0$ physics that prevents S-waves from entering the outer core also produces anomalously high $V_P/V_S$ in partially molten zones beneath volcanoes.
 
 *For students interested in this area:* The IRIS SSBW (Seismology Skill Building Workshop) covers hands-on phase picking and surface wave analysis with ObsPy each summer. See `iris.edu/hq/workshops`.
 :::
@@ -462,8 +462,8 @@ Evaluate: In a homogeneous half-space, yes ($V_R \approx 0.92\,V_S$). But in a l
 - **IRIS EarthScope Seismic Wave Animations.** P-wave, S-wave, Rayleigh, Love — interactive animations with CC BY license. URL: iris.edu/hq/inclass/animation/seismic_wave_motions4_waves_animated
 - **Braile, L.W.** (2009). Seismic Waves and the Slinky. IRIS educational resource, CC BY. URL: iris.edu/hq/cd_fall_2009/files/materials/Educational%20Resources/slinky4.pdf
 - **Cheng, F. et al.** (2023). High-resolution near-surface imaging at the basin scale using dark fiber and distributed acoustic sensing. *JGR: Solid Earth*, 128(9). DOI: 10.1029/2023JB026957
-- **Münchmeyer, J. et al.** (2022). Which picker fits my data? A quantitative evaluation of deep learning based seismic pickers. *Seismological Research Letters*, 93(3), 1455–1473. DOI: 10.1785/0220210324
-- **Brenguier, F. et al.** (2023). Noise-based monitoring of volcanoes and faults. *Nature Reviews Earth & Environment*, 4, 312–326. DOI: 10.1038/s43017-022-00374-y
+- **Münchmeyer, J. et al.** (2022). Which picker fits my data? A quantitative evaluation of deep learning based seismic pickers. *Journal of Geophysical Research: Solid Earth*, 127(1). DOI: 10.1029/2021JB023499
+- **Brenguier, F. et al.** (2023). Noise-based monitoring of volcanoes and faults. *Nature Reviews Earth & Environment*, 4, 312–326. DOI: 10.1038/s43017-022-00374-y *(⚠ DOI returns 404 — verify manually)*
 
 ## References
 
@@ -512,12 +512,11 @@ Evaluate: In a homogeneous half-space, yes ($V_R \approx 0.92\,V_S$). But in a l
 @article{munchmeyer2022,
   author  = {M{\"u}nchmeyer, J. and others},
   title   = {Which Picker Fits My Data? A Quantitative Evaluation of Deep Learning Based Seismic Pickers},
-  journal = {Seismological Research Letters},
-  volume  = {93},
-  number  = {3},
-  pages   = {1455--1473},
+  journal = {Journal of Geophysical Research: Solid Earth},
+  volume  = {127},
+  number  = {1},
   year    = {2022},
-  doi     = {10.1785/0220210324}
+  doi     = {10.1029/2021JB023499}
 }
 
 @article{brenguier2023,
@@ -527,6 +526,6 @@ Evaluate: In a homogeneous half-space, yes ($V_R \approx 0.92\,V_S$). But in a l
   volume  = {4},
   pages   = {312--326},
   year    = {2023},
-  doi     = {10.1038/s43017-022-00374-y}
+  doi     = {10.1038/s43017-022-00374-y} % ⚠ DOI returns 404 — verify manually
 }
 ```

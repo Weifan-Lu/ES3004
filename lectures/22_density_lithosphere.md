@@ -1,7 +1,7 @@
 # Density, Isostasy, and the Lithosphere
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Understand density structure of the lithosphere
 - Link isostasy to plate tectonics
 - Lithospheric strength and flexure

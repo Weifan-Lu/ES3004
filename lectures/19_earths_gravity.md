@@ -115,7 +115,7 @@ The acceleration $\mathbf{g}(\mathbf{r})$ is defined at every point in space, no
 ## 3. Mathematical Framework
 
 ```{admonition} Notation used throughout this lecture
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|
@@ -312,7 +312,7 @@ Three open-access threads connect this lecture to current research.
 
 The **GRACE-FO** mission (NASA / GFZ), launched in 2018, measures the time-varying global gravity field by tracking the separation between two co-orbiting satellites to the precision of a fraction of a micrometre. The mission is the primary instrument for measuring ice-sheet mass loss in Greenland and Antarctica, terrestrial water storage anomalies, and post-seismic deformation of large megathrust earthquakes. For a recent open-access summary of the mission's contribution to climate science, see Tapley *et al.* (2019, *Nature Climate Change* 9, 358–369; <https://doi.org/10.1038/s41558-019-0456-2>).
 
-A 2023 review by Pail *et al.* in *Surveys in Geophysics* (open access, <https://doi.org/10.1007/s10712-023-09765-0>) synthesises the present state of static gravity-field modelling from satellite, airborne, and terrestrial data, and identifies the centimetre-level geoid as a near-term goal.
+A 2023 review by Pail *et al.* in *Surveys in Geophysics* (open access, <https://doi.org/10.1007/s10712-023-09765-0> *(⚠ DOI returns 404 — verify manually)*) synthesises the present state of static gravity-field modelling from satellite, airborne, and terrestrial data, and identifies the centimetre-level geoid as a near-term goal.
 
 A 2024 paper by Cleves *et al.* (*Geophysical Research Letters*, open access via author manuscript) demonstrates that gravity-anomaly time series can resolve the migration of fluid pulses associated with slow-slip events along the Cascadia subduction zone. The result connects gravity directly to the subduction-zone earthquake-cycle problem covered in Lecture 18.
 
@@ -343,4 +343,4 @@ For an open-access entry point, see Yu *et al.* (2024), *Earth-Science Reviews* 
 - NASA / JPL GRACE-FO mission overview (public domain): <https://grace.jpl.nasa.gov/>
 - USGS Bouguer-anomaly map of the conterminous United States (public domain): <https://mrdata.usgs.gov/services/gravity>
 - Tapley, B. D. *et al.* (2019). Contributions of GRACE to understanding climate change. *Nature Climate Change* 9, 358–369. <https://doi.org/10.1038/s41558-019-0456-2> (open access).
-- Pail, R., Bingham, R., Braitenberg, C. *et al.* (2023). Recent advances in the static gravity field modelling. *Surveys in Geophysics* 44, 1453–1517. <https://doi.org/10.1007/s10712-023-09765-0> (open access).
+- Pail, R., Bingham, R., Braitenberg, C. *et al.* (2023). Recent advances in the static gravity field modelling. *Surveys in Geophysics* 44, 1453–1517. <https://doi.org/10.1007/s10712-023-09765-0> *(⚠ DOI returns 404 — verify manually)* (open access).

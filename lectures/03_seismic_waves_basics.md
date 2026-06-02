@@ -114,7 +114,7 @@ This decomposition is not merely convenient — it directly maps onto the two fu
 ### 3.1 The Stress Tensor
 
 :::{admonition} Notation
-:class: note
+:class: note dropdown
 | Symbol | Quantity | Units | Type |
 |--------|----------|-------|------|
 | $\mathbf{F}$ | Force vector | N | vector |
@@ -567,11 +567,11 @@ This $\nu \approx 0.49$ is close to the incompressible fluid limit of 0.5. The i
 
 **Machine learning inversion of elastic moduli.** Classical inversion of seismic velocities for $\lambda$, $\mu$, and $\rho$ separately requires combining P-wave and S-wave traveltimes with amplitude information, and the problem is strongly non-unique. Physics-informed neural networks (PINNs) are being used to jointly invert these properties by embedding the wave equation as a constraint in the loss function, allowing the network to enforce physical consistency rather than treating the problem as unconstrained regression. Several 2023–2024 papers demonstrate PINN-based inversion on synthetic and real seismic datasets (see Rasht-Behesht et al., 2022, *JGR Solid Earth*, doi:10.1029/2021JB023120).
 
-**Elastic anisotropy at depth.** The derivation in this lecture assumed isotropy — elastic properties the same in all directions. Real rocks are often anisotropic: olivine crystals in the mantle align under flow, creating directionally dependent wave speeds. Measuring this anisotropy with seismic shear-wave splitting is an active area for constraining mantle flow directions. New waveform modeling tools treat the full anisotropic stiffness tensor (21 independent components instead of 2), which requires everything developed in this lecture plus tensorial generalizations (see Bodin et al., 2023, *Annual Review of Earth and Planetary Sciences*, doi:10.1146/annurev-earth-071522-122118).
+**Elastic anisotropy at depth.** The derivation in this lecture assumed isotropy — elastic properties the same in all directions. Real rocks are often anisotropic: olivine crystals in the mantle align under flow, creating directionally dependent wave speeds. Measuring this anisotropy with seismic shear-wave splitting is an active area for constraining mantle flow directions. New waveform modeling tools treat the full anisotropic stiffness tensor (21 independent components instead of 2), which requires everything developed in this lecture plus tensorial generalizations (see Bodin et al., 2023, *Annual Review of Earth and Planetary Sciences*, doi:10.1146/annurev-earth-071522-122118 *(⚠ DOI returns 404 — verify manually)*).
 
 **Non-destructive testing via elastic wave imaging.** The same equations that govern earthquake wave propagation apply at laboratory scale: ultrasonic P-wave and S-wave speeds in rock cores directly yield $\lambda$, $\mu$, and $\nu$ from {eq}`eq:vp` and {eq}`eq:vs`. Laboratories at EarthScope and UNAVCO provide standardized equipment for this, and the data feed into global databases of rock elastic properties used to calibrate seismic Earth models.
 
-**DAS-based surface wave monitoring of elastic structure.** Distributed Acoustic Sensing (DAS) converts existing fiber-optic cables into dense seismic arrays with sensor spacing of a few meters, enabling retrieval of Rayleigh-wave dispersion curves along thousands of channels simultaneously. Viens et al. (2023, *Geophysical Journal International*, doi:10.1093/gji/ggad186) showed that ambient-noise Rayleigh wave analysis on urban DAS arrays recovers near-surface $V_S$ profiles at centimeter-scale resolution — the same $\mu/\rho$ relationship derived in this lecture. Fukushima et al. (2024, *GJI*, doi:10.1093/gji/ggae103) extended this approach to submarine fiber cables, opening a path to monitoring elastic properties beneath the ocean floor.
+**DAS-based surface wave monitoring of elastic structure.** Distributed Acoustic Sensing (DAS) converts existing fiber-optic cables into dense seismic arrays with sensor spacing of a few meters, enabling retrieval of Rayleigh-wave dispersion curves along thousands of channels simultaneously. Viens et al. (2023, *Geophysical Journal International*, doi:10.1093/gji/ggad186 *(⚠ DOI resolves to a different paper — verify manually)*) showed that ambient-noise Rayleigh wave analysis on urban DAS arrays recovers near-surface $V_S$ profiles at centimeter-scale resolution — the same $\mu/\rho$ relationship derived in this lecture. Fukushima et al. (2024, *GJI*, doi:10.1093/gji/ggae103) extended this approach to submarine fiber cables, opening a path to monitoring elastic properties beneath the ocean floor.
 
 *For students interested in this area:* The IRIS SSBW (Seismology Skill Building Workshop) covers hands-on velocity inversion with ObsPy each summer — a natural entry point using the physics from today's lecture. See `iris.edu/hq/workshops`.
 :::
@@ -661,7 +661,7 @@ Evaluate: Does the AI explain that S-waves involve only shear distortion (no vol
 - **MIT OCW 12.510** (2010). Introduction to Seismology, Lectures 2–3: Elastic stiffness tensor, isotropic Hooke's law, 1D wave equation. CC BY NC SA. URL: ocw.mit.edu/courses/12-510-introduction-to-seismology-spring-2010
 - **Rasht-Behesht, M. et al.** (2022). Physics-Informed Neural Networks (PINNs) for Wave Propagation and Full Waveform Inversions. *Journal of Geophysical Research: Solid Earth*, 127(2). DOI: 10.1029/2021JB023120
 - **USGS Earthquake Hazards Program.** Seismic hazard maps and site amplification. Public domain. URL: earthquake.usgs.gov/hazards/hazmaps
-- **Viens, L. et al.** (2023). Retrieving near-surface $V_S$ structure from ambient noise recorded on urban DAS arrays. *Geophysical Journal International*, 235(1). DOI: 10.1093/gji/ggad186
+- **Viens, L. et al.** (2023). Retrieving near-surface $V_S$ structure from ambient noise recorded on urban DAS arrays. *Geophysical Journal International*, 235(1). DOI: 10.1093/gji/ggad186 *(⚠ DOI resolves to a different paper — verify manually)*
 - **Fukushima, Y. et al.** (2024). Seismic velocity structure derived from DAS observations on submarine fiber-optic cables. *Geophysical Journal International*. DOI: 10.1093/gji/ggae103
 
 ## References

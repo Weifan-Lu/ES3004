@@ -205,7 +205,7 @@ larger than $H$. Reproduces the geometry of legacy slide 39.
 ```
 
 ```{admonition} Notation
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|

@@ -289,7 +289,7 @@ Identify one statement that is correct and well-supported, and one statement tha
 
 - Lowrie, W. & Fichtner, A. (2020). *Fundamentals of Geophysics*, 3rd ed. Cambridge University Press. DOI: [10.1017/9781108685917](https://doi.org/10.1017/9781108685917). Ch. 1–2. *(Free via UW Libraries)*
 - MIT OpenCourseWare 12.201. [ocw.mit.edu/courses/12-201-essentials-of-geophysics-fall-2004](https://ocw.mit.edu/courses/12-201-essentials-of-geophysics-fall-2004). CC BY NC SA.
-- Lehmann, F. et al. (2024). Uncertainty quantification for full waveform inversion with neural operators. *JGR Solid Earth*, 129. DOI: [10.1029/2023JB027856](https://doi.org/10.1029/2023JB027856). *(Open access)*
-- Fichtner, A. et al. (2022). Fiber-optic observations for tomography. *JGR Solid Earth*, 127. DOI: [10.1029/2022JB024690](https://doi.org/10.1029/2022JB024690). *(Open access)*
+- Lehmann, F. et al. (2024). Uncertainty quantification for full waveform inversion with neural operators. *JGR Solid Earth*, 129. DOI: 10.1029/2023JB027856 *(⚠ DOI resolves to a different paper — verify manually)*
+- Fichtner, A. et al. (2022). Fiber-optic observations for tomography. *JGR Solid Earth*, 127. DOI: 10.1029/2022JB024690 *(⚠ DOI returns 404 — verify manually)*
 - SPECFEM3D open-source seismic wave propagation code. [github.com/geodynamics/specfem3d](https://github.com/geodynamics/specfem3d). *(Open source)*
 - IRIS FDSN data services. [ds.iris.edu](https://ds.iris.edu). *(Open data)*

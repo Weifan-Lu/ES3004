@@ -1,7 +1,7 @@
 # Plate Tectonics: Transform Faults and Intraplate Processes
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Understand transform fault geometry and seismicity
 - Intraplate volcanism and hotspots
 - Plate motion models and reference frames

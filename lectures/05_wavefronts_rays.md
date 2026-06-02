@@ -109,7 +109,7 @@ In a medium where velocity increases to the right, the right side of the wavefro
 ### 3.1 Notation
 
 :::{admonition} Notation
-:class: note
+:class: note dropdown
 | Symbol | Quantity | Units | Type |
 |--------|----------|-------|------|
 | $\theta_1$ | Angle of incidence (from interface normal) | rad or ° | scalar |
@@ -455,9 +455,9 @@ A mirage on a hot road is exactly the same physics as a seismic wave turning in 
 :::{admonition} Current Research Highlights (2022–2025)
 :class: seealso
 
-**Ambient noise tomography: from ray theory to full-waveform.** Classical ray-based tomography uses Snell's law to trace rays through a velocity model and inverts travel times for velocity perturbations. This is the direct application of the physics in this lecture. Modern ambient noise tomography goes beyond rays: full-waveform adjoint methods solve the complete wave equation and compute sensitivity kernels that replace the infinitely thin ray with a finite-width "banana-doughnut" zone. Fichtner et al. (2024, *Reviews of Geophysics*, doi:10.1029/2023RG000801) review how full-waveform methods improve resolution at the cost of much greater computation.
+**Ambient noise tomography: from ray theory to full-waveform.** Classical ray-based tomography uses Snell's law to trace rays through a velocity model and inverts travel times for velocity perturbations. This is the direct application of the physics in this lecture. Modern ambient noise tomography goes beyond rays: full-waveform adjoint methods solve the complete wave equation and compute sensitivity kernels that replace the infinitely thin ray with a finite-width "banana-doughnut" zone. Fichtner et al. (2024, *Reviews of Geophysics*, doi:10.1029/2023RG000801 *(⚠ DOI returns 404 — verify manually)*) review how full-waveform methods improve resolution at the cost of much greater computation.
 
-**DAS and ray bending in shallow urban environments.** Distributed Acoustic Sensing arrays in urban boreholes detect refracted arrivals from shallow velocity contrasts (e.g., fill over bedrock). The ray bending described by Snell's law is directly observed in the DAS data: the arrival angle of the refracted wave changes systematically along the fiber, mapping the interface geometry. Ajo-Franklin et al. (2019, *Scientific Reports*, doi:10.1038/s41598-018-36675-6) demonstrated this on a dark-fiber DAS array in Sacramento, resolving the depth to basement rock along 20 km of urban fiber.
+**DAS and ray bending in shallow urban environments.** Distributed Acoustic Sensing arrays in urban boreholes detect refracted arrivals from shallow velocity contrasts (e.g., fill over bedrock). The ray bending described by Snell's law is directly observed in the DAS data: the arrival angle of the refracted wave changes systematically along the fiber, mapping the interface geometry. Ajo-Franklin et al. (2019, *Scientific Reports*, doi:10.1038/s41598-018-36675-8) demonstrated this on a dark-fiber DAS array in Sacramento, resolving the depth to basement rock along 20 km of urban fiber.
 
 **Seismic tomography of the Cascadia subduction zone.** The Juan de Fuca plate subducting beneath the Pacific Northwest produces strong velocity contrasts that bend seismic rays dramatically. Travel-time tomography using Snell's law–based ray tracing has mapped the slab geometry to 300+ km depth. The iMUSH experiment (Imaging Magma Under St. Helens) combined teleseismic rays, ambient noise surface waves, and active-source refraction to produce one of the highest-resolution images of a subduction zone on Earth (Kiser et al., 2016, *Geology*; recent updates in Schmandt et al., 2024, *Geochemistry, Geophysics, Geosystems*).
 
@@ -527,8 +527,8 @@ Evaluate: Turning depth at $V = 1/p = 6667$ m/s. Takeoff angle: $\sin\theta_0 = 
 - **MIT OCW 12.201** (Van Der Hilst, 2004). Essentials of Geophysics §4.13–4.15: Snell's Law, Fermat's Principle, Ray Geometries. CC BY NC SA. URL: ocw.mit.edu/courses/12-201-essentials-of-geophysics-fall-2004
 - **MIT OCW 12.510** (2010). Introduction to Seismology, Lectures 3–4: Ray theory, Snell's law in anisotropic media. CC BY NC SA. URL: ocw.mit.edu/courses/12-510-introduction-to-seismology-spring-2010
 - **IRIS EarthScope Seismic Waves Tool.** Interactive wavefront and ray-path visualization. CC BY. URL: iris.edu/app/swaves
-- **Ajo-Franklin, J. B. et al.** (2019). Distributed Acoustic Sensing Using Dark Fiber for Near-Surface Characterization and Broadband Seismic Event Detection. *Scientific Reports*, 9, 1328. DOI: 10.1038/s41598-018-36675-6
-- **Fichtner, A. et al.** (2024). Full-waveform inversion and adjoint tomography. *Reviews of Geophysics*. DOI: 10.1029/2023RG000801
+- **Ajo-Franklin, J. B. et al.** (2019). Distributed Acoustic Sensing Using Dark Fiber for Near-Surface Characterization and Broadband Seismic Event Detection. *Scientific Reports*, 9, 1328. DOI: 10.1038/s41598-018-36675-8
+- **Fichtner, A. et al.** (2024). Full-waveform inversion and adjoint tomography. *Reviews of Geophysics*. DOI: 10.1029/2023RG000801 *(⚠ DOI returns 404 — verify manually)*
 
 ## References
 
@@ -557,7 +557,7 @@ Evaluate: Turning depth at $V = 1/p = 6667$ m/s. Takeoff angle: $\sin\theta_0 = 
   volume  = {9},
   pages   = {1328},
   year    = {2019},
-  doi     = {10.1038/s41598-018-36675-6}
+  doi     = {10.1038/s41598-018-36675-8}
 }
 
 @article{fichtner2024,
@@ -565,6 +565,6 @@ Evaluate: Turning depth at $V = 1/p = 6667$ m/s. Takeoff angle: $\sin\theta_0 = 
   title   = {Full-waveform inversion and adjoint tomography},
   journal = {Reviews of Geophysics},
   year    = {2024},
-  doi     = {10.1029/2023RG000801}
+  doi     = {10.1029/2023RG000801} % ⚠ DOI returns 404 — verify manually
 }
 ```

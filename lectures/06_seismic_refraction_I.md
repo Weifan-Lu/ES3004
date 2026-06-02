@@ -103,7 +103,7 @@ At the introductory scale, seismic refraction equipment is simple and portable. 
 ### 3.1 Notation
 
 :::{admonition} Notation
-:class: note
+:class: note dropdown
 | Symbol | Quantity | Units | Type |
 |--------|----------|-------|------|
 | $V_1$ | P-wave velocity in layer 1 (surface layer) | m/s | scalar |
@@ -410,11 +410,11 @@ The water table is at 2.2 m depth. The dramatic velocity increase (350 → 1500 
 :::{admonition} Current Research Highlights (2022–2025)
 :class: seealso
 
-**DAS-based refraction surveys for shallow structure.** Distributed Acoustic Sensing (DAS) is transforming refraction surveying. A single fiber-optic cable replaces hundreds of geophones, with channel spacing of 1–2 m over kilometers of profile. Ajo-Franklin et al. (2019, *Scientific Reports*, doi:10.1038/s41598-018-36675-6) demonstrated that dark-fiber DAS arrays in urban Sacramento detected refraction arrivals from shallow velocity contrasts invisible to conventional geophone arrays. The head-wave slopes on the DAS shot gathers are interpreted using exactly the equations from §3.3 — but with orders-of-magnitude more spatial sampling.
+**DAS-based refraction surveys for shallow structure.** Distributed Acoustic Sensing (DAS) is transforming refraction surveying. A single fiber-optic cable replaces hundreds of geophones, with channel spacing of 1–2 m over kilometers of profile. Ajo-Franklin et al. (2019, *Scientific Reports*, doi:10.1038/s41598-018-36675-8) demonstrated that dark-fiber DAS arrays in urban Sacramento detected refraction arrivals from shallow velocity contrasts invisible to conventional geophone arrays. The head-wave slopes on the DAS shot gathers are interpreted using exactly the equations from §3.3 — but with orders-of-magnitude more spatial sampling.
 
 **Ambient noise refraction.** Classical refraction requires an active source. Emerging methods extract refraction-like arrivals from ambient seismic noise correlations, enabling passive refraction surveys in environments where active sources are impractical (urban areas, environmentally sensitive sites). Nakata et al. (2015, *Geophysics*, doi:10.1190/geo2014-0223.1) showed that noise-based body wave retrieval recovers head-wave arrivals consistent with active-source results.
 
-**Machine learning first-break picking.** The rate-limiting step in refraction processing is picking the first arrival on each trace. Deep-learning models trained on thousands of labeled shot gathers now automate this step with sub-millisecond precision, dramatically accelerating the workflow from field data to velocity model (Yuan et al., 2023, *Geophysics*, doi:10.1190/geo2022-0286.1).
+**Machine learning first-break picking.** The rate-limiting step in refraction processing is picking the first arrival on each trace. Deep-learning models trained on thousands of labeled shot gathers now automate this step with sub-millisecond precision, dramatically accelerating the workflow from field data to velocity model (Yuan et al., 2023, *Geophysics*, doi:10.1190/geo2022-0286.1 *(⚠ DOI returns 404 — verify manually)*).
 
 *Student entry point:* The IRIS "Determining Shallow Earth Structure" activity (CC BY) provides real refraction data for classroom inversion: `iris.edu/hq/inclass/lesson/determining_shallow_earth_structure`.
 :::
@@ -478,7 +478,7 @@ Evaluate: A low-velocity layer produces no head wave (no critical refraction fro
 - **MIT OCW 12.510** (2010). Introduction to Seismology, Lecture 6: Travel-time curves for layered models. CC BY NC SA. URL: ocw.mit.edu/courses/12-510-introduction-to-seismology-spring-2010
 - **IRIS EarthScope.** Seismic Wave Behavior animations: single boundary, critically refracted rays, direct vs. refracted. CC BY. URL: iris.edu/hq/inclass/animation
 - **IRIS EarthScope.** Determining Shallow Earth Structure — classroom activity with real refraction data. CC BY. URL: iris.edu/hq/inclass/lesson/determining_shallow_earth_structure
-- **Ajo-Franklin, J. B. et al.** (2019). Distributed Acoustic Sensing Using Dark Fiber for Near-Surface Characterization and Broadband Seismic Event Detection. *Scientific Reports*, 9, 1328. DOI: 10.1038/s41598-018-36675-6
+- **Ajo-Franklin, J. B. et al.** (2019). Distributed Acoustic Sensing Using Dark Fiber for Near-Surface Characterization and Broadband Seismic Event Detection. *Scientific Reports*, 9, 1328. DOI: 10.1038/s41598-018-36675-8
 
 ## References
 
@@ -506,6 +506,6 @@ Evaluate: A low-velocity layer produces no head wave (no critical refraction fro
   volume  = {9},
   pages   = {1328},
   year    = {2019},
-  doi     = {10.1038/s41598-018-36675-6}
+  doi     = {10.1038/s41598-018-36675-8}
 }
 ```

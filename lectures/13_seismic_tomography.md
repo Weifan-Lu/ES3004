@@ -1,7 +1,7 @@
 # Seismic Tomography
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Understand the principles of seismic tomography
 - Relate velocity anomalies to temperature and composition
 - Interpret tomographic images of Earth's interior

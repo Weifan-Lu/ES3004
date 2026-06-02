@@ -438,7 +438,7 @@ Document: (a) what the AI identified correctly; (b) what the AI failed to flag a
 1. Lowrie, W. & Fichtner, A. (2020). *Fundamentals of Geophysics*, 3rd ed. Ch. 6, §6.5. [Free via UW Libraries]
 2. Shuey, R.T. (1985). A simplification of the Zoeppritz equations. *Geophysics*, 50(4), 609–614. [doi:10.1190/1.1441936](https://doi.org/10.1190/1.1441936)
 3. Rutherford, S.R. & Williams, R.H. (1989). Amplitude-versus-offset variations in gas sands. *Geophysics*, 54(6), 680–688. [doi:10.1190/1.1442696](https://doi.org/10.1190/1.1442696)
-4. Birnie, C. et al. (2021). Analysis and application of unsupervised deep learning for seismic noise attenuation. *Geophysical Prospecting*, 69(8). [doi:10.1111/1365-2478.13095](https://doi.org/10.1111/1365-2478.13095)
+4. Birnie, C. et al. (2021). Analysis and application of unsupervised deep learning for seismic noise attenuation. *Geophysical Prospecting*, 69(8). doi:10.1111/1365-2478.13095 *(⚠ this DOI leads to the 2021 Erratum, not the original article — verify manually)*
 5. Haeni, F.P. (1988). USGS Open-File Report 88-296. [Public domain]
 
 ```{bibliography}

@@ -279,7 +279,7 @@ factors approaching 50 and selectively destroyed mid-rise buildings,
 is the canonical illustration.
 
 ```{admonition} Notation
-:class: note
+:class: note dropdown
 
 | Symbol | Meaning | Units |
 |---|---|---|

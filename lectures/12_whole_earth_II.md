@@ -1,7 +1,7 @@
 # Whole Earth Structure II
 
 ```{admonition} Learning Objectives
-:class: tip
+:class: tip dropdown
 - Explore the inner and outer core
 - The D'' layer and lower mantle
 - Free oscillations and normal modes
