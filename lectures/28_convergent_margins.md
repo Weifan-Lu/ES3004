@@ -85,7 +85,7 @@ The boundary between the descending slab (**I**) and the overriding plate (**G**
 
 Its behaviour is governed by how strongly the two plates are mechanically locked, or *coupled*, across the interface.
 
-Where the megathrust is strongly coupled, the plates lock during the interseismic period, strain accumulates in the overriding plate, and that strain is released suddenly in great earthquakes. Where the megathrust is weakly coupled, the plates slide past one another more aseismically, and little strain accumulates to be released seismically. The degree of coupling is not a fixed property of a margin; it varies with depth along the interface (developed in §4) and along strike, and it depends on temperature, fluid pressure (derived in part from slab dehydration at **H**), and the physical state of the material caught in the fault zone.
+Where the megathrust is strongly coupled, the plates lock during the interseismic period, strain accumulates in the overriding plate, and that strain is released suddenly in great earthquakes. Where the megathrust is weakly coupled, the plates slide past one another more aseismically, and little strain accumulates to be released seismically. The degree of coupling is not a fixed property of a margin; it varies with depth along the interface and along strike, and it depends on temperature, fluid pressure (derived in part from slab dehydration at **H**), and the physical state of the material caught in the fault zone.
 
 ### 2.3 Two end-member modes
 
@@ -105,7 +105,7 @@ The Chilean end-member has a young, buoyant slab (**I**), a shallow dip, strong 
 
 The Chilean–Mariana continuum tracks a second, more concrete distinction: the nature of the *overriding* plate. Only oceanic lithosphere subducts readily, so the subducting plate is oceanic in every case; what differs is what sits above it.
 
-In **intra-oceanic** (ocean–ocean) subduction, the overriding plate is also oceanic — thin, dense, and mechanically weak. These margins tend toward the Mariana end-member: a steep slab, weak coupling, trench rollback, and back-arc spreading, with volcanic *island* arcs built on oceanic crust (the Mariana, Tonga–Kermadec, Izu–Bonin, and Lesser Antilles arcs). In **ocean–continent** subduction, the overriding plate is continental — thick, buoyant, and strong — and the margin tends toward the Chilean end-member: a shallower slab, stronger coupling, back-arc shortening, and tall *continental* (Andean-type) arcs whose magmas are more evolved from their passage through thick crust (the Andes, Cascadia, Sumatra). The overriding-plate type therefore sets arc character, the style of back-arc deformation, and — through coupling — much of the great-earthquake behaviour developed in §5. It is also the first step of the broader spectrum taken up in §7: an ocean–continent margin is what a subduction zone becomes just before its ocean runs out.
+In **intra-oceanic** (ocean–ocean) subduction, the overriding plate is also oceanic — thin, dense, and mechanically weak. These margins tend toward the Mariana end-member: a steep slab, weak coupling, trench rollback, and back-arc spreading, with volcanic *island* arcs built on oceanic crust (the Mariana, Tonga–Kermadec, Izu–Bonin, and Lesser Antilles arcs). In **ocean–continent** subduction, the overriding plate is continental — thick, buoyant, and strong — and the margin tends toward the Chilean end-member: a shallower slab, stronger coupling, back-arc shortening, and tall *continental* (Andean-type) arcs whose magmas are more evolved from their passage through thick crust (the Andes, Cascadia, Sumatra). The overriding-plate type therefore sets arc character, the style of back-arc deformation, and — through coupling — much of the great-earthquake behaviour. It is also the first step of the broader spectrum taken up in §5: an ocean–continent margin is what a subduction zone becomes just before its ocean runs out.
 
 ---
 
@@ -146,7 +146,7 @@ $$ (eq:thermal-parameter)
 
 with $A$ the incoming-plate age, $v_c$ the convergence rate, and $\delta$ the dip. A large $\Phi$ describes a cold slab that penetrates deep before warming; a small $\Phi$ describes a warm slab that equilibrates shallow. The thermal parameter sets the depth of the deepest earthquakes in a slab and the position of the basalt–eclogite transition, and — through temperature-dependent friction — it influences where on the interface the megathrust can store elastic strain.
 
-The thermal parameter is the quantitative heart of the *classic* expectation: large $\Phi$ (old, fast, steep) was supposed to mean strong coupling and great earthquakes. Keep {eq}`eq:thermal-parameter` in mind through §5, where the observed maximum magnitudes are compared against it.
+The thermal parameter is the quantitative heart of the *classic* expectation: large $\Phi$ (old, fast, steep) was supposed to mean strong coupling and great earthquakes. Keep {eq}`eq:thermal-parameter` in mind; the following sections connect it to real margins.
 
 ### 3.3 Seismic moment and the geometry of rupture
 
@@ -176,63 +176,17 @@ A wide, long, strongly locked seismogenic zone produces great earthquakes regard
 
 ---
 
-## 4. The Forward Problem: Predicting Rupture Behaviour with Depth
+## 4. Worked Example: Classifying Three Margins
 
-The forward problem in subduction seismology is to predict, from the structure of a margin, how the megathrust will behave — where it locks, where it slips aseismically, and what kind of earthquake each part can produce. {cite:t}`Lay2012` synthesized the rupture behaviour of recent great earthquakes into a model of four depth-varying domains along the interface ({numref}`SF4_rupture_domains`), and this model organizes the connection between structure and hazard.
-
-```{figure} ../assets/figures/SF4_rupture_domains.png
-:name: SF4_rupture_domains
-:alt: Cross-section of a subduction megathrust from the trench downdip, with the interface coloured into four domains by depth. Domain A from the trench to 15 km depth (green) is the near-trench domain of tsunami earthquakes and stable sliding, with a blue arrow at the trench showing seafloor uplift driving a tsunami. Domain B from 15 to 35 km (orange) is the central domain of large slip. Domain C from 35 to 55 km (vermillion) is the downdip domain of strong ground motion. Domain D (pink dashed) is a deeper transitional zone of slow slip, tremor, and low-frequency earthquakes.
-:width: 100%
-
-The four depth-varying rupture domains of a subduction megathrust {cite:p}`Lay2012`. **Domain A** (trench to $\sim 15$ km): the near-trench domain, where tsunami earthquakes, anelastic deformation, and stable sliding occur, and where the largest *seafloor* slip — and therefore the dominant tsunami source — is generated. **Domain B** ($\sim 15$–$35$ km): the central domain of large coseismic slip with modest short-period radiation; the core of great ruptures. **Domain C** ($\sim 35$–$55$ km): the downdip domain of isolated patches that radiate strong, coherent short-period energy, the dominant source of damaging strong ground motion. **Domain D**: a transitional domain, present mainly where a young, warm slab subducts at shallow dip, hosting slow-slip events, tremor, and low-frequency earthquakes. Produced by ``assets/scripts/fig_28_rupture_domains.py``.
-```
-
-The domains carry the lecture's central hazard message. The tsunami threat is largest from shallow slip in domain A, near the trench, where the seafloor is displaced directly upward; the strong-ground-motion threat is largest from domain C, downdip and closer to land. The shallow updip domain has its own distinctive hazard signature: because its weak, fluid-rich, low-rigidity materials radiate seismic energy inefficiently, an event confined to it can slip a great deal yet shake weakly — a *tsunami earthquake*, producing a tsunami far larger than its magnitude would suggest. The 2010 $M\,7.8$ Mentawai event, expected to generate a few metres of run-up, produced up to $16$ m {cite:p}`Wirth2022`. A margin's hazard profile therefore depends on which domains it has and how they are distributed, which in turn depends on its structure. A margin that locks all the way to the trench — so that domain A can rupture in a great earthquake rather than creeping — is a margin capable of a large, trench-breaching, strongly tsunamigenic event. The 2011 Tōhoku earthquake was exactly this: rupture propagated into the shallow domain A and produced tens of metres of slip near the trench, generating the devastating tsunami even though the deeper interface had been thought to set the magnitude ceiling.
-
-The forward problem also explains the link between slab structure and the deeper, intermediate-depth seismicity. Earthquakes within the descending slab define the *Wadati–Benioff zone*, a dipping plane of seismicity that traces the slab to depths of several hundred kilometres in cold (large-$\Phi$) slabs and dies out shallow in warm (small-$\Phi$) slabs. The geometry of that zone — and of the locked seismogenic interface above it — is captured globally by the Slab2 model {cite:p}`Hayes2018`, which is the data product behind {numref}`SF1_global_trenches` and the cross-sections of this lecture.
-
----
-
-## 5. The Inverse Problem: Inferring Maximum Magnitude — and Where It Fails
-
-The inverse problem is the one the field cares about most and answers least well: given what can be measured about a margin, infer the largest earthquake it can produce. This is where the classic classification meets the data.
-
-The classic framework reaches first for incoming-plate age and convergence rate. {cite:t}`Wirth2022` test that framework directly, correlating the maximum observed magnitude of the global set of $M \geq 8.5$ segments against eight subduction parameters. {numref}`SF3_parameter_space` reproduces the four most telling comparisons — the two parameters the recipe was built on, and the two that the data actually favour.
+The key empirical result motivating this exercise is that maximum earthquake magnitude correlates with the *geometry* of the seismogenic zone — not with plate age or convergence rate. {cite:t}`Wirth2022` test this directly by comparing the maximum observed $M_w$ of well-constrained margin segments against eight subduction parameters ({numref}`SF3_parameter_space`).
 
 ```{figure} ../assets/figures/SF3_parameter_space.png
 :name: SF3_parameter_space
 :alt: Four scatter panels of maximum moment magnitude versus a subduction parameter, after Wirth et al. 2022 Table 1 and Figure 3. Top row, the dispelled recipe: panel a, subducting-plate age, shows no correlation (Wirth r = 0.05) with the giant M ≥ 9 earthquakes (vermillion stars) scattered across all ages from Cascadia at 7 Ma to Tohoku at 132 Ma; panel b, trench-normal convergence rate in the HS3-NUVEL1A absolute frame, shows no correlation (r = 0.19) with Sumatra a giant at only 3 mm/yr. Bottom row, the geometric controls: panel c, seismogenic-zone width, shows the strongest correlation (r = 0.44) with every giant above 110 km width and dashed thresholds at 75 km (all M ≥ 8.5) and 150 km (all M ≥ 9.2); panel d, downdip curvature, shows the giants clustering at low curvature, the flatter-ruptures-larger result (|r| = 0.42, Bletery 2016).
 :width: 100%
 
-Which parameter controls the maximum earthquake? Maximum observed $M_w$ against four subduction parameters for the well-constrained margin segments of {cite:t}`Wirth2022`, Table 1. **Top row — the recipe the data dispelled. (a)** Plate age: no correlation ($r = 0.05$). The giant ($M \geq 9$) earthquakes (stars) span the full age range — young Cascadia ($7$ Ma), old Tōhoku ($132$ Ma). **(b)** Trench-normal convergence rate (HS3-NUVEL1A absolute frame): no correlation ($r = 0.19$). Sumatra–Andaman is a giant at a trench-normal rate of only $3$ mm/yr. **Bottom row — the geometric controls that hold. (c)** Seismogenic-zone width: the strongest single control ($r = 0.44$). Every giant has a width above $\sim 110$ km; recorded $M \geq 8.5$ events occur only where the width exceeds $75$ km, and $M \geq 9.2$ events only above $150$ km. **(d)** Downdip curvature: the giants cluster at low curvature — flatter megathrusts rupture larger ($|r| = 0.42$; {cite:t}`Bletery2016`). Correlation coefficients are Wirth et al.'s reported Figure 3 values over their full $M \geq 8.5$ data set; the plotted points are the Table 1 segments, so their bare correlation differs slightly. Age, rate, dip, width, and sediment are from the SubMap database ({cite:t}`HeuretLallemand2005`); downdip curvature from {cite:t}`Bletery2016`; $M_w$ from the USGS/Global CMT record. Produced by ``assets/scripts/fig_28_parameter_space.py``.
+Which parameter controls the maximum earthquake? Maximum observed $M_w$ against four subduction parameters for the well-constrained margin segments of {cite:t}`Wirth2022`, Table 1. **Top row — the recipe the data dispelled. (a)** Plate age: no correlation ($r = 0.05$). The giant ($M \geq 9$) earthquakes (stars) span the full age range — young Cascadia ($7$ Ma), old Tōhoku ($132$ Ma). **(b)** Trench-normal convergence rate: no correlation ($r = 0.19$). Sumatra–Andaman is a giant at a trench-normal rate of only $3$ mm/yr. **Bottom row — the geometric controls that hold. (c)** Seismogenic-zone width: the strongest single control ($r = 0.44$). Every giant has a width above $\sim 110$ km. **(d)** Downdip curvature: flatter megathrusts rupture larger ($|r| = 0.42$; {cite:t}`Bletery2016`). Produced by ``assets/scripts/fig_28_parameter_space.py``.
 ```
-
-The figure is the inverse problem's verdict. If maximum magnitude were controlled by plate age or convergence rate, the giant earthquakes would track those parameters. They do not: the top row is flat, and the $M \geq 9$ events span the entire range of both — Chile 1960 (young), Cascadia 1700 (young, slow), Sumatra 2004 (old, near-zero trench-normal rate), Tōhoku 2011 (old, fast). The thermal parameter {eq}`eq:thermal-parameter` that combines age, rate, and dip does no better. What *does* order the magnitudes is the bottom row: the **seismogenic-zone width** (the strongest single control) and the **downdip curvature** of the interface. The conclusion is the one stated in §1 — age and convergence rate do not predict the maximum earthquake a margin can host {cite:p}`Wirth2022` — and it points directly at the controls that do.
-
-What does the modern literature put in their place? The parameters that correlate most strongly with magnitude in {cite:t}`Wirth2022` are *geometric* — the ones that govern how far a rupture can propagate, consistent with the moment scaling of {eq}`eq:seismic-moment`:
-
-1. **Seismogenic-zone width and dip — the strongest single control.** A wider, shallower-dipping locked zone offers a larger downdip rupture dimension $W$. The empirical thresholds are sharp: recorded $M \geq 8.5$ earthquakes occur only where the interface dips less than $\sim 35^\circ$ with a seismogenic width greater than $\sim 75$ km, and $M \geq 9.2$ events only where it dips less than $20^\circ$ with width greater than $150$ km — the widest, flattest megathrusts (the narrow, steeply dipping Aleutian arc being a noted exception). Convergence rate enters here *indirectly*: a faster-subducting slab stays colder to greater depth, pushing the downdip brittle–ductile limit farther from the trench and widening the seismogenic zone.
-2. **Downdip curvature — planarity of the interface.** The largest earthquakes rupture nearly planar megathrusts; "mega-earthquakes rupture flat megathrusts" {cite:p}`Bletery2016`. Low curvature means the shear strength varies smoothly along dip, so the critical stress is exceeded across a broad, continuous area rather than being arrested at a geometric kink. Downdip curvature shows one of the highest correlations with magnitude in the global compilation.
-3. **Secondary controls — sediment, roughness, fluids, upper-plate structure.** A thick, well-consolidated sediment section and a low incoming-plate roughness *smooth* the interface, removing the subducting seamounts and ridges that would otherwise arrest a rupture, and promote a large, homogeneous zone of interseismic coupling. The control is interface *smoothness*, not sediment volume in itself: the $M\,9.1$ Tōhoku margin is sediment-starved yet smooth. Pore-fluid pressure and consolidation state govern whether the shallow interface locks (and can rupture seismically to the trench) or creeps; at Cascadia, along-strike changes in sediment consolidation track along-strike changes in inferred locking {cite:p}`Han2017`.
-
-One caveat accompanies every one of these correlations: the instrumental record (about a century) is far shorter than the earthquake cycle (centuries to millennia), so the statistical power of all of them is low {cite:p}`Wirth2022`. No single parameter is a reliable predictor on its own.
-
-These second-order controls also organize the upper-plate deformation. The deep slab dip — itself related to slab age and buoyancy — governs whether the overriding plate shortens or extends ({numref}`SF5_slabdip_backarc`). That strain regime is in turn correlated with seismic behaviour: margins whose upper plates are *extensional* tend to host fewer great earthquakes, and erosive margins (typically extensional across the marine fore-arc) behave differently from accretionary ones. The correlation is suggestive rather than deterministic — the $M\,9.1$ Sumatra–Andaman rupture extended adjacent to the actively extending Andaman back-arc, a notable counterexample {cite:p}`Wirth2022`.
-
-```{figure} ../assets/figures/SF5_slabdip_backarc.png
-:name: SF5_slabdip_backarc
-:alt: Scatter plot of deep slab dip (5-90 degrees, x-axis) against a back-arc strain index from shortening (negative) through neutral to extension (positive). Steeply dipping margins above about 50 degrees — Mariana, Tonga, Izu-Bonin, Kermadec — plot in the extension field (green). Shallowly dipping margins below about 30 degrees — Peru flat slab, central Chile, Nankai, Cascadia — plot in the shortening field (vermillion). Dashed vertical lines mark the 30 and 50 degree thresholds.
-:width: 100%
-
-Deep slab dip controls the deformation of the overriding plate {cite:p}`Lallemand2005`. Margins with steep deep dip ($> \sim 50^\circ$) tend toward back-arc extension and trench rollback (Mariana, Tonga, Izu–Bonin); margins with shallow deep dip ($< \sim 30^\circ$) tend toward upper-plate shortening (the Andes, the Peru flat slab). The back-arc strain index here is an ordinal teaching simplification; the threshold dips follow {cite:t}`Lallemand2005`. Produced by ``assets/scripts/fig_28_slabdip_backarc.py``.
-```
-
-The honest summary of the inverse problem is that there is no single observable that predicts maximum magnitude. The modern working assumption — and it is a sobering one for hazard assessment — is that essentially any mature subduction megathrust should be regarded as capable of a great, $M \sim 9$ earthquake until specific evidence shows otherwise {cite:p}`Wirth2022`. The 2004 and 2011 events were the proof of that principle, and the Pacific Northwest is the place where it matters most to the people reading this.
-
----
-
-## 6. Worked Example: Classifying Three Margins
 
 The companion notebook ``notebooks/subduction_parameter_space.ipynb`` carries out the full quantitative classification interactively, loading the per-zone table behind {numref}`SF3_parameter_space` and letting the reader reposition any margin and test the correlation. The qualitative version of that exercise, worked here, compares three margins that occupy very different parts of the parameter space yet have all produced — or are expected to produce — great earthquakes.
 
@@ -246,7 +200,7 @@ The three margins make the lesson concrete: Chile fits the old recipe, Mariana b
 
 ---
 
-## 7. The Convergence Spectrum: From Subduction to Collision
+## 5. The Convergence Spectrum: From Subduction to Collision
 
 Subduction is the steady state of a convergent margin, but it is not the whole story. A subduction zone consumes oceanic lithosphere at the rate the plates converge, and oceanic lithosphere is finite. As an ocean closes, the material arriving at the trench becomes progressively more buoyant, and the margin moves along a spectrum from subduction toward collision ({numref}`SF8_convergence_spectrum`). The organizing principle is buoyancy: oceanic lithosphere is dense enough to subduct, but continental crust is too light to be carried deep into the mantle, so when continental material reaches the trench, subduction stalls and the convergence is taken up by deformation instead.
 
@@ -264,23 +218,23 @@ The spectrum of convergent margins, ordered by the buoyancy of the incoming mate
 
 The spectrum reframes this lecture's subject. Subduction zones are the convergent margins that still have ocean to consume; collisional belts are what they become when the ocean is gone. The physics is continuous across the spectrum — buoyancy drives the descending plate, coupling and geometry govern the earthquakes — which is why the same toolkit carries from Cascadia to the Himalaya.
 
-## 8. Course Connections
+## 6. Course Connections
 
 ```{admonition} Where this lecture connects
 :class: seealso
 
 - **L26 §7 (Plate Boundaries and Relative Motion):** This lecture is the convergent case of the kinematic classification. The convergence rate $v_c$ used throughout is the relative-velocity magnitude defined there; the Mendocino triple junction worked in L26 §7.4 places the northern end of the Cascadia margin, and the subduction-polarity point made there is why §2.1 must invoke buoyancy, not kinematics, to say which plate descends.
-- **L04–L07 (Seismic waves):** Wadati–Benioff seismicity (§4) is located by the travel-time methods developed there.
+- **L04–L07 (Seismic waves):** Wadati–Benioff seismicity is located by the travel-time methods developed there.
 - **L13–L16 (Earthquake source):** The megathrust is a thrust fault; its focal mechanism, moment {eq}`eq:seismic-moment`, and magnitude {eq}`eq:moment-magnitude` are the source quantities introduced there.
-- **L16–L17 (Ground motions and tsunamis):** The domain-A tsunami source and domain-C strong-motion source of {numref}`SF4_rupture_domains` are the inputs to the hazard methods of those lectures.
+- **L16–L17 (Ground motions and tsunamis):** The domain-based tsunami and strong-motion sources are the inputs to the hazard methods of those lectures.
 - **L27 (Ridges and Rifts):** The divergent counterpart — where the oceanic lithosphere that arrives at these trenches was born.
-- **L29 (Transforms & Intraplate):** The third boundary class, and the breakdown of the rigid-plate assumption that circuit closure (L26 §7.4) depends on. The distributed deformation of continental collision (§7) is an extreme case of that breakdown.
-- **L30 (Plate Tectonics and Geodynamics):** Slab pull (§2.1) is the dominant term in the global force and heat budget assembled in the capstone, and the convergence spectrum of §7 — from intra-oceanic subduction through continental collision — is the framework the capstone uses to read the rock record of closed oceans.
+- **L29 (Transforms & Intraplate):** The third boundary class, and the breakdown of the rigid-plate assumption that circuit closure (L26 §7.4) depends on. The distributed deformation of continental collision (§5) is an extreme case of that breakdown.
+- **L30 (Plate Tectonics and Geodynamics):** Slab pull (§2.1) is the dominant term in the global force and heat budget assembled in the capstone, and the convergence spectrum of §5 — from intra-oceanic subduction through continental collision — is the framework the capstone uses to read the rock record of closed oceans.
 ```
 
 ---
 
-## 9. Research Horizon
+## 7. Research Horizon
 
 The study of great subduction earthquakes is in an unusually active phase, driven by the well-recorded giants of 2004, 2010, and 2011 and by new offshore instrumentation. Three open-access entry points:
 
@@ -298,7 +252,7 @@ The study of great subduction earthquakes is in an unusually active phase, drive
 
 ---
 
-## 10. Societal Relevance: Cascadia, the M9-Capable "Exception"
+## 8. Societal Relevance: Cascadia, the M9-Capable "Exception"
 
 The Cascadia subduction zone runs offshore from northern California to southern British Columbia, directly west of every student reading this. The Juan de Fuca plate — born at the ridge of L26, young and warm by the time it reaches the margin — descends beneath North America at $\sim 35$–$45$ mm/yr ({numref}`SF6_cascadia_section`).
 
@@ -307,7 +261,7 @@ The Cascadia subduction zone runs offshore from northern California to southern 
 :alt: West-to-east cross-section of the Cascadia subduction zone. The young, warm Juan de Fuca plate (blue) moves east at 35-45 mm/yr and descends beneath North America. A thick orange sediment layer rides on the incoming plate; there is a buried deformation front with no bathymetric trench and a large accretionary wedge. The megathrust interface is marked as a locked seismogenic zone (the 1700 M9 rupture) updip and an episodic-tremor-and-slip zone downdip, with the Cascade arc volcano to the east. A call-out box notes that Cascadia is young, slow, sediment-rich, and smooth — the opposite of the old big-earthquake recipe — yet is M9-capable.
 :width: 100%
 
-Cascadia subduction zone cross-section: the $M\,9$-capable "exception." The young ($< 15$ Ma), warm Juan de Fuca slab, the slow convergence, the thick incoming sediment, the buried deformation front with no bathymetric trench, and the unusually smooth interface are every ingredient the classic recipe says should produce only modest earthquakes. The paleoseismic record says otherwise: the megathrust is locked, and it produced an $M \sim 9$ in January 1700. Episodic tremor and slip (ETS) occupies the deep transition (domain D of {numref}`SF4_rupture_domains`). Schematic after {cite:t}`WangTrehu2016`; geometry consistent with Slab2 {cite:p}`Hayes2018`. Produced by ``assets/scripts/fig_28_cascadia_section.py``.
+Cascadia subduction zone cross-section: the $M\,9$-capable "exception." The young ($< 15$ Ma), warm Juan de Fuca slab, the slow convergence, the thick incoming sediment, the buried deformation front with no bathymetric trench, and the unusually smooth interface are every ingredient the classic recipe says should produce only modest earthquakes. The paleoseismic record says otherwise: the megathrust is locked, and it produced an $M \sim 9$ in January 1700. Episodic tremor and slip (ETS) occupies the deep transition zone. Schematic after {cite:t}`WangTrehu2016`; geometry consistent with Slab2 {cite:p}`Hayes2018`. Produced by ``assets/scripts/fig_28_cascadia_section.py``.
 ```
 
 By the parameters of the classic recipe — young, slow — Cascadia is the *last* place one would expect a great earthquake. By the modern controls it is one of the most concerning margins on Earth. Its geometry alone places it firmly in great-earthquake territory: {cite:t}`Wirth2022` give it a seismogenic width of $127$ km and a shallow interface dip of $11^\circ$ — comfortably past the $>75$ km / $<35^\circ$ threshold for $M \geq 8.5$, and a smooth, near-planar megathrust. The thick, well-consolidated sediment smooths the interface further and may allow rupture to propagate the full $\sim 1000$ km length of the margin and breach the trench, the two ingredients (large $L$, shallow domain-A slip) that produce a long, strongly tsunamigenic rupture {cite:p}`WangTrehu2016, Han2017`. The evidence that this has happened is unambiguous: the January 1700 earthquake is dated to the night of 26 January 1700 by the tsunami it sent across the Pacific to Japan {cite:p}`Satake2003`, and recorded along the Cascadia margin by drowned forests and by the offshore turbidites it shook loose.
@@ -358,11 +312,11 @@ Open-access references preferred; all linkable:
 - **Avouac, J.-P., Meng, L., Wei, S., Wang, T. & Ampuero, J.-P.** (2015). Lower edge of locked Main Himalayan Thrust unzipped by the 2015 Gorkha earthquake. *Nature Geoscience* 8, 708–711. DOI: [10.1038/ngeo2518](https://doi.org/10.1038/ngeo2518).
 
 
-## 11. Concept Checks
+## 9. Concept Checks
 
-### 11a. Anatomy of a subduction zone
+### 9a. Anatomy of a subduction zone
 
-The illustrated cross-section below ({numref}`SF7_subduction_anatomy`) uses plain-English text labels for every structural element of a subduction zone. Each text label corresponds directly to the letter callout (A–I) introduced in the road-map cartoon of §1a ({numref}`quiz4_cartoon`); the table that follows lists both names together so you can move fluently between the two representations. For each element, know its name, the dominant process it hosts, and how it connects to a hazard or equation from §2–§5.
+The illustrated cross-section below ({numref}`SF7_subduction_anatomy`) uses plain-English text labels for every structural element of a subduction zone. Each text label corresponds directly to the letter callout (A–I) introduced in the road-map cartoon of §1a ({numref}`quiz4_cartoon`); the table that follows lists both names together so you can move fluently between the two representations. For each element, know its name, the dominant process it hosts, and how it connects to a hazard or equation from §2–§4.
 
 ```{figure} ../assets/figures/SF7_subduction_anatomy.png
 :name: SF7_subduction_anatomy
@@ -375,14 +329,14 @@ The illustrated cross-section below ({numref}`SF7_subduction_anatomy`) uses plai
 | Label (§1a cartoon) | Figure text label (SF7) | Dominant process / hazard connection |
 |---------------------|------------------------|---------------------------------------|
 | **A** | Incoming oceanic plate / Oceanic sediments | Born at a mid-ocean ridge (L27); cooling thickens it and increases negative buoyancy (§2.1); age here sets the thermal parameter $\Phi$ |
-| **B** | Deep-sea trench | Surface trace of the subducting slab; deepest ocean floor; marks the updip end of the megathrust — if rupture reaches here (domain A of §4), seafloor uplift generates a large tsunami |
-| **C** | Accretionary wedge | Incoming sediments scraped off the oceanic plate and stacked against the overriding margin; thick at Cascadia, thin or absent at Mariana; a thick prism smooths the interface and may allow rupture to propagate along strike (§5) |
+| **B** | Deep-sea trench | Surface trace of the subducting slab; deepest ocean floor; marks the updip end of the megathrust — if rupture reaches the trench, seafloor uplift generates a large tsunami |
+| **C** | Accretionary wedge | Incoming sediments scraped off the oceanic plate and stacked against the overriding margin; thick at Cascadia, thin or absent at Mariana; a thick prism smooths the interface and may allow rupture to propagate along strike |
 | **D** | Forearc basin | Sediment-filled basin between the prism and the volcanic arc; subsides during interseismic locking and may uplift coseismically; records the earthquake cycle stratigraphically |
 | **E** | Volcanic arc | Chain of arc volcanoes produced by partial melting of the mantle wedge (**H**); the subareal expression of slab dehydration; position relative to the trench reflects slab dip |
-| **F** | Backarc / continental interior (rear portion) | Compressional (shortening → Andes) on Chilean-type margins; extensional (rifting / back-arc spreading) on Mariana-type margins (§2.3, {numref}`SF5_slabdip_backarc`) |
+| **F** | Backarc / continental interior (rear portion) | Compressional (shortening → Andes) on Chilean-type margins; extensional (rifting / back-arc spreading) on Mariana-type margins (§2.3) |
 | **G** | Backarc / continental interior (craton) / overriding plate | Buoyant, thick, felsic; this positive buoyancy is why it overrides the denser oceanic slab (L26 §6); the overriding plate stores elastic strain during interseismic locking |
 | **H** | Slab dehydration fluids + Mantle wedge | Water released by mineral dehydration in the descending slab lowers the peridotite solidus → partial melt rises to feed arc volcanoes at **E**; hydrous fluids also lower friction on the megathrust at **I** |
-| **I** | Megathrust fault interface + Subducting slab | The subduction-interface fault — the largest fault on Earth; locking here stores the elastic strain released in $M\,8$–$9$ earthquakes; the depth-varying rupture domains of §4 all occur on this surface |
+| **I** | Megathrust fault interface + Subducting slab | The subduction-interface fault — the largest fault on Earth; locking here stores the elastic strain released in $M\,8$–$9$ earthquakes; all great-subduction-zone earthquakes occur on this surface |
 
 ```{admonition} Quiz-preparation questions
 :class: tip dropdown
@@ -403,27 +357,22 @@ Practice answering each in 2–4 sentences. These are the styles of questions on
 
 5. Redraw the diagram schematically for a Mariana-type margin. What happens to the trench (**B**), the accretionary wedge (**C**), and the back-arc (**F**)? What happens to the width of the seismogenic zone on **I**?
 
-**Part 3 — Rupture domains and hazard (§4)**
+**Part 3 — Hazard and seismic moment**
 
-6. Using the Lay (2012) four-domain model from {numref}`SF4_rupture_domains`:
-   - (a) Which domain is located nearest to label **B** (the trench)?
-   - (b) What kind of seismic source — and which surface hazard — is it associated with?
-   - (c) Which domain produces the strongest *ground shaking* at a city 100 km inland?
+6. The 2011 Tōhoku earthquake produced tens of metres of slip near **B** (the trench). Using the equation $M_0 = \mu \bar{D}\,L\,W$ ({eq}`eq:seismic-moment`): which term ($\bar{D}$, $L$, or $W$) was unexpectedly large, and why did conventional hazard models fail to anticipate it?
 
-7. The 2011 Tōhoku earthquake produced tens of metres of slip near **B** (the trench). Using the equation $M_0 = \mu \bar{D}\,L\,W$ ({eq}`eq:seismic-moment`): which term ($\bar{D}$, $L$, or $W$) was unexpectedly large, and why did conventional hazard models fail to anticipate it?
+**Part 4 — Cascadia application (§8)**
 
-**Part 4 — Cascadia application (§5, §10)**
-
-8. At Cascadia, the bathymetric trench (**B**) is buried and the accretionary prism (**C**) is unusually thick.
+7. At Cascadia, the bathymetric trench (**B**) is buried and the accretionary prism (**C**) is unusually thick.
    - (a) What does a thick prism at **C** imply for the roughness of the interface at **I**?
    - (b) How does a smooth interface affect the along-strike rupture length $L$ in {eq}`eq:seismic-moment`?
    - (c) What additional control — related to the composition of sediment at **C** — does {cite:t}`Han2017` identify as varying along strike?
 
-9. Two students argue about the maximum earthquake Cascadia can produce. **Student A** says: "The incoming plate at **A** is young ($< 15$ Ma), so the slab is warm and buoyant; coupling should be weak and the maximum event moderate." **Student B** says: "The thick, smooth sediment at **C** allows the full 1 000 km margin to rupture in a single event." (a) Which student's reasoning is consistent with {cite:t}`Wirth2022`? (b) Which parameter in {eq}`eq:seismic-moment` is each student focusing on?
+8. Two students argue about the maximum earthquake Cascadia can produce. **Student A** says: "The incoming plate at **A** is young ($< 15$ Ma), so the slab is warm and buoyant; coupling should be weak and the maximum event moderate." **Student B** says: "The thick, smooth sediment at **C** allows the full 1 000 km margin to rupture in a single event." (a) Which student's reasoning is consistent with {cite:t}`Wirth2022`? (b) Which parameter in {eq}`eq:seismic-moment` is each student focusing on?
 
 **Part 5 — Cross-cutting synthesis**
 
-10. The figure shows a single snapshot of the subduction system. Describe what the same cross-section will look like in 10 million years: which label shrinks, which grows, and what tectonic event eventually terminates subduction at this margin?
+9. The figure shows a single snapshot of the subduction system. Describe what the same cross-section will look like in 10 million years: which label shrinks, which grows, and what tectonic event eventually terminates subduction at this margin?
 ```
 
 ---

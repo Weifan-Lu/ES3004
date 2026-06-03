@@ -74,7 +74,7 @@ This structure is shown schematically in {numref}`fig-synthesis-operators`: a si
 One Earth model, many observables. Each forward operator $G_i$ is a piece of physics taught earlier in the course; each maps the same model $m$ to a different data type. The joint inverse problem requires a single $m$ consistent with all of them.
 ```
 
-A second organizing idea sits beneath the first. The Earth model $m$ is not static: the planet is cooling, and that cooling sets much of what the observables record. Heat flow measures it directly; the deepening of the seafloor records the cooling of one plate; the density and magnetization structure carry the thermal state. The synthesis therefore operates at two scales. At the *local* scale, a single oceanic plate cools as it ages — the worked example of sections 3–6. At the *global* scale, the whole planet cools, and the dominant way it sheds that heat — mantle convection — is the engine that drives plate tectonics and produces hotspots (section 3c and section 7). The local cooling model is one cold piece of the global convecting system.
+A second organizing idea sits beneath the first. The Earth model $m$ is not static: the planet is cooling, and that cooling sets much of what the observables record. Heat flow measures it directly; the deepening of the seafloor records the cooling of one plate; the density and magnetization structure carry the thermal state. The synthesis therefore operates at two scales. At the *local* scale, a single oceanic plate cools as it ages — the worked example of sections 3–4. At the *global* scale, the whole planet cools, and the dominant way it sheds that heat — mantle convection — is the engine that drives plate tectonics and produces hotspots (section 3c and section 5). The local cooling model is one cold piece of the global convecting system.
 
 ```{important}
 **Key Concept — cooling at two scales.** The half-space cooling of an oceanic plate ($q \propto t^{-1/2}$) is the cold upper thermal boundary layer of a mantle that is convecting as a whole. The same thermal physics that deepens the seafloor with age governs how the entire planet loses heat. Plate tectonics is the surface signature of that convection; hotspots are a second, independent signature that the rigid-plate picture alone cannot explain.
@@ -175,45 +175,13 @@ where $g$ is gravitational acceleration, $\Delta T$ the temperature contrast acr
 For the mantle — a layer roughly $D \approx 2.9\times10^{6}\ \mathrm{m}$ thick with a temperature contrast of order $10^{3}\ \mathrm{K}$ and a viscosity near $10^{21}\ \mathrm{Pa\,s}$ — equation {eq}`eq-rayleigh` gives $Ra \sim 10^{6}\text{–}10^{8}$, far above critical. **The mantle convects: it sheds the planet's heat by flowing, not by conduction.** A pot of water on a stove reaches a high Rayleigh number for the same reason and convects visibly; the mantle does the same, immeasurably more slowly. The conduction-only cooling of section 3b is therefore valid *only* in the cold upper boundary layer — the lithosphere — where the rock is too stiff to flow. Below it, heat moves by convection.
 ```
 
-This convection is not an abstraction: its limbs are observable at the surface. Cold, dense lithosphere sinks as subducting slabs (downwellings); hot material rises beneath ridges (passive, shallow upwelling) and in narrow plumes from the deep mantle (active upwelling). {numref}`fig-convection-engine` in section 7 shows the planform, and section 7 connects it to plate tectonics and to hotspots.
+This convection is not an abstraction: its limbs are observable at the surface. Cold, dense lithosphere sinks as subducting slabs (downwellings); hot material rises beneath ridges (passive, shallow upwelling) and in narrow plumes from the deep mantle (active upwelling). {numref}`fig-convection-engine` in section 5 shows the planform, and section 5 connects it to plate tectonics and to hotspots.
 
 ---
 
-## 4. The Forward Problem
+## 4. Worked Example
 
-Given values for the model — mantle temperature $T_m \approx 1300\,^\circ\mathrm{C}$, $T_s \approx 0\,^\circ\mathrm{C}$, $\kappa \approx 1\times10^{-6}\,\mathrm{m^2\,s^{-1}}$, $k \approx 3.3\,\mathrm{W\,m^{-1}\,K^{-1}}$, $\rho_m = 3300$, $\rho_w = 1000\,\mathrm{kg\,m^{-3}}$, $\alpha = 3\times10^{-5}\,\mathrm{K^{-1}}$ — equations {eq}`eq-hsc-heatflow` and {eq}`eq-hsc-depth` predict the two observables as functions of seafloor age. With these constants the scalings take the familiar numerical forms $q \approx 510\,t^{-1/2}\ \mathrm{mW\,m^{-2}}$ and $d \approx 2500 + 350\,t^{1/2}\ \mathrm{m}$, with $t$ in millions of years. Both predictions are shown in {numref}`fig-plate-cooling`, with synthetic observations for comparison.
-
-```{figure} ../assets/figures/fig_plate_cooling_joint.png
-:name: fig-plate-cooling
-:alt: Two side-by-side panels sharing a horizontal axis of seafloor age from 0 to 100 million years. Left panel — surface heat flow in milliwatts per square metre, falling steeply from about 300 near the ridge to about 50 at 100 million years, following a curve proportional to age to the power minus one-half; synthetic observations (circles) lie on the curve, annotated as hot, thin lithosphere near the ridge. Right panel — seafloor depth below the ridge crest in metres, plotted increasing downward, deepening from 2500 metres at the ridge along a curve proportional to the square root of age; synthetic observations (squares) follow the curve for young seafloor but lift above it (shallower than predicted) beyond about 60 million years, annotated that old seafloor flattens and the half-space model fails, requiring the plate model.
-:width: 100%
-
-Forward predictions of the half-space cooling model. Heat flow (left) decays as $t^{-1/2}$; seafloor depth (right) grows as $t^{1/2}$. The two panels share the same thermal model. The departure of old seafloor from the half-space prediction (right) is itself diagnostic — see section 5.
-```
-
-A companion notebook, `synthesis_joint_interpretation.ipynb`, implements equations {eq}`eq-hsc-temp`–{eq}`eq-hsc-depth`, reproduces {numref}`fig-plate-cooling`, and lets the model constants be varied so that the coupled response of both observables can be explored directly.
-
----
-
-## 5. The Inverse Problem
-
-The forward model runs in one direction: model to data. The scientific task runs in the other: given measured heat flow and seafloor depth as functions of age, infer the thermal model. Here the value of combining observables becomes concrete.
-
-Heat flow alone, {eq}`eq-hsc-heatflow`, constrains the grouping $k(T_m - T_s)/\sqrt{\kappa}$; it cannot separate a hotter mantle from a more conductive or less diffusive lithosphere. Seafloor depth alone, {eq}`eq-hsc-depth`, constrains a different grouping, $\alpha (T_m - T_s)\sqrt{\kappa}$. Each dataset, taken by itself, leaves a trade-off — a direction in model space along which the data do not change. Because the two groupings depend on $\kappa$ with opposite sign in the exponent, fitting both observables together pins down $\kappa$ and $(T_m - T_s)$ separately in a way neither could alone. The joint fit is not twice as much data of the same kind; it is data that breaks the other's degeneracy.
-
-```{admonition} Reading the misfit
-:class: seealso
-
-For young seafloor, both observables follow the half-space predictions closely. Beyond roughly 70 million years the observed seafloor is systematically *shallower* than {eq}`eq-hsc-depth` predicts, and the heat flow stops falling (the flattening in {numref}`fig-plate-cooling`, right). The misfit is not noise: it is the signature of a missing ingredient. The half-space cools without bound, but real lithosphere reaches a steady thickness as heat is supplied from below. Replacing the half-space with a plate of finite thickness removes the misfit. Interpreting a systematic residual as a statement about the model — rather than as error to be minimized away — is the central habit of geophysical inference (LO-OUT-E).
-```
-
-The same logic operates beyond Earth. On Mars, the gravity field and topography together constrain only *relative* variations in crustal thickness; an absolute thickness requires one independent tie point, which seismology supplied when InSight recorded converted phases beneath the lander {cite:p}`KnapmeyerEndrun2021`. One seismic constraint resolved a degeneracy that orbital data alone could not — the joint inverse problem on another planet.
-
----
-
-## 6. Worked Example
-
-Consider a site on 50-million-year-old oceanic seafloor. Using the numerical forms from section 4:
+Consider a site on 50-million-year-old oceanic seafloor. Using the numerical forms from section 3:
 
 - Heat flow: $q = 510 / \sqrt{50} = 510 / 7.07 \approx 72\ \mathrm{mW\,m^{-2}}$.
 - Seafloor depth: $d = 2500 + 350\sqrt{50} = 2500 + 2475 \approx 4975\ \mathrm{m}$.
@@ -222,7 +190,7 @@ Both predictions come from the same model. A measured heat flow near $72\ \mathr
 
 ---
 
-## 7. Connecting to Cascadia: From Local Cooling to the Global Engine
+## 5. Connecting to Cascadia: From Local Cooling to the Global Engine
 
 This lecture is deliberately a return visit to the whole course. The forward operators in {numref}`fig-synthesis-operators` are, in order, the subjects of Modules 1–3 (the elastic wave equation and seismic imaging), Module 4 (gravity and isostasy), Module 5 (magnetics and the magnetization–temperature link through the Curie point), and Module 7 (the thermal lithosphere and flexure). The non-uniqueness argument formalizes a thread that began with the hidden-layer problem in seismic refraction, recurred in the equivalent-source ambiguity of potential fields, and was named explicitly in tomography. The plate-cooling spine ties Module 7's thermal model to Module 4's isostasy and to the seafloor ages read from Module 5's magnetic stripes — three modules in one model.
 
@@ -246,27 +214,27 @@ The second disruption is fixity. The hotspot reference frame was long treated as
 
 The deeper significance is the one to carry out of the course. Plate tectonics shows mantle convection's cold, organized *downwellings* at the surface; hotspots reveal its hot, narrow *upwellings* from the base of the mantle. That those upwellings wander, tilt, and split is direct evidence that the mantle is not a tidy array of steady cells but a vigorously stirred, turbulent flow. Hotspots, in other words, are the clearest surface sign that the solid Earth is convecting — the planet's slow boil made visible.
 
-The Pacific Northwest concentrates these themes in one place. The Cascadia subduction zone offshore is the region's dominant earthquake and tsunami hazard, and its assessment is exactly a multi-method problem — seismic imaging of the megathrust geometry, geodetic measurement of locking, and gravity and bathymetry of the forearc, combined into one picture of where and how the fault will slip {cite:p}`Biemiller2025, Ledeczi2024`. The same Puget Sound that carries the hazard also carries dense fibre-optic networks beneath its cities, now being read as urban seismic arrays; and the Cascade glaciers and the larger ice sheets that set regional sea level are monitored by the seismic and geodetic methods introduced in section 8. A student leaving this course is equipped to read any of these problems as an instance of the single logic the course has built: observation, model, inference, interpretation.
+The Pacific Northwest concentrates these themes in one place. The Cascadia subduction zone offshore is the region's dominant earthquake and tsunami hazard, and its assessment is exactly a multi-method problem — seismic imaging of the megathrust geometry, geodetic measurement of locking, and gravity and bathymetry of the forearc, combined into one picture of where and how the fault will slip {cite:p}`Biemiller2025, Ledeczi2024`. The same Puget Sound that carries the hazard also carries dense fibre-optic networks beneath its cities, now being read as urban seismic arrays; and the Cascade glaciers and the larger ice sheets that set regional sea level are monitored by the seismic and geodetic methods introduced in section 6. A student leaving this course is equipped to read any of these problems as an instance of the single logic the course has built: observation, model, inference, interpretation.
 
 ---
 
-## 8. Research Horizon
+## 6. Research Horizon
 
 Geophysics is expanding along several fronts at once. Four are sketched here; each is advancing now for an identifiable methodological reason, and each is an entry point for undergraduate research.
 
-### 8a. Machine learning
+### 6a. Machine learning
 
 Data-driven methods became central to seismology over a short window beginning around 2018, when convolutional networks were first shown to detect and locate earthquakes directly from waveforms {cite:p}`Perol2018`, followed quickly by deep phase pickers that now underpin routine catalog production {cite:p}`MousaviBeroza2024`. The timing was set by two enabling conditions arriving together: inexpensive parallel computation on graphics processing units, and large labelled seismic datasets from decades of dense network archives. The methods are tools, not oracles — their failure modes (poor transfer between regions and instrument types, sensitivity to training-set bias) are themselves an active research subject {cite:p}`MousaviBeroza2022`.
 
-### 8b. Sensing technology
+### 6b. Sensing technology
 
 The data that geophysics can collect are limited by its instruments, and the instrument base is changing. Distributed acoustic sensing turns an ordinary fibre-optic telecommunication cable into a dense array of thousands of strain sensors by interrogating backscattered laser light, recording the seismic wavefield every few metres along tens of kilometres of fibre at low cost {cite:p}`LindseyMartin2021, Zhan2020`. Unused "dark fibre" beneath cities, under the seafloor, and along glaciers is being repurposed as seismic instrumentation in places where conventional stations cannot be installed.
 
-### 8c. The cryosphere and the environment
+### 6c. The cryosphere and the environment
 
 Glaciers and ice sheets generate seismic signals — fracture, basal slip, calving — that record processes otherwise hidden from view, and these signals can be monitored continuously and modelled physically {cite:p}`AsterWinberry2017, Latto2024`. Fibre-optic sensing has recently been extended onto and into ice, combining the technology and cryosphere fronts {cite:p}`Lipovsky2025`. The same near-surface methods constrain groundwater, permafrost, and contaminant transport, placing geophysics directly in the service of environmental and climate science.
 
-### 8d. Planetary interiors
+### 6d. Planetary interiors
 
 The course defined geophysics as the physics of the inaccessible interior. That definition now extends to other worlds. NASA's InSight lander placed a single seismometer on Mars in 2018 and, from roughly 1,300 marsquakes recorded by that one station, returned the first seismologically determined crust, mantle, and core of another planet — including confirmation of a large liquid iron core {cite:p}`Stahler2021, Khan2021, Lognonne2023`. Earth's interior was mapped by thousands of stations, the Moon's by the four-station Apollo network, and Mars's by one ({numref}`fig-planetary`). The reasoning is identical at every scale: convert what reaches the surface into a statement about what lies beneath.
 
@@ -284,7 +252,7 @@ The live tectonics frontier remains close to home. The structure of the Cascadia
 
 ---
 
-## 9. AI Literacy: Evaluating a Synthesis Against Your Own Rubric
+## 7. AI Literacy: Evaluating a Synthesis Against Your Own Rubric
 
 ```{admonition} AI Epistemics — the capstone standard (LO-7)
 :class: important
@@ -309,17 +277,16 @@ The standard is not whether the AI sounds authoritative. It is whether its argum
 
 ---
 
-## 10. Concept Checks
+## 8. Concept Checks
 
-1. A heat-flow survey on old oceanic seafloor returns values well above the half-space prediction. Two explanations are hydrothermal circulation removing heat near the ridge (biasing young-seafloor data low) and a finite-thickness plate supplying basal heat. Which observable in {numref}`fig-plate-cooling` would best distinguish them, and why?
-2. Gravity and seismic refraction are both proposed to map the depth to a basement interface beneath a sedimentary basin. State one property each method senses, and explain why running both is more informative than running either twice.
-3. On the Moon, the core radius is about 19% of the planetary radius; on Mars it is about 54% ({numref}`fig-planetary`). Both figures were obtained seismologically. What does the contrast imply about how much iron each body retained relative to its silicate mantle?
-4. The mantle's Rayleigh number is of order $10^{6}\text{–}10^{8}$, while the critical value is near $10^{3}$. State, in one sentence each, what this implies about (a) how the mantle transfers heat and (b) why the conduction-only cooling model of section 3b is nonetheless valid in the lithosphere.
-5. A volcanic island chain becomes progressively older away from an active volcano, yet lies far from any plate boundary. Explain why this observation cannot be accounted for by rigid-plate tectonics alone, and what the chain reveals about the mantle beneath. Why does a slowly migrating hotspot complicate using such chains as an absolute reference frame for plate motion?
+1. Gravity and seismic refraction are both proposed to map the depth to a basement interface beneath a sedimentary basin. State one property each method senses, and explain why running both is more informative than running either twice.
+2. On the Moon, the core radius is about 19% of the planetary radius; on Mars it is about 54% ({numref}`fig-planetary`). Both figures were obtained seismologically. What does the contrast imply about how much iron each body retained relative to its silicate mantle?
+3. The mantle's Rayleigh number is of order $10^{6}\text{–}10^{8}$, while the critical value is near $10^{3}$. State, in one sentence each, what this implies about (a) how the mantle transfers heat and (b) why the conduction-only cooling model of section 3b is nonetheless valid in the lithosphere.
+4. A volcanic island chain becomes progressively older away from an active volcano, yet lies far from any plate boundary. Explain why this observation cannot be accounted for by rigid-plate tectonics alone, and what the chain reveals about the mantle beneath. Why does a slowly migrating hotspot complicate using such chains as an absolute reference frame for plate motion?
 
 ---
 
-## 11. Connections
+## 9. Connections
 
 - [Lecture 11 — Whole Earth I](11_whole_earth_I.md) — seismic travel times and the reference velocity model that sections 3a–3b extend.
 - [Lecture 12 — Seismic Tomography](12_seismic_tomography.md) — the tomographic inverse problem of which {eq}`eq-misfit` is a generalization.
