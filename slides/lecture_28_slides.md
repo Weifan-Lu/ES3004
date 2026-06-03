@@ -27,7 +27,7 @@ style: |
 
 # Convergent Plate Boundaries
 
-## Subduction Zones
+## Subduction & Collision
 
 ### ESS 314 · Geophysics · Lecture 28
 
@@ -109,19 +109,19 @@ $$ M_0 = \mu\,\bar{D}\,(L\,W), \qquad M_w = \tfrac{2}{3}\log_{10} M_0 - 6.07 $$
 
 ---
 
-## The classification space
+## The recipe, tested against data
 
-![w:880](../assets/figures/SF3_parameter_space.png)
+![w:760](../assets/figures/SF3_parameter_space.png)
 
-<span class="takeaway">Takeaway —</span> The dashed "recipe box" is **empty**; the $M\!\geq\!9$ events scatter across the whole plane.
+<span class="takeaway">Takeaway —</span> Age & rate (top) don't order $M_w$; seismogenic **width** ($r{=}0.44$) & **flatness** ($r{=}0.42$) do (Wirth 2022).
 
 ---
 
 ## What actually controls $M_{\max}$
 
-- Seismogenic-zone **width & dip** → rupture area
-- Interface **smoothness** → sediment removes rupture barriers
-- **Fluids** & consolidation → locked vs. creeping
+- **Seismogenic width & dip** — strongest; $M{\geq}8.5$ needs width $>75$ km, $M{\geq}9.2$ needs $>150$ km
+- **Downdip curvature** — flat megathrusts rupture biggest
+- **Secondary:** sediment smoothing, roughness, fluids, upper-plate strain
 - **Working assumption: any mature megathrust may be $M\,9$**
 
 ---
@@ -148,6 +148,14 @@ $$ M_0 = \mu\,\bar{D}\,(L\,W), \qquad M_w = \tfrac{2}{3}\log_{10} M_0 - 6.07 $$
 ![w:900](../assets/figures/SF6_cascadia_section.png)
 
 <span class="takeaway">Takeaway —</span> Young, warm, slow, sediment-rich, smooth — yet locked, and it ruptured $M\sim 9$ in January 1700.
+
+---
+
+## Zooming out: the convergence spectrum
+
+![w:760](../assets/figures/SF8_convergence_spectrum.png)
+
+<span class="takeaway">Takeaway —</span> Buoyancy of the incoming material sets the mode: ocean subducts; arcs & continents **collide** (Taiwan, Himalaya).
 
 ---
 
