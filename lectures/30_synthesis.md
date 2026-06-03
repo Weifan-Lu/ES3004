@@ -74,7 +74,7 @@ This structure is shown schematically in {numref}`fig-synthesis-operators`: a si
 One Earth model, many observables. Each forward operator $G_i$ is a piece of physics taught earlier in the course; each maps the same model $m$ to a different data type. The joint inverse problem requires a single $m$ consistent with all of them.
 ```
 
-A second organizing idea sits beneath the first. The Earth model $m$ is not static: the planet is cooling, and that cooling sets much of what the observables record. Heat flow measures it directly; the deepening of the seafloor records the cooling of one plate; the density and magnetization structure carry the thermal state. The synthesis therefore operates at two scales. At the *local* scale, a single oceanic plate cools as it ages — the worked example of sections 3–4. At the *global* scale, the whole planet cools, and the dominant way it sheds that heat — mantle convection — is the engine that drives plate tectonics and produces hotspots (section 3c and section 5). The local cooling model is one cold piece of the global convecting system.
+A second organizing idea sits beneath the first. The Earth model $m$ is not static: the planet is cooling, and that cooling sets much of what the observables record. Heat flow measures it directly; the deepening of the seafloor records the cooling of one plate; the density and magnetization structure carry the thermal state. The synthesis therefore operates at two scales. At the *local* scale, a single oceanic plate cools as it ages — the worked example of sections 3–4. At the *global* scale, the whole planet cools, and the dominant way it sheds that heat — mantle convection — is the engine that drives plate tectonics and produces hotspots (section 3e and section 5). The local cooling model is one cold piece of the global convecting system.
 
 ```{important}
 **Key Concept — cooling at two scales.** The half-space cooling of an oceanic plate ($q \propto t^{-1/2}$) is the cold upper thermal boundary layer of a mantle that is convecting as a whole. The same thermal physics that deepens the seafloor with age governs how the entire planet loses heat. Plate tectonics is the surface signature of that convection; hotspots are a second, independent signature that the rigid-plate picture alone cannot explain.
@@ -156,7 +156,29 @@ where $d_r$ is the ridge-crest depth. Heat flow is read through a thermal measur
 Heat flow falls as the inverse square root of age, {eq}`eq-hsc-heatflow`, while seafloor depth grows as the square root of age, {eq}`eq-hsc-depth`. The same three quantities — $(T_m - T_s)$, $\kappa$, and the material constants — control both. A thermal model that fits the heat flow but not the bathymetry, or the reverse, is rejected. This is the joint inverse problem in its simplest non-trivial form.
 ```
 
-### 3c. From a cooling plate to a cooling planet
+The age $t$ in equations {eq}`eq-hsc-heatflow` and {eq}`eq-hsc-depth` is not itself measured thermally — it is read from the **magnetic anomaly pattern** of the seafloor. The paleomagnetic reversal stripes recorded symmetrically about the ridge crest (L23–L25) identify the age of each strip of lithosphere with precision and serve as the direct input to the thermal equations. The plate-cooling synthesis therefore spans three independent observing systems — **magnetics** (age), **heat-flow probes** (thermal flux), and **bathymetry** (depth) — each measuring a different physical property of the same lithosphere, all constraining the same thermal parameters. Over young seafloor, measured heat flow falls systematically below the half-space prediction because hydrothermal circulation carries heat advectively through the porous young crust; the mismatch between the magnetically determined age-prediction and the measured heat flow localizes zones of active hydrothermal recharge.
+
+### 3c. Seismic velocity and gravity: joint crustal imaging
+
+Seismic P-wave velocity and bulk density are physically related: in crustal and upper-mantle rocks they follow the empirical *Nafe\u2013Drake curve*, where denser rocks propagate P waves faster across a wide range of compositions. This link is the physical bridge between the elastic-wave forward operator (L03\u2013L13) and the Newtonian gravity forward operator (L19\u2013L22) — the two most prevalent method families in the course.
+
+A refraction or wide-angle reflection survey produces a $V_P$ model of the crust. Converting each cell to a density through the Nafe\u2013Drake relation generates a predicted Bouguer or free-air anomaly that can be compared with the observed field. Where prediction matches observation, the velocity model is a self-consistent description of the density structure. Where they disagree, the gravity residual localizes compositional anomalies — serpentinized mantle, mafic intrusions, evaporite bodies — that are either invisible to seismic refraction or too subtle in velocity contrast to resolve clearly.
+
+The benefit flows in both directions. Gravity inversion alone suffers from the equivalent-source ambiguity introduced in L19\u2013L20: infinitely many depth\u2013density combinations produce an identical surface anomaly. Coupling the gravity inversion to a seismic $V_P$ model removes that ambiguity for the resolved structures, shrinking the null space of {eq}`eq-misfit` in exactly the sense of section 3a. The joint result — crustal thickness, slab geometry, wedge density — is more constrained than either observable alone.
+
+### 3d. Earthquake source, strong motion, and hazard: a multi-observable synthesis
+
+Seismic hazard assessment is the course's most consequential synthesis problem: it draws on more observing systems than any other application in ESS 314. Estimating what an earthquake will do to a site requires at least four independent data streams, each sensing a different aspect of the same fault.
+
+**Fault geometry** from seismic imaging. Reflection and refraction surveys constrain fault-plane geometry and the $V_P$ model used to locate earthquakes; local seismicity traces the Wadati\u2013Benioff zone; teleseismic tomography images the slab and identifies where the seismogenic zone is widest (L11\u2013L13, L28). The seismogenic width $W$ in $M_0 = \mu\,\bar{D}\,L\,W$ is controlled by the brittle\u2013ductile transition depth — itself a thermal quantity, connecting the hazard problem to sections 3b and 3e.
+
+**Past rupture** from waveform inversion. Fitting seismogram waveforms to recover the moment tensor and $M_0$ is an instance of {eq}`eq-misfit` with the elastic wave equation as the forward operator and the double-couple source parameters as the model (L14\u2013L16). For historical events, long-period surface waves and geodetic co-seismic offsets provide independent data types for the same inversion.
+
+**Present-day loading** from geodesy. GPS and InSAR map the interseismic surface velocity field; inverting for slip deficit on the fault (structurally identical to {eq}`eq-misfit`) gives the spatial coupling distribution — where elastic strain is accumulating to be released in the next rupture. At Cascadia, this geodetic inversion predicts which segments will participate in the next $M\,9$ event.
+
+**Future shaking and tsunami** from forward modeling. Ground-motion prediction equations translate $M_w$, source\u2013site distance, and site $V_{s30}$ into engineering shaking intensity (L17). Tsunami generation and propagation use the same fault-slip distribution as the sea-surface initial condition (L18). A complete hazard model satisfies the seismic imaging, the geodetic coupling, the paleoseismic record, and ground-motion observations from past earthquakes simultaneously — one consistent fault model explaining all observables, exactly the logic of {numref}`fig-synthesis-operators`.
+
+### 3e. From a cooling plate to a cooling planet
 
 The plate of section 3b cools because it loses heat to the ocean above. The whole Earth does the same on a far larger scale. Summed over its surface, the planet loses heat at a rate of approximately $46\ \mathrm{TW}$ {cite:p}`DaviesDavies2010`. About half of this is replaced by the radioactive decay of uranium, thorium, and potassium distributed through the mantle and crust; the remainder is *secular cooling* — heat left over from accretion and core formation, released as the planet slowly cools, together with a contribution of roughly $5\text{–}15\ \mathrm{TW}$ conducted out of the core across the core–mantle boundary. The Earth is, in the most literal sense, a cooling body, and the question is how that heat escapes.
 
@@ -187,6 +209,14 @@ Consider a site on 50-million-year-old oceanic seafloor. Using the numerical for
 - Seafloor depth: $d = 2500 + 350\sqrt{50} = 2500 + 2475 \approx 4975\ \mathrm{m}$.
 
 Both predictions come from the same model. A measured heat flow near $72\ \mathrm{mW\,m^{-2}}$ *and* a measured depth near $5000\ \mathrm{m}$ would jointly confirm the cooling model at this age; a mismatch in either would demand revision.
+
+**Seismic moment and fault dimensions.** The Cascadia megathrust has well-constrained geometry: $L \approx 1000\ \mathrm{km}$ along strike and $W \approx 100\ \mathrm{km}$ downdip. Paleoseismic evidence (drowned coastal forests and Japanese tsunami records) fixes average coseismic slip in the 1700 rupture at $\bar{D} \approx 15\ \mathrm{m}$. Using $\mu = 30\ \mathrm{GPa}$ for the shallow megathrust:
+
+$$M_0 = \mu\,\bar{D}\,L\,W = 3\times10^{10}\ \mathrm{Pa} \times 15\ \mathrm{m} \times 10^{6}\ \mathrm{m} \times 10^{5}\ \mathrm{m} = 4.5\times10^{22}\ \mathrm{N\cdot m},$$
+
+$$M_w = \tfrac{2}{3}\log_{10}(4.5\times10^{22}) - 6.07 \approx 9.0.$$
+
+Three forward operators then act on this single source model. The **elastic wave equation** predicts teleseismic waveform amplitudes, consistent with the magnitude inferred independently from Japanese tsunami records. A **ground-motion prediction equation** (L17) maps $M_w$ and source\u2013site distance to expected shaking intensity along the I-5 corridor. The **shallow-water wave equation** (L18) propagates the fault-slip sea-surface deformation to predict run-up heights along the coast. All three use the same $M_0$ and fault geometry — three independent physical predictions from one source model, each testable against separate observations.
 
 ---
 
@@ -283,6 +313,8 @@ The standard is not whether the AI sounds authoritative. It is whether its argum
 2. On the Moon, the core radius is about 19% of the planetary radius; on Mars it is about 54% ({numref}`fig-planetary`). Both figures were obtained seismologically. What does the contrast imply about how much iron each body retained relative to its silicate mantle?
 3. The mantle's Rayleigh number is of order $10^{6}\text{–}10^{8}$, while the critical value is near $10^{3}$. State, in one sentence each, what this implies about (a) how the mantle transfers heat and (b) why the conduction-only cooling model of section 3b is nonetheless valid in the lithosphere.
 4. A volcanic island chain becomes progressively older away from an active volcano, yet lies far from any plate boundary. Explain why this observation cannot be accounted for by rigid-plate tectonics alone, and what the chain reveals about the mantle beneath. Why does a slowly migrating hotspot complicate using such chains as an absolute reference frame for plate motion?
+5. The magnetic anomaly pattern reveals that a site on oceanic seafloor has age $t = 40$ Ma. A heat-flow probe at the same site returns $q = 45\ \mathrm{mW\,m^{-2}}$. (a) Compute the half-space predictions for heat flow and seafloor depth at 40 Ma (use $q = 510\,t^{-1/2}\ \mathrm{mW\,m^{-2}}$ and $d = 2500 + 350\,t^{1/2}\ \mathrm{m}$, with $t$ in Ma). (b) The measured heat flow is roughly half the predicted value. Name one physical process that explains this discrepancy, and state why it is more prevalent over young seafloor than old. (c) The bathymetric depth at this site agrees well with the half-space prediction even though heat flow does not. Explain in one sentence why this joint result is more constraining than the heat-flow measurement alone.
+6. A subduction-zone segment has seismically imaged dimensions $L = 400\ \mathrm{km}$, $W = 120\ \mathrm{km}$, and paleoseismic evidence indicates average coseismic slip $\bar{D} = 8\ \mathrm{m}$. Using $\mu = 30\ \mathrm{GPa}$: (a) compute $M_0$ and $M_w$; (b) identify two observing systems — from different methods — that together would determine whether rupture reached the seafloor in a future event; (c) explain in one sentence why that determination is critical for the tsunami prediction.
 
 ---
 
@@ -290,11 +322,17 @@ The standard is not whether the AI sounds authoritative. It is whether its argum
 
 - [Lecture 11 — Whole Earth I](11_whole_earth_I.md) — seismic travel times and the reference velocity model that sections 3a–3b extend.
 - [Lecture 12 — Seismic Tomography](12_seismic_tomography.md) — the tomographic inverse problem of which {eq}`eq-misfit` is a generalization.
+- [Lecture 14 — Earthquake Phenomena I](14_earthquake_phenomena_I.md) — the kinematics and dynamics of the seismic source, underpinning section 3d.
+- [Lecture 16 — Focal Mechanisms](16_focal_mechanisms.md) — moment-tensor inversion as an instance of {eq}`eq-misfit` with the elastic wave equation as forward operator.
+- [Lecture 17 — Ground Motions](17_ground_motions.md) — ground-motion prediction equations: the forward operator from $M_0$ and site distance to engineering shaking intensity.
+- [Lecture 18 — Tsunami](18_tsunami.md) — shallow-water wave propagation: the forward operator from fault slip to coastal run-up.
 - [Lecture 19 — Earth's Gravity](19_earths_gravity.md) — the Poisson equation forward operator in the $\Delta g$ column of {numref}`fig-synthesis-operators`.
 - [Lecture 21 — Isostasy](21_isostasy.md) — the isostatic balance that converts thermal contraction into seafloor deepening, {eq}`eq-hsc-depth`.
-- [Lecture 22 — Density of the Lithosphere](22_density_lithosphere.md) — the density–temperature link that ties the thermal and gravity observables.
+- [Lecture 22 — Density of the Lithosphere](22_density_lithosphere.md) — the density–temperature link connecting seismic velocity to gravity via the Nafe–Drake curve (section 3c).
+- [Lecture 23 — Earth's Magnetism](23_earth_magnetism.md) — the magnetic forward operator and the Curie-point link between temperature and magnetization.
+- [Lecture 25 — Magnetic Anomalies](25_magnetic_anomalies.md) — seafloor spreading stripes as the source of age $t$ entering {eq}`eq-hsc-heatflow` and {eq}`eq-hsc-depth`.
 - [Lecture 26 — Oceanic and Continental Lithosphere](26_lithosphere_oceanic_continental.md) — the half-space cooling model derived and applied.
-- [Lecture 28 — Convergent Margins](28_convergent_margins.md) — subduction as the cold downwelling limb of the mantle convection engine.
+- [Lecture 28 — Convergent Margins](28_convergent_margins.md) — subduction as the cold downwelling limb of the convection engine; the seismic hazard synthesis of section 3d applied to Cascadia.
 
 ---
 
