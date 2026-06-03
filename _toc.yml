@@ -87,7 +87,7 @@ parts:
         title: "L28 — Convergent Margins"
       - file: lectures/28_transform_intraplate
         title: "L29 — Transform & Intraplate"
-      - file: lectures/29_synthesis
+      - file: lectures/30_synthesis
         title: "L30 — Synthesis"
 
   - caption: "Labs"
