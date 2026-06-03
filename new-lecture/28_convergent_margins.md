@@ -17,7 +17,7 @@ keywords: [subduction, convergent margin, megathrust, slab, Wadati-Benioff, seis
 :::
 
 ```{admonition} Learning Objectives
-:class: tip dropdown
+:class: tip
 
 By the end of this lecture, students will be able to:
 
@@ -55,37 +55,21 @@ The framing question for the lecture is therefore not "where do subduction earth
 
 The answer organizes the rest of the lecture. The classification that failed is worth teaching precisely because it failed: it is a clean example of how a physically reasonable hypothesis is revised against data, and it leads directly to the controls the modern literature does favour.
 
-### 1a. Orientation: the anatomy of a subduction zone
-
-Before developing the physics, we need a shared visual vocabulary. The block diagram below ({numref}`quiz4_cartoon`) labels the nine structural domains that will appear in every section of this lecture. Read through the labels once now — not to memorize them, but to map the words onto a geometry. Each label will be invoked again, with its physics, in §2–§10.
-
-```{figure} ../assets/figures/quiz4_cartoon_subduction_zones.png
-:name: quiz4_cartoon
-:alt: Three-dimensional perspective block diagram of an ocean-to-continent subduction zone. Oceanic lithosphere at the lower left, labeled A, bears prominent horizontal seafloor-spreading lineations and moves toward the continent (arrow pointing lower right). Nine structural domains are labeled in red. Along the top surface from left to right: A, oceanic lithosphere with spreading lineations; B, the deep-sea trench, the surface trace of the subduction hinge; C, the accretionary prism, a wedge of deformed and stacked sediments immediately landward of the trench; D, the forearc basin, a sediment-filled depression between the prism and the arc; E, the volcanic arc, shown as a broad highland with a prominent stratovolcano; F, the back-arc region, rugged mountainous terrain representing shortening on a Chilean-type margin; G, the continental interior on the far right. Below the surface, the thick black inclined slab (label I) descends from the trench beneath the overriding plate; vertical wavy lines at label H, beneath the volcanic arc, represent hot mantle and slab-derived fluids rising into the mantle wedge. The word OCEANIC LITHOSPHERE labels the left side; CONTINENTAL LITHOSPHERE labels the right side.
-:width: 95%
-
-**Road map for Lecture 28.** Nine labeled domains of an ocean–continent subduction zone. The oceanic plate (left, **A**) approaches the trench (**B**), where the denser slab (**I**) begins its descent. Scraped-off sediments pile into the accretionary prism (**C**); the forearc basin (**D**) sits between the prism and the volcanic arc (**E**). Slab dehydration releases fluids (**H**) that trigger partial melting in the mantle wedge and feed the arc volcanoes. The back-arc (**F**) and continental interior (**G**) record the stress state of the overriding plate. Every equation and hazard discussed in §2–§10 can be located on this figure. This figure is also used on the L28 quiz — see §11 for the identification table.
-```
-
-The story of a subduction zone, read left to right through the labels, is a story of **heat and water**. Cold, dense oceanic lithosphere (**A**) arrives at the trench (**B**) and sinks along the megathrust (**I**). As it descends it cools the surrounding mantle and releases water from hydrous minerals (**H**). That water lowers the melting point of the overlying mantle wedge, generating magma that rises to build the volcanic arc (**E**). The stress transmitted across the interface determines whether the overriding plate shortens — building mountains in the back-arc (**F**) as at the Andes — or extends, opening a back-arc basin as in the western Pacific. Every measurable parameter that matters for earthquake hazard is a proxy for how efficiently this system transfers heat and how strongly the two plates grip each other at **I**.
-
 ---
 
 ## 2. Governing Physics
 
 ### 2.1 The slab as a cold, dense sinker
 
-A subducting slab is oceanic lithosphere that has cooled and thickened away from its ridge (L26 §2). By the time it reaches a trench it is colder, and therefore denser, than the asthenosphere beneath it. That negative buoyancy is the engine of subduction: the weight of the sinking slab (label **I** in {numref}`quiz4_cartoon`) pulls the trailing plate along behind it. *Slab pull* is generally regarded as the dominant force in the plate-tectonic budget, larger than the *ridge push* that drives plates away from spreading centres.
+A subducting slab is oceanic lithosphere that has cooled and thickened away from its ridge (L26 §2). By the time it reaches a trench it is colder, and therefore denser, than the asthenosphere beneath it. That negative buoyancy is the engine of subduction: the weight of the sinking slab pulls the trailing plate along behind it. *Slab pull* is generally regarded as the dominant force in the plate-tectonic budget, larger than the *ridge push* that drives plates away from spreading centres.
 
-The density contrast that drives the slab down has two parts, exactly as in the lithosphere comparison of L26 §6.1. The *thermal* contrast comes from the slab being colder than its surroundings; it grows with the age of the incoming plate (label **A**), because older lithosphere is thicker and colder. The *compositional* contrast comes from the basalt-to-eclogite transition: as the basaltic oceanic crust descends and increases in pressure, it transforms to eclogite, a denser assemblage that adds to the slab's negative buoyancy. Both effects make an old slab a more vigorous sinker than a young one — which is exactly why the original Ruff–Kanamori reasoning was physically appealing.
+The density contrast that drives the slab down has two parts, exactly as in the lithosphere comparison of L26 §6.1. The *thermal* contrast comes from the slab being colder than its surroundings; it grows with the age of the incoming plate, because older lithosphere is thicker and colder. The *compositional* contrast comes from the basalt-to-eclogite transition: as the basaltic oceanic crust descends and increases in pressure, it transforms to eclogite, a denser assemblage that adds to the slab's negative buoyancy. Both effects make an old slab a more vigorous sinker than a young one — which is exactly why the original Ruff–Kanamori reasoning was physically appealing.
 
 ### 2.2 Coupling on the megathrust
 
-The boundary between the descending slab (**I**) and the overriding plate (**G**) is the *megathrust* — the largest fault surface on Earth, and the source of every great subduction earthquake. Its surface trace at the seafloor is the trench (**B**).
+The boundary between the descending slab and the overriding plate is the *megathrust* — the largest fault surface on Earth, and the source of every great subduction earthquake. Its behaviour is governed by how strongly the two plates are mechanically locked, or *coupled*, across the interface.
 
-Its behaviour is governed by how strongly the two plates are mechanically locked, or *coupled*, across the interface.
-
-Where the megathrust is strongly coupled, the plates lock during the interseismic period, strain accumulates in the overriding plate, and that strain is released suddenly in great earthquakes. Where the megathrust is weakly coupled, the plates slide past one another more aseismically, and little strain accumulates to be released seismically. The degree of coupling is not a fixed property of a margin; it varies with depth along the interface (developed in §4) and along strike, and it depends on temperature, fluid pressure (derived in part from slab dehydration at **H**), and the physical state of the material caught in the fault zone.
+Where the megathrust is strongly coupled, the plates lock during the interseismic period, strain accumulates in the overriding plate, and that strain is released suddenly in great earthquakes. Where the megathrust is weakly coupled, the plates slide past one another more aseismically, and little strain accumulates to be released seismically. The degree of coupling is not a fixed property of a margin; it varies with depth along the interface (developed in §4) and along strike, and it depends on temperature, fluid pressure, and the physical state of the material caught in the fault zone.
 
 ### 2.3 Two end-member modes
 
@@ -99,7 +83,7 @@ Where the megathrust is strongly coupled, the plates lock during the interseismi
 The two end-member modes of subduction {cite:p}`UyedaKanamori1979`. **(left) Chilean type:** a young, buoyant slab resists sinking and subducts at a shallow angle; it presses against the overriding plate (strong coupling), driving back-arc shortening and building a high mountain arc, and it hosts great ($M\,9$) earthquakes. **(right) Mariana type:** an old, dense slab sinks steeply and rolls back; coupling is weak, the trench retreats, and the back-arc is pulled into extension (active back-arc spreading). Mariana-type margins produce frequent small-to-moderate earthquakes but no recorded great events. Real margins lie on a continuum between these idealizations.
 ```
 
-The Chilean end-member has a young, buoyant slab (**I**), a shallow dip, strong coupling, back-arc shortening — building the Andes (**F**) — and great earthquakes. The accretionary prism (**C**) is thick at sediment-rich Chilean-type margins. The Mariana end-member has an old, dense slab (**I**), a steep dip, weak coupling, trench rollback, and back-arc extension (active spreading in the Mariana Trough, where **F** opens rather than compresses); the prism (**C**) is thin or absent. The continuum between them was the first physically grounded *dynamic* classification of convergent margins, and it remains a useful organizing idea. Its limitation — which the next two sections develop — is that the simple "old/dense/coupled → big earthquakes" expectation does not survive contact with the global earthquake record.
+The Chilean end-member has a young, buoyant slab, a shallow dip, strong coupling, back-arc shortening (the Andes), and great earthquakes. The Mariana end-member has an old, dense slab, a steep dip, weak coupling, trench rollback, and back-arc extension (active spreading in the Mariana Trough). The continuum between them was the first physically grounded *dynamic* classification of convergent margins, and it remains a useful organizing idea. Its limitation — which the next two sections develop — is that the simple "old/dense/coupled → big earthquakes" expectation does not survive contact with the global earthquake record.
 
 ### 2.4 Intra-oceanic versus ocean–continent subduction
 
@@ -114,7 +98,7 @@ In **intra-oceanic** (ocean–ocean) subduction, the overriding plate is also oc
 ### 3.1 Notation
 
 ```{admonition} Notation
-:class: important dropdown
+:class: important
 
 | Symbol | Meaning | Typical value / units |
 |--------|---------|------------------------|
@@ -248,10 +232,10 @@ The three margins make the lesson concrete: Chile fits the old recipe, Mariana b
 
 ## 7. The Convergence Spectrum: From Subduction to Collision
 
-Subduction is the steady state of a convergent margin, but it is not the whole story. A subduction zone consumes oceanic lithosphere at the rate the plates converge, and oceanic lithosphere is finite. As an ocean closes, the material arriving at the trench becomes progressively more buoyant, and the margin moves along a spectrum from subduction toward collision ({numref}`SF8_convergence_spectrum`). The organizing principle is buoyancy: oceanic lithosphere is dense enough to subduct, but continental crust is too light to be carried deep into the mantle, so when continental material reaches the trench, subduction stalls and the convergence is taken up by deformation instead.
+Subduction is the steady state of a convergent margin, but it is not the whole story. A subduction zone consumes oceanic lithosphere at the rate the plates converge, and oceanic lithosphere is finite. As an ocean closes, the material arriving at the trench becomes progressively more buoyant, and the margin moves along a spectrum from subduction toward collision ({numref}`SF7_convergence_spectrum`). The organizing principle is buoyancy: oceanic lithosphere is dense enough to subduct, but continental crust is too light to be carried deep into the mantle, so when continental material reaches the trench, subduction stalls and the convergence is taken up by deformation instead.
 
-```{figure} ../assets/figures/SF8_convergence_spectrum.png
-:name: SF8_convergence_spectrum
+```{figure} ../assets/figures/SF7_convergence_spectrum.png
+:name: SF7_convergence_spectrum
 :alt: Four schematic cross-sections arranged two by two showing the spectrum of convergent margins. Panel a, intra-oceanic subduction, has an oceanic plate subducting steeply beneath a thin oceanic upper plate with a volcanic island arc and back-arc spreading (Mariana, Tonga). Panel b, ocean-continent subduction, has an oceanic plate subducting at shallower angle beneath a thick continental plate with a tall Andean arc and back-arc shortening (Andes, Cascadia). Panel c, arc-continent collision, shows a buoyant continental margin arriving at the trench and a volcanic arc colliding with it to build a rising doubly-vergent orogen (Taiwan). Panel d, continent-continent collision, shows two continental plates with one underthrusting the other along a detachment megathrust, thickening the crust into a plateau (Himalaya-Tibet, Arabia-Zagros).
 :width: 100%
 
@@ -357,82 +341,22 @@ Open-access references preferred; all linkable:
 - **Teng, L. S.** (1990). Geotectonic evolution of late Cenozoic arc–continent collision in Taiwan. *Tectonophysics* 183, 57–76. DOI: [10.1016/0040-1951(90)90188-E](https://doi.org/10.1016/0040-1951(90)90188-E).
 - **Avouac, J.-P., Meng, L., Wei, S., Wang, T. & Ampuero, J.-P.** (2015). Lower edge of locked Main Himalayan Thrust unzipped by the 2015 Gorkha earthquake. *Nature Geoscience* 8, 708–711. DOI: [10.1038/ngeo2518](https://doi.org/10.1038/ngeo2518).
 
-
-## 11. Concept Checks
-
-### 11a. Anatomy of a subduction zone
-
-The illustrated cross-section below ({numref}`SF7_subduction_anatomy`) uses plain-English text labels for every structural element of a subduction zone. Each text label corresponds directly to the letter callout (A–I) introduced in the road-map cartoon of §1a ({numref}`quiz4_cartoon`); the table that follows lists both names together so you can move fluently between the two representations. For each element, know its name, the dominant process it hosts, and how it connects to a hazard or equation from §2–§5.
-
-```{figure} ../assets/figures/SF7_subduction_anatomy.png
-:name: SF7_subduction_anatomy
-:alt: Illustrated cross-section titled "Anatomy of a Subduction Zone." The oceanic plate (quiz4_cartoon label A) approaches from the left with a blue rightward arrow labelled "oceanic plate motion"; a thin layer of oceanic sediments rides on top. At the bend where the plate begins to descend, the deep-sea trench (B) forms the topographic low. Immediately landward, imbricate wedges of stacked sediment build the accretionary wedge (C). Behind it, a water-filled low forms the forearc basin (D). Further landward, a large erupting stratovolcano represents the volcanic arc (E), with a solid red arrow showing melt rising from depth through the overriding plate. To the right, green highland terrain marks the backarc and continental interior (F and G combined); a blue leftward arrow labelled "overriding plate" shows its motion. Below the surface, the thick grey descending slab (I, labelled "Subducting slab") dips from upper-left to lower-right. The slab-overriding-plate contact, labelled "Megathrust fault interface," is traced by a chain of red stars whose depth increases landward, with the annotation "Earthquakes deepen landward" — the Wadati–Benioff zone. From the slab surface, three cyan dashed arrows labelled "Slab dehydration fluids" (H) rise into the overlying "Mantle wedge" (H); the solid red magma arrows continue from the mantle wedge up to the volcanic arc. The warm tan-orange lower region is labelled "Asthenosphere / upper mantle." Footer: "Original educational schematic for ESS 314. Designed for redistribution; no third-party artwork copied."
-:width: 95%
-
-**Anatomy of a subduction zone** — the same nine domains introduced as labels **A–I** in the §1a road-map ({numref}`quiz4_cartoon`), now shown in a rendered cross-section with plain-English callouts. *Incoming oceanic plate* = **A**; *Oceanic sediments* = the sediment blanket on **A**; *Deep-sea trench* = **B**; *Accretionary wedge* = **C**; *Forearc basin* = **D**; *Volcanic arc* = **E**; *Backarc / continental interior* = **F** + **G**; *Slab dehydration fluids* + *Mantle wedge* = **H**; *Megathrust fault interface* + *Subducting slab* = **I**. Red stars trace the Wadati–Benioff zone deepening landward; cyan dashed arrows are the slab-fluid pathway that triggers arc volcanism; solid red arrows are rising melt. Original educational schematic for ESS 314.
-```
-
-| Label (§1a cartoon) | Figure text label (SF7) | Dominant process / hazard connection |
-|---------------------|------------------------|---------------------------------------|
-| **A** | Incoming oceanic plate / Oceanic sediments | Born at a mid-ocean ridge (L27); cooling thickens it and increases negative buoyancy (§2.1); age here sets the thermal parameter $\Phi$ |
-| **B** | Deep-sea trench | Surface trace of the subducting slab; deepest ocean floor; marks the updip end of the megathrust — if rupture reaches here (domain A of §4), seafloor uplift generates a large tsunami |
-| **C** | Accretionary wedge | Incoming sediments scraped off the oceanic plate and stacked against the overriding margin; thick at Cascadia, thin or absent at Mariana; a thick prism smooths the interface and may allow rupture to propagate along strike (§5) |
-| **D** | Forearc basin | Sediment-filled basin between the prism and the volcanic arc; subsides during interseismic locking and may uplift coseismically; records the earthquake cycle stratigraphically |
-| **E** | Volcanic arc | Chain of arc volcanoes produced by partial melting of the mantle wedge (**H**); the subareal expression of slab dehydration; position relative to the trench reflects slab dip |
-| **F** | Backarc / continental interior (rear portion) | Compressional (shortening → Andes) on Chilean-type margins; extensional (rifting / back-arc spreading) on Mariana-type margins (§2.3, {numref}`SF5_slabdip_backarc`) |
-| **G** | Backarc / continental interior (craton) / overriding plate | Buoyant, thick, felsic; this positive buoyancy is why it overrides the denser oceanic slab (L26 §6); the overriding plate stores elastic strain during interseismic locking |
-| **H** | Slab dehydration fluids + Mantle wedge | Water released by mineral dehydration in the descending slab lowers the peridotite solidus → partial melt rises to feed arc volcanoes at **E**; hydrous fluids also lower friction on the megathrust at **I** |
-| **I** | Megathrust fault interface + Subducting slab | The subduction-interface fault — the largest fault on Earth; locking here stores the elastic strain released in $M\,8$–$9$ earthquakes; the depth-varying rupture domains of §4 all occur on this surface |
-
-```{admonition} Quiz-preparation questions
-:class: tip dropdown
-
-Practice answering each in 2–4 sentences. These are the styles of questions on the L28 quiz.
-
-**Part 1 — Label identification and process**
-
-1. Label **I** is called the *megathrust*. (a) What type of faulting mechanism does it have (thrust, normal, or strike-slip)? (b) What determines the depth at which earthquakes on **I** stop occurring (the base of the seismogenic zone)? (c) Name the two primary hazards generated when **I** ruptures to the trench (**B**).
-
-2. Trace the process chain **A → I → H → E**: starting from the composition of the incoming oceanic crust at **A**, explain step by step how subduction ultimately produces a volcano at **E**.
-
-3. The wavy lines at **H** represent fluid released from the slab. In what mineral reactions does this fluid originate? At roughly what depth? Why does the presence of this fluid lower the melting point of the overlying mantle?
-
-**Part 2 — Margin classification (§2.3)**
-
-4. In this diagram, label **F** shows a volcanic mountain range (like the Andes) behind the arc. Does this indicate a Chilean-type or Mariana-type margin? What does it imply about: (a) slab dip at **I**, (b) the degree of coupling, and (c) the expected maximum earthquake magnitude?
-
-5. Redraw the diagram schematically for a Mariana-type margin. What happens to the trench (**B**), the accretionary wedge (**C**), and the back-arc (**F**)? What happens to the width of the seismogenic zone on **I**?
-
-**Part 3 — Rupture domains and hazard (§4)**
-
-6. Using the Lay (2012) four-domain model from {numref}`SF4_rupture_domains`:
-   - (a) Which domain is located nearest to label **B** (the trench)?
-   - (b) What kind of seismic source — and which surface hazard — is it associated with?
-   - (c) Which domain produces the strongest *ground shaking* at a city 100 km inland?
-
-7. The 2011 Tōhoku earthquake produced tens of metres of slip near **B** (the trench). Using the equation $M_0 = \mu \bar{D}\,L\,W$ ({eq}`eq:seismic-moment`): which term ($\bar{D}$, $L$, or $W$) was unexpectedly large, and why did conventional hazard models fail to anticipate it?
-
-**Part 4 — Cascadia application (§5, §10)**
-
-8. At Cascadia, the bathymetric trench (**B**) is buried and the accretionary prism (**C**) is unusually thick.
-   - (a) What does a thick prism at **C** imply for the roughness of the interface at **I**?
-   - (b) How does a smooth interface affect the along-strike rupture length $L$ in {eq}`eq:seismic-moment`?
-   - (c) What additional control — related to the composition of sediment at **C** — does {cite:t}`Han2017` identify as varying along strike?
-
-9. Two students argue about the maximum earthquake Cascadia can produce. **Student A** says: "The incoming plate at **A** is young ($< 15$ Ma), so the slab is warm and buoyant; coupling should be weak and the maximum event moderate." **Student B** says: "The thick, smooth sediment at **C** allows the full 1 000 km margin to rupture in a single event." (a) Which student's reasoning is consistent with {cite:t}`Wirth2022`? (b) Which parameter in {eq}`eq:seismic-moment` is each student focusing on?
-
-**Part 5 — Cross-cutting synthesis**
-
-10. The figure shows a single snapshot of the subduction system. Describe what the same cross-section will look like in 10 million years: which label shrinks, which grows, and what tectonic event eventually terminates subduction at this margin?
-```
-
 ---
+
+```{admonition} Concept checks
+:class: note
+
+Try these before the next class meeting; we will go over them in discussion.
+
+1. **Thermal parameter.** Compute $\Phi = A\,v_c\,\sin\delta$ for (a) Tōhoku ($A = 130$ Ma, $v_c = 83$ mm/yr, $\delta = 15^\circ$ shallow interface) and (b) Mariana ($A = 155$ Ma, $v_c = 35$ mm/yr, $\delta = 60^\circ$). Which slab is "colder" by this measure? Does the colder slab host the larger earthquakes? What does your answer say about $\Phi$ as a predictor of $M_{\max}$?
+2. **Moment and area.** Using {eq}`eq:seismic-moment` and {eq}`eq:moment-magnitude` with $\mu = 40$ GPa, estimate the rupture area needed for an $M_w\,9.0$ earthquake assuming an average slip of $\bar{D} = 15$ m. If the seismogenic zone is $W = 100$ km wide, how long along strike must the rupture be? Compare to the length of the Cascadia margin.
+3. **Reading the parameter space.** Using {numref}`SF3_parameter_space`, explain why seismogenic-zone width is a better predictor of $M_{\max}$ than plate age or convergence rate. State the two geometric thresholds (a dip and a width) that no recorded $M \geq 9.2$ earthquake has violated, and name the margin that is the noted exception to the width rule.
+4. **Cascadia hazard.** Cascadia is young and slow. State, in two or three sentences, why it is nonetheless regarded as capable of an $M\,9$ earthquake, citing its seismogenic width and interface smoothness from §5 and §10.
+5. **AI epistemics.** Run the AI Prompt Lab prompt above with an assistant of your choice. Did it accept the obsolete premise? Quote the sentence where it either challenged or accepted the age/rate assumption, and grade it against the rubric.
+6. **The convergence spectrum.** Using {numref}`SF7_convergence_spectrum`, explain why the Andes (ocean–continent) builds a tall continental arc while the Marianas (intra-oceanic) builds low island arcs with back-arc spreading. Then state what must change at the trench for an ocean–continent subduction zone to become a continent–continent collision, and name one collisional belt that still hosts great earthquakes despite consuming no oceanic slab.
+```
 
 ::::{admonition} A note on sensitive content
 :class: warning
 This lecture discusses earthquake and tsunami hazards that have caused large loss of life, including events within living memory. The intent is scientific and preparedness-oriented. Students in the Pacific Northwest who find the Cascadia hazard distressing may find it helpful to channel that concern into preparedness resources from the Washington Emergency Management Division and the Pacific Northwest Seismic Network.
 ::::
-
-```{bibliography}
-:filter: docname in docnames
-```
