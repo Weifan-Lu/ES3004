@@ -31,7 +31,7 @@ CARD_FIELDS = [
 
 GROUPS = [
     dict(
-        fig="fig_l30_group1_whole_planet.png",
+        fig="fig_l30_group1_earth.png",
         title="Group 1 — The Whole Planet",
         scale="planetary interior  ·  ~10,000 km",
         question=("How do we know Earth's outer core is liquid iron — and how "

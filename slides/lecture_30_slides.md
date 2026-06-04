@@ -109,10 +109,24 @@ Fill these rows as a group:
 
 ## Group 1 · The Whole Planet · *planetary interior, ~10⁴ km*
 
-![w:430 Earth cross-section: P rays turn in the mantle, S rays stop at the liquid core, a shaded P-wave shadow spans 103-143 degrees, and PKP passes through the core to the far side.](../assets/figures/fig_l30_group1_whole_planet.png)
+![w:380 Ray-traced Earth cross-section: direct P turns in the mantle to about 100 degrees, PKP refracts through the low-velocity outer core to re-emerge past 143 degrees with a shadow zone between, and S cannot cross the liquid outer core so it vanishes beyond about 103 degrees.](../assets/figures/fig_l30_group1_earth.png) ![w:300 Companion Mars cross-section: a large liquid core, with turning P and S rays in the mantle and a core-reflected phase that sizes the core from a single station.](../assets/figures/fig_l30_group1_mars.png)
 
 **Q:** How do we know the **outer core is liquid iron** — and how would you find the core of **Mars** with one seismometer?
-*On the table:* S-wave shadow · normal modes / PKIKP · mean density & moment of inertia · the geodynamo.
+*On the table:* S-wave shadow · PKP / PKIKP · normal modes · mean density & moment of inertia · the geodynamo.
+
+*Read more → [Studio Station 1](../discussions/session_10_synthesis.html#station-1-the-whole-planet)*
+
+---
+
+## Group 1 · Extension — two network designs
+
+![w:760 Two designs side by side: a satellite-led network (gravity pair, magnetic survey, precession) sensing global fields with weak depth resolution, and a ground-led network (seismometer ring, body-wave PKP ray, normal modes) resolving sharp boundaries but needing earthquakes and dense coverage.](../assets/figures/fig_l30_group1_networks.png)
+
+**Design A — satellite-led:** gravity + mass, magnetic (geodynamo), precession → **bulk** core size, density, dynamics.
+**Design B — ground-led:** body-wave travel times (PKP shadow), normal modes → **sharp** boundaries (CMB, ICB) and state.
+*Joint move:* satellites fix the global budget; ground sensors fix the boundaries — name the ambiguity each removes.
+
+*Read more → [Studio Station 1 extension](../discussions/session_10_synthesis.html#station-1-the-whole-planet)*
 
 ---
 

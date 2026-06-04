@@ -68,17 +68,43 @@ Each station has a figure to reason from. The figure does not give the answer; i
 
 ### Station 1 - The Whole Planet
 
-```{figure} ../assets/figures/fig_l30_group1_whole_planet.png
+```{figure} ../assets/figures/fig_l30_group1_earth.png
 :name: fig-l30-g1
-:alt: Cross-section of Earth with mantle, liquid outer core, and solid inner core. A surface source sends P rays that turn in the mantle and S rays that stop at the liquid core; a shaded P-wave shadow zone spans about 103 to 143 degrees, an S-wave shadow covers everything beyond about 103 degrees, and a PKP ray passes through the core to emerge on the far side.
-:width: 78%
+:alt: Cross-section of Earth showing mantle, liquid outer core, and solid inner core. Direct P rays (right) turn in the mantle and reach about 100 degrees; steeper rays refract through the low-velocity outer core and re-emerge beyond about 143 degrees as PKP, while one ray crosses the inner core as PKIKP. The gap between is the P-wave shadow zone. On the left, S rays turn in the mantle but cannot cross the liquid outer core, so no direct S exists beyond about 103 degrees - the S-wave shadow.
+:width: 80%
 
-The seismic shadow that proves a liquid core. No direct S beyond about 103 degrees means the outer core has no shear strength.
+Ray-traced shadow zones (Snell's law, p = r sin i / v constant). The velocity drop at the core-mantle boundary refracts P into the core as PKP and opens the shadow zone; S has no path through the liquid outer core and simply disappears beyond about 103 degrees - the evidence that the outer core has no shear strength.
+```
+
+```{figure} ../assets/figures/fig_l30_group1_mars.png
+:name: fig-l30-g1-mars
+:alt: Cross-section of Mars with a large liquid core of radius about 1830 km. A surface marsquake sends P and S rays that curve concave toward the surface and turn within the mantle by Snell's law; a steeper ray reflects off the core-mantle boundary as a core-reflected phase, and a wedge opposite the source marks the core shadow.
+:width: 62%
+
+Companion case: the same ray physics on Mars. A single station (NASA InSight) sized the liquid core to about 1830 km from core-reflected phases - the scaling-down of the same method.
 ```
 
 **Question.** How do we know Earth's outer core is liquid iron - and how would you find the core of Mars with a single seismometer?
 **Footholds:** teleseismic body waves and the S-wave shadow; normal modes and PKIKP; mean density and moment of inertia; the geodynamo.
 **Notice:** which property does each method sense - state, radius, density, or the existence of a convecting conductor?
+
+````{admonition} Extension - design two observing networks
+:class: tip
+
+Your team is now asked to design **two complementary networks** to pin Earth's core radius, density, and liquid/solid state - and to argue why you would want both.
+
+```{figure} ../assets/figures/fig_l30_group1_networks.png
+:name: fig-l30-g1-networks
+:alt: Two side-by-side designs. Design A, satellite-led: a GRACE-FO pair measuring gravity and monthly mass change, a magnetic-survey satellite sensing the outer-core geodynamo, and rotation and precession giving the moment of inertia; it senses global integrated fields with weak vertical resolution. Design B, ground-led: a ring of seismometers recording body-wave travel times and the PKP shadow plus the planet's normal modes; it resolves sharp boundaries such as the core-mantle and inner-core boundaries but needs earthquakes and has sparse ocean coverage.
+:width: 100%
+
+Two designs for the same target. The satellite-led network fixes the global mass and field budget; the ground-led network fixes the sharp boundaries and state.
+```
+
+- **Design A - satellite-led.** What is mostly in orbit? Likely elements: time-variable **gravity** (a GRACE-FO-style pair for mass and moment of inertia), the **magnetic field** (a Swarm-style survey that senses the outer-core geodynamo), and **rotation, precession, nutation** (space geodesy) that constrain the moment of inertia. These give **bulk** quantities - core size, mean density, core dynamics - with global coverage but weak resolution of *where* at depth.
+- **Design B - ground-led.** What is mostly on the ground? A global **seismometer** network recording **body-wave travel times** (the PKP shadow itself) and the planet's **free oscillations** (normal modes). These resolve **sharp radial structure** - the depths of the core-mantle and inner-core boundaries, the velocity jumps, and whether a layer is solid or liquid - but need earthquakes and have uneven coverage over oceans.
+- **The joint move (the point of the task).** Neither design alone fixes everything: satellites constrain *how much mass and what bulk field* without sharp depth control; ground sensors constrain *exactly where the boundaries are and their state* but cannot weigh the whole planet from sparse stations. Used together, they pin core radius, density, and state with the null space of each filled by the other. State, in one sentence, which ambiguity each network removes from the other.
+````
 
 ### Station 2 - Ocean Geophysics: The Spreading Seafloor
 
