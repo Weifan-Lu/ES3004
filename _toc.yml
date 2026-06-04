@@ -161,6 +161,8 @@ parts:
         title: "Session 9 — Inversion & the Climate Problem"
       - file: discussions/session_10
         title: "Session 10 — What Have We Learned?"
+      - file: discussions/session_10_synthesis
+        title: "Studio (L30) — One Earth, Many Observables"
       - file: discussions/session_lithosphere
         title: "Workshop — Lithosphere Comparison (L26)"
 
