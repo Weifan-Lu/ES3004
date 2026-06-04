@@ -224,7 +224,7 @@ Three forward operators then act on this single source model. The **elastic wave
 
 This lecture is deliberately a return visit to the whole course. The forward operators in {numref}`fig-synthesis-operators` are, in order, the subjects of Modules 1–3 (the elastic wave equation and seismic imaging), Module 4 (gravity and isostasy), Module 5 (magnetics and the magnetization–temperature link through the Curie point), and Module 7 (the thermal lithosphere and flexure). The non-uniqueness argument formalizes a thread that began with the hidden-layer problem in seismic refraction, recurred in the equivalent-source ambiguity of potential fields, and was named explicitly in tomography. The plate-cooling spine ties Module 7's thermal model to Module 4's isostasy and to the seafloor ages read from Module 5's magnetic stripes — three modules in one model.
 
-The cooling of one plate (section 3b) and the cooling of the whole planet (section 3c) are the same physics at two scales. The convecting mantle that sheds the Earth's heat ({numref}`fig-convection-engine`) presents itself at the surface in two ways. Its cold, organized downwellings are the subducting slabs of plate tectonics; its passive shallow upwellings rise beneath the mid-ocean ridges. Plate tectonics, in this light, is the *surface expression of mantle convection* — the cold upper boundary layer of the convecting system, broken into plates that diverge where material rises and converge where it sinks.
+The cooling of one plate (section 3b) and the cooling of the whole planet (section 3e) are the same physics at two scales. The convecting mantle that sheds the Earth's heat ({numref}`fig-convection-engine`) presents itself at the surface in two ways. Its cold, organized downwellings are the subducting slabs of plate tectonics; its passive shallow upwellings rise beneath the mid-ocean ridges. Plate tectonics, in this light, is the *surface expression of mantle convection* — the cold upper boundary layer of the convecting system, broken into plates that diverge where material rises and converge where it sinks.
 
 ```{figure} ../assets/figures/fig_mantle_convection_engine.png
 :name: fig-convection-engine
@@ -244,27 +244,78 @@ The second disruption is fixity. The hotspot reference frame was long treated as
 
 The deeper significance is the one to carry out of the course. Plate tectonics shows mantle convection's cold, organized *downwellings* at the surface; hotspots reveal its hot, narrow *upwellings* from the base of the mantle. That those upwellings wander, tilt, and split is direct evidence that the mantle is not a tidy array of steady cells but a vigorously stirred, turbulent flow. Hotspots, in other words, are the clearest surface sign that the solid Earth is convecting — the planet's slow boil made visible.
 
-The Pacific Northwest concentrates these themes in one place. The Cascadia subduction zone offshore is the region's dominant earthquake and tsunami hazard, and its assessment is exactly a multi-method problem — seismic imaging of the megathrust geometry, geodetic measurement of locking, and gravity and bathymetry of the forearc, combined into one picture of where and how the fault will slip {cite:p}`Biemiller2025, Ledeczi2024`. The same Puget Sound that carries the hazard also carries dense fibre-optic networks beneath its cities, now being read as urban seismic arrays; and the Cascade glaciers and the larger ice sheets that set regional sea level are monitored by the seismic and geodetic methods introduced in section 6. A student leaving this course is equipped to read any of these problems as an instance of the single logic the course has built: observation, model, inference, interpretation.
+The Pacific Northwest concentrates these themes in one place. The Cascadia subduction zone offshore is the region's dominant earthquake and tsunami hazard, and its assessment is exactly a multi-method problem — seismic imaging of the megathrust geometry, geodetic measurement of locking, and gravity and bathymetry of the forearc, combined into one picture of where and how the fault will slip {cite:p}`Biemiller2025, Ledeczi2024`. The same Puget Sound that carries the hazard also carries dense fibre-optic networks beneath its cities, now being read as urban seismic arrays; and the Cascade glaciers and the larger ice sheets that set regional sea level are monitored by the seismic and geodetic methods introduced in section 7. A student leaving this course is equipped to read any of these problems as an instance of the single logic the course has built: observation, model, inference, interpretation.
 
 ---
 
-## 6. Research Horizon
+## 6. Scales of Investigation: Imaging the Subsurface from Planet to Pore
+
+The synthesis of section 5 spanned one plate to the whole planet, but the reach of these methods is wider still. The forward operators of {numref}`fig-synthesis-operators` are not tied to any particular size: the elastic wave equation, Newtonian gravity, the magnetic potential field, heat conduction, and electromagnetic induction apply from the radius of an entire planet down to the first metre of soil. What changes from one scale to the next is not the physics but the **wavelength of the probe and the aperture of the survey**, which together fix the depth of penetration and the spatial resolution. A method resolves structure on the order of the wavelength it uses and senses to a depth comparable to the size of its array. Matching wavelength and aperture to the target is the practical craft of subsurface imaging — and it is the same craft, whether the target is the Martian core or a buried fuel tank.
+
+### 6a. The scale ladder
+
+The course has, often without naming it, climbed a ladder of scales. Each rung uses the same families of observation but tunes them to a different depth.
+
+| Scale | Characteristic size | Dominant methods | What is imaged | Typical resolution |
+|---|---|---|---|---|
+| Planetary interior | $10^{3}\text{–}10^{4}$ km | Teleseismic body waves, free oscillations, mean density, moment of inertia | Core, mantle, and crust radii of Earth, Mars, the Moon ({numref}`fig-planetary`) | $10^{2}$ km |
+| Whole mantle / global | $10^{3}$ km | Travel-time and waveform tomography, the geoid | Slabs, plumes, large low-shear-velocity provinces, convective planform | $10^{2}$–$10^{3}$ km |
+| Lithosphere / regional | $10\text{–}500$ km | Surface-wave tomography, receiver functions, regional gravity and magnetics, heat flow | Moho depth, plate thickness, basin and orogen geometry | km–$10$ km |
+| Crustal exploration | $0.1\text{–}10$ km | Active-source reflection and refraction, gravity and magnetic surveys, magnetotellurics | Reservoirs, faults, ore bodies, magma chambers, aquifers | $10$–$10^{2}$ m |
+| Near surface / engineering | $1\text{–}100$ m | Ground-penetrating radar, electrical resistivity, shallow refraction and surface-wave (MASW) | Water table, bedrock depth, contaminant plumes, permafrost, voids | cm–m |
+
+Reading the table downward, the wavelength shortens, the aperture shrinks, and the resolution sharpens — but the depth of investigation shrinks with it. A free-oscillation period of an hour senses the whole planet but cannot resolve a sedimentary layer; a $100\ \mathrm{MHz}$ ground-penetrating-radar pulse maps the water table to the centimetre but dies out within metres. There is no single best method, only a method matched to a scale.
+
+### 6b. The same logic at every depth
+
+What unifies the ladder is the inverse problem itself. At every rung the workflow is the one this course has built: deploy sources and receivers, measure a wavefield or a potential field at the surface, and invert it for the property contrast at depth, then test the result against an independent observable. At planetary scale the source is a marsquake and the receiver a single lander; in a groundwater survey the source is a sledgehammer and the receivers a line of geophones a metre apart. The misfit functional {eq}`eq-misfit`, and the non-uniqueness it carries, are identical in form. So is the cure: the joint-inversion logic that ties seismic velocity to density through the Nafe–Drake relation (section 3c), or pins a gravity model to a seismically imaged interface, removes ambiguity as effectively in a 50-metre engineering survey as in a whole-mantle tomography. **The synthesis principle of this course is scale-invariant.**
+
+```{important}
+**Key Concept — scale invariance of the inverse problem.** The physics that images Mars from one seismometer and the physics that images a contaminant plume from a resistivity line are the same forward-and-inverse logic operating at different wavelengths. Mastering the principle once — observation, forward operator, joint inversion, independent check — equips a geophysicist to work at any scale.
+```
+
+### 6c. Why structure matters: resource management
+
+Knowing the subsurface structure is not an end in itself; it is the basis for managing what the subsurface holds. Every resource decision rests on an image built from the methods of this course.
+
+- **Geothermal energy** depends on the heat-flow and temperature field of section 3b and on seismic and magnetotelluric imaging of permeable, hot rock at drillable depth.
+- **Groundwater** is mapped by electrical resistivity and shallow seismics that locate the water table, the aquifer geometry, and the impermeable layers that confine it.
+- **Critical minerals** — the metals required for electrification — are targeted by gravity and magnetic surveys that detect the density and magnetization contrasts of ore bodies, then refined by seismic and electromagnetic follow-up.
+- **Carbon storage** requires both *characterization* (a porous reservoir beneath an impermeable seal, imaged by reflection seismology and gravity) and *monitoring* (time-lapse, or 4-D, seismic and gravity surveys that track the injected $\mathrm{CO_2}$ plume and verify it stays contained).
+
+In each case the value of the image is set by its resolution and by how well independent methods agree: a single ambiguous survey can place a costly well in barren rock, whereas a joint interpretation that satisfies seismic, gravity, and electromagnetic data at once de-risks the decision.
+
+### 6d. Why structure matters: hazard modelling
+
+The same images underpin the assessment of geophysical hazards, the theme that ran through Modules 3 and 8.
+
+- **Earthquake shaking** depends on near-surface structure: the shallow shear-wave velocity $V_{s30}$, imaged by surface-wave methods, controls how much a soft basin amplifies ground motion (L17), while deeper seismic and geodetic imaging fixes the fault geometry and locking that set the source (section 3d).
+- **Tsunami run-up** depends on the slip distribution and the bathymetry and forearc structure imaged seismically (L18); whether rupture reaches the shallow seafloor — a question of accretionary-wedge structure — governs the wave height.
+- **Volcanic unrest** is tracked by seismic imaging of magma reservoirs, by geodetic measurement of inflation, and by gravity changes as magma moves — three independent observables of one migrating mass.
+- **Landslides and ground failure** are assessed with near-surface seismic and resistivity imaging of the failure surface and the saturated layers above it.
+- **Induced seismicity** from fluid injection — wastewater, geothermal, or carbon storage — links the resource and hazard sides directly: the same reservoir model that guides injection must also forecast the faults that injection might reactivate.
+
+In every case the chain is identical: an image of the subsurface, built by joint interpretation of independent methods, feeds a forward model that predicts the consequence — shaking, run-up, eruption, failure. The better the structural image, the more reliable the forecast. This is the practical payoff of the entire course: **structure inferred from geophysics is the input on which resource management and hazard mitigation depend.**
+
+---
+
+## 7. Research Horizon
 
 Geophysics is expanding along several fronts at once. Four are sketched here; each is advancing now for an identifiable methodological reason, and each is an entry point for undergraduate research.
 
-### 6a. Machine learning
+### 7a. Machine learning
 
 Data-driven methods became central to seismology over a short window beginning around 2018, when convolutional networks were first shown to detect and locate earthquakes directly from waveforms {cite:p}`Perol2018`, followed quickly by deep phase pickers that now underpin routine catalog production {cite:p}`MousaviBeroza2024`. The timing was set by two enabling conditions arriving together: inexpensive parallel computation on graphics processing units, and large labelled seismic datasets from decades of dense network archives. The methods are tools, not oracles — their failure modes (poor transfer between regions and instrument types, sensitivity to training-set bias) are themselves an active research subject {cite:p}`MousaviBeroza2022`.
 
-### 6b. Sensing technology
+### 7b. Sensing technology
 
 The data that geophysics can collect are limited by its instruments, and the instrument base is changing. Distributed acoustic sensing turns an ordinary fibre-optic telecommunication cable into a dense array of thousands of strain sensors by interrogating backscattered laser light, recording the seismic wavefield every few metres along tens of kilometres of fibre at low cost {cite:p}`LindseyMartin2021, Zhan2020`. Unused "dark fibre" beneath cities, under the seafloor, and along glaciers is being repurposed as seismic instrumentation in places where conventional stations cannot be installed.
 
-### 6c. The cryosphere and the environment
+### 7c. The cryosphere and the environment
 
 Glaciers and ice sheets generate seismic signals — fracture, basal slip, calving — that record processes otherwise hidden from view, and these signals can be monitored continuously and modelled physically {cite:p}`AsterWinberry2017, Latto2024`. Fibre-optic sensing has recently been extended onto and into ice, combining the technology and cryosphere fronts {cite:p}`Lipovsky2025`. The same near-surface methods constrain groundwater, permafrost, and contaminant transport, placing geophysics directly in the service of environmental and climate science.
 
-### 6d. Planetary interiors
+### 7d. Planetary interiors
 
 The course defined geophysics as the physics of the inaccessible interior. That definition now extends to other worlds. NASA's InSight lander placed a single seismometer on Mars in 2018 and, from roughly 1,300 marsquakes recorded by that one station, returned the first seismologically determined crust, mantle, and core of another planet — including confirmation of a large liquid iron core {cite:p}`Stahler2021, Khan2021, Lognonne2023`. Earth's interior was mapped by thousands of stations, the Moon's by the four-station Apollo network, and Mars's by one ({numref}`fig-planetary`). The reasoning is identical at every scale: convert what reaches the surface into a statement about what lies beneath.
 
@@ -282,7 +333,7 @@ The live tectonics frontier remains close to home. The structure of the Cascadia
 
 ---
 
-## 7. AI Literacy: Evaluating a Synthesis Against Your Own Rubric
+## 8. AI Literacy: Evaluating a Synthesis Against Your Own Rubric
 
 ```{admonition} AI Epistemics — the capstone standard (LO-7)
 :class: important
@@ -307,7 +358,7 @@ The standard is not whether the AI sounds authoritative. It is whether its argum
 
 ---
 
-## 8. Concept Checks
+## 9. Concept Checks
 
 1. Gravity and seismic refraction are both proposed to map the depth to a basement interface beneath a sedimentary basin. State one property each method senses, and explain why running both is more informative than running either twice.
 2. On the Moon, the core radius is about 19% of the planetary radius; on Mars it is about 54% ({numref}`fig-planetary`). Both figures were obtained seismologically. What does the contrast imply about how much iron each body retained relative to its silicate mantle?
@@ -318,7 +369,7 @@ The standard is not whether the AI sounds authoritative. It is whether its argum
 
 ---
 
-## 9. Connections
+## 10. Connections
 
 - [Lecture 11 — Whole Earth I](11_whole_earth_I.md) — seismic travel times and the reference velocity model that sections 3a–3b extend.
 - [Lecture 12 — Seismic Tomography](12_seismic_tomography.md) — the tomographic inverse problem of which {eq}`eq-misfit` is a generalization.

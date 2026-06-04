@@ -30,22 +30,24 @@ mpl.rcParams.update({
 planets = [
     dict(name="Earth",  R=6371, Rc=3480,  stations="thousands of stations\n(FDSN global network)",
          color_mantle="#6BAED6", color_core="#FD8D3C",
-         xc=0.18),
+         xc=0.50),
     dict(name="Mars",   R=3390, Rc=1830,  stations="ONE station\n(InSight SEIS)",
          color_mantle="#74C476", color_core="#FD8D3C",
-         xc=0.55),
+         xc=1.35),
     dict(name="Moon",   R=1737, Rc=330,   stations="four stations\n(Apollo network)",
          color_mantle="#9ECAE1", color_core="#FD8D3C",
-         xc=0.83),
+         xc=1.90),
 ]
 
-# Scale everything to Earth radius = 0.18 of figure width
+# Scale everything to Earth radius = 0.175 display-units
 SCALE = 0.175 / 6371   # display-units per km
 
 FIG_W, FIG_H = 13, 6.0
+ASPECT = FIG_W / FIG_H   # data-unit aspect so circles stay circular
 fig, ax = plt.subplots(figsize=(FIG_W, FIG_H))
-ax.set_xlim(0, 1)
+ax.set_xlim(0, ASPECT)
 ax.set_ylim(0, 1)
+ax.set_aspect("equal")   # critical: prevents circles rendering as ellipses
 ax.axis("off")
 
 BODY_Y = 0.55   # vertical centre of planets
