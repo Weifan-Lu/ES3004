@@ -33,6 +33,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch
+from scipy.integrate import solve_ivp
 
 mpl.rcParams.update({
     "font.size": 13,
@@ -49,6 +50,54 @@ COLORS = ["#0072B2", "#E69F00", "#56B4E9", "#009E73",
           "#D55E00", "#CC79A7", "#000000"]
 FIGDIR = os.path.join(os.path.dirname(__file__), "..", "figures")
 
+# --- PREM-like model for ray tracing (Design B). The unit-radius cartoon uses
+#     Earth's true core fractions (0.55, 0.19), so traced rays in km map onto it
+#     by dividing by R_E. Velocity RISES with depth in the mantle, so rays curve
+#     concave toward the surface and turn; it DROPS at the CMB, refracting P into
+#     the core as PKP. ---
+R_E = 6371.0
+R_CMB = 3480.0
+R_ICB = 1220.0
+_W = 40.0
+
+
+def vp(r):
+    f = np.clip((R_E - r) / (R_E - R_CMB), 0, 1)
+    vm = 8.0 + (13.7 - 8.0) * f ** 0.55                          # mantle
+    voc = 8.0 + (10.3 - 8.0) * ((R_CMB - r) / (R_CMB - R_ICB))   # outer core
+    s_cmb = 0.5 * (1 + np.tanh((r - R_CMB) / _W))
+    s_icb = 0.5 * (1 + np.tanh((r - R_ICB) / _W))
+    return s_cmb * vm + (1 - s_cmb) * (s_icb * voc + (1 - s_icb) * 11.0)
+
+
+def trace(a_deg, stop_core, smax=45000):
+    """Kinematic spherical ray (p = r sin i / v conserved), source at the top."""
+    def deriv(s, Y):
+        x, y, px, py = Y
+        r = np.hypot(x, y)
+        vv = vp(r)
+        dvdr = (vp(r + 1.0) - vp(r - 1.0)) / 2.0
+        g = -dvdr / (vv * vv * r)
+        return [vv * px, vv * py, g * x, g * y]
+    a = np.radians(a_deg)
+    u0 = 1.0 / vp(R_E)
+    Y0 = [0.0, R_E, np.sin(a) * u0, -np.cos(a) * u0]
+
+    def surf(s, Y):
+        return np.hypot(Y[0], Y[1]) - R_E
+    surf.terminal = True
+    surf.direction = +1
+    events = [surf]
+    if stop_core:
+        def core(s, Y):
+            return np.hypot(Y[0], Y[1]) - R_CMB
+        core.terminal = True
+        core.direction = -1
+        events.append(core)
+    sol = solve_ivp(deriv, [0, smax], Y0, events=events, max_step=8,
+                    rtol=1e-9, atol=1e-7)
+    return sol.y[0] / R_E, sol.y[1] / R_E
+
 
 def draw_earth(ax):
     ax.add_patch(Circle((0, 0), 1.0, facecolor="#EAF2F8", edgecolor=COLORS[6],
@@ -62,14 +111,6 @@ def draw_earth(ax):
 def polar(r, deg):
     t = np.radians(deg)
     return r * np.sin(t), r * np.cos(t)
-
-
-def bow(deg0, deg1, r_turn, n=80):
-    """Stylized turning ray, concave toward the surface."""
-    s = np.linspace(0, 1, n)
-    deg = deg0 + (deg1 - deg0) * s
-    r = 1.0 - (1.0 - r_turn) * np.sin(np.pi * s)
-    return polar(r, deg)
 
 
 def main():
@@ -133,19 +174,15 @@ def main():
         axB.plot(sx, sy, marker="^", ms=9, color=COLORS[3],
                  markeredgecolor=COLORS[6], markeredgewidth=0.5, zorder=6)
 
-    # earthquake source + body-wave rays
+    # earthquake source + ray-traced body waves. Velocity rises with depth, so
+    # the rays curve concave toward the surface and turn in the mantle; the
+    # steep ray refracts through the low-velocity outer core as PKP.
     axB.plot(0, 1.0, marker="*", ms=18, color=COLORS[6], zorder=7)
-    x, y = bow(0, 78, 0.62)                      # direct P/S, turns in mantle
-    axB.plot(x, y, color=COLORS[0], lw=1.8, zorder=5)
-    # PKP: steep, refracts through the core, emerges far side
-    a = np.array([0, 12, 168, 180.0]); rr = np.array([1.0, 0.55, 0.55, 1.0])
-    s = np.linspace(0, 1, 120)
-    deg = np.interp(s, np.linspace(0, 1, 4), a)
-    r = np.interp(s, np.linspace(0, 1, 4), rr)
-    mid = (deg > 12) & (deg < 168)
-    r = r - np.where(mid, 0.16 * np.exp(-((deg - 90) / 60) ** 2), 0)
-    px, py = polar(r, deg)
-    axB.plot(px, py, color=COLORS[4], lw=1.8, zorder=5)
+    for a in (40, 26):                       # direct P/S, turn in the mantle
+        rx, ry = trace(a, stop_core=True)
+        axB.plot(rx, ry, color=COLORS[0], lw=1.8, zorder=5)
+    rx, ry = trace(7, stop_core=False)       # PKP, refracts through the core
+    axB.plot(rx, ry, color=COLORS[4], lw=1.8, zorder=5)
     axB.text(0.9, 0.5, "body waves\n(P, S, PKP)\n-> travel times,\nshadow zone",
              fontsize=9.5, ha="left", color=COLORS[0])
 
