@@ -57,10 +57,10 @@ The answer organizes the rest of the lecture. The classification that failed is 
 
 ### 1a. Orientation: the anatomy of a subduction zone
 
-Before developing the physics, we need a shared visual vocabulary. The block diagram below ({numref}`quiz4_cartoon`) labels the nine structural domains that will appear in every section of this lecture. Read through the labels once now — not to memorize them, but to map the words onto a geometry. Each label will be invoked again, with its physics, in §2–§10.
+Before developing the physics, we need a shared visual vocabulary. The block diagram below ({numref}`subduction_anatomy`) labels the nine structural domains that will appear in every section of this lecture. Read through the labels once now — not to memorize them, but to map the words onto a geometry. Each label will be invoked again, with its physics, in §2–§10.
 
-```{figure} ../assets/figures/quiz4_cartoon_subduction_zones.png
-:name: quiz4_cartoon
+```{figure} ../assets/figures/SF7_subduction_anatomy.png
+:name: subduction_anatomy
 :alt: Three-dimensional perspective block diagram of an ocean-to-continent subduction zone. Oceanic lithosphere at the lower left, labeled A, bears prominent horizontal seafloor-spreading lineations and moves toward the continent (arrow pointing lower right). Nine structural domains are labeled in red. Along the top surface from left to right: A, oceanic lithosphere with spreading lineations; B, the deep-sea trench, the surface trace of the subduction hinge; C, the accretionary prism, a wedge of deformed and stacked sediments immediately landward of the trench; D, the forearc basin, a sediment-filled depression between the prism and the arc; E, the volcanic arc, shown as a broad highland with a prominent stratovolcano; F, the back-arc region, rugged mountainous terrain representing shortening on a Chilean-type margin; G, the continental interior on the far right. Below the surface, the thick black inclined slab (label I) descends from the trench beneath the overriding plate; vertical wavy lines at label H, beneath the volcanic arc, represent hot mantle and slab-derived fluids rising into the mantle wedge. The word OCEANIC LITHOSPHERE labels the left side; CONTINENTAL LITHOSPHERE labels the right side.
 :width: 95%
 
