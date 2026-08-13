@@ -1,4 +1,4 @@
-# ESS 314: Introduction to Geophysics
+# ES3004: Introduction to Geophysics
 
 [![Deploy Jupyter Book](https://github.com/uw-geophysics-edu/ess314/actions/workflows/deploy-book.yml/badge.svg)](https://github.com/uw-geophysics-edu/ess314/actions/workflows/deploy-book.yml)
 [![Docker Image](https://github.com/uw-geophysics-edu/ess314/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/uw-geophysics-edu/ess314/actions/workflows/docker-publish.yml)
