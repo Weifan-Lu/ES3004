@@ -1,8 +1,8 @@
 ---
 marp: true
-theme: ess314
+theme: es3004
 paginate: true
-header: "ESS 314 — Lecture 14"
+header: "ES3004 — Lecture 14"
 footer: "Earthquake Phenomena I — Records, Phases, and Location"
 math: katex
 ---
@@ -12,10 +12,9 @@ math: katex
 # Earthquake Phenomena I
 ## Records, Phases, and Location
 
-ESS 314 — Introduction to Geophysics
-University of Washington · Spring 2026
+ES3004 — Introduction to Geophysics
 
-Marine Denolle
+Weifan Lu
 
 ---
 
@@ -33,10 +32,10 @@ By the end of this lecture, you will be able to:
 
 ## 1. The framing question
 
-The Pacific Northwest sits above the **Cascadia subduction zone**.
+Southeast Asia sits adjacent to the highly active **Sundaland margin & Sumatra subduction zone**.
 
-- Last megathrust event: $M_w \sim 9$, on **26 January 1700**
-- Hundreds of smaller earthquakes per month, recorded by **PNSN**
+- Great megathrust event: $M_w \sim 9.1$, on **26 December 2004**
+- Frequent intermediate and shallow earthquakes recorded across regional networks
 - Every earthquake is hidden underground — the focus is never directly observed during rupture
 - Yet, from surface records, we routinely infer **where, when, how big, and what kind**
 
@@ -90,21 +89,15 @@ The interval $T_S - T_P$ is the **diagnostic measurement** for distance.
 
 Subtract the P arrival time from the S arrival time at one station:
 
-$$
-T_S - T_P \;=\; D \left( \frac{1}{V_S} - \frac{1}{V_P} \right)
-$$
+$$T_S - T_P \;=\; D \left( \frac{1}{V_S} - \frac{1}{V_P} \right)$$
 
 Solving for hypocentral distance:
 
-$$
-\boxed{\;D \;=\; \frac{V_P\, V_S}{V_P - V_S}\,(T_S - T_P)\;}
-$$
+$$\boxed{\;D \;=\; \frac{V_P\, V_S}{V_P - V_S}\,(T_S - T_P)\;}$$
 
 For average crust ($V_P = 6.0$, $V_S = 3.46$ km/s):
 
-$$
-D \;\approx\; 8.2 \times (T_S - T_P)
-$$
+$$D \;\approx\; 8.2 \times (T_S - T_P)$$
 
 — the textbook **rule of eight**.
 
@@ -122,9 +115,7 @@ Slower velocity contrast → steeper slope → small velocity-model errors → l
 
 ![w:1100 alt:Three-component first-motion seismogram and a compass rose showing how the horizontal particle-motion vector points toward the source](../assets/figures/fig_polarization_baz.png)
 
-$$
-\mathrm{AZI} \;=\; \arctan(A_E / A_N)
-$$
+$$\mathrm{AZI} \;=\; \arctan(A_E / A_N)$$
 
 Vertical-component polarity resolves the $180°$ ambiguity.
 
@@ -154,11 +145,7 @@ Vertical-component polarity resolves the $180°$ ambiguity.
 
 Given a candidate hypocenter $\mathbf{m} = (x_0, y_0, z_0, t_0)$, predict the P arrival time at every station:
 
-$$
-T_P^{(i)\,\mathrm{pred}}
-\;=\;
-t_0 \;+\; \frac{1}{V_P}\,\sqrt{(x_i - x_0)^2 + (y_i - y_0)^2 + (z_i - z_0)^2}
-$$
+$$T_P^{(i)\,\mathrm{pred}} \;=\; t_0 \;+\; \frac{1}{V_P}\,\sqrt{(x_i - x_0)^2 + (y_i - y_0)^2 + (z_i - z_0)^2}$$
 
 Two key properties:
 
@@ -175,21 +162,13 @@ This decomposition is what Geiger's 1912 algorithm exploits.
 
 Define the residual at observation $i$:
 
-$$
-r_i(\mathbf{m}) \;=\; d_i^{\,\mathrm{obs}} - G_i(\mathbf{m})
-$$
+$$r_i(\mathbf{m}) \;=\; d_i^{\,\mathrm{obs}} - G_i(\mathbf{m})$$
 
 Minimize the misfit:
 
-$$
-\Phi_2(\mathbf{m}) = \sum_i \left( \frac{r_i}{\sigma_i} \right)^{\!2}
-\quad\text{(L$_2$, Gaussian errors)}
-$$
+$$\Phi_2(\mathbf{m}) = \sum_i \left( \frac{r_i}{\sigma_i} \right)^{\!2} \quad\text{(L$\_2$, Gaussian errors)}$$
 
-$$
-\Phi_1(\mathbf{m}) = \sum_i \left| \frac{r_i}{\sigma_i} \right|
-\quad\text{(L$_1$, robust to outliers)}
-$$
+$$\Phi_1(\mathbf{m}) = \sum_i \left\vert{} \frac{r_i}{\sigma_i} \right\vert{} \quad\text{(L$\_1$, robust to outliers)}$$
 
 Iterative: linearize about $\mathbf{m}_k$, take a least-squares step, repeat.
 
@@ -213,21 +192,21 @@ When two earthquakes are close together, the *difference* of their arrival times
 - {cite:t}`Waldhauser2000` — double-difference algorithm
 - Routinely achieves **tens of metres** relative precision
 - Resolves fault-plane structures invisible in absolute catalogs
-- {cite:t}`Hauksson2012` (SoCal), {cite:t}`Shelly2016` (Long Valley), {cite:t}`Ross2019` (San Jacinto)
+- Applied globally for fault geometry and volcanic/seismic swarm imaging
 
 ---
 
-## 6. Worked example — a Puget Lowland event
+## 6. Worked example — Regional Intra-slab Event
 
-A station at $\Delta = 50$ km records $T_P = 14.2$ s, $T_S = 21.1$ s, with $A_N = 0.74$, $A_E = 0.32$, $A_Z = +0.92$.
+A regional station at $\Delta = 50$ km records $T_P = 14.2$ s, $T_S = 21.1$ s, with $A_N = 0.74$, $A_E = 0.32$, $A_Z = +0.92$.
 
 - **Distance**: $D = 8.2 \times 6.9 \approx 56$ km
 - **Back-azimuth**: $\mathrm{AZI} = \arctan(0.32/0.74) \approx 23°$
 - **Depth**: $h = \sqrt{56^2 - 50^2} \approx 25$ km
 
-A 25 km focal depth is consistent with a deep intra-slab event in the subducting Juan de Fuca plate — the same regime as the **2001 $M_w$ 6.8 Nisqually** earthquake.
+A 25 km focal depth is consistent with a subducting slab intra-slab event in a active subduction setting.
 
-> *Did anyone in this room feel Nisqually?* Stories from across the Puget Lowland — things falling off shelves at home, bricks tumbling off the State Capitol — are exactly the ground-motion data this lecture’s methods turned into a hypocenter the same morning.
+> Practical seismic processing relies on converting these exact vector components and differential times into stable hypocenters.
 
 *Read more → [Lecture 14 §6](../lectures/14_earthquake_phenomena_I.html#6-a-worked-example-locating-a-small-puget-lowland-earthquake)*
 
@@ -238,7 +217,7 @@ A 25 km focal depth is consistent with a deep intra-slab event in the subducting
 - **Lecture 12 (Tomography)**: same forward/inverse framework, different unknown
 - **Lecture 15 (next)**: takes location as known, asks *how big* — magnitude, $M_0$
 - **Lectures 18, 23**: gravity and magnetic inverse problems — the same non-uniqueness reappears
-- **Week 5 lab**: phase picking and location with `ObsPy` and PNSN data
+- **Lab section**: phase picking and location with `ObsPy` and real seismic station data
 
 *Read more → [Lecture 14 §11](../lectures/14_earthquake_phenomena_I.html#11-connections)*
 
@@ -246,10 +225,10 @@ A 25 km focal depth is consistent with a deep intra-slab event in the subducting
 
 ## 8. Research horizon — ML phase picking
 
-- **PhaseNet** {cite:p}`Zhu2019PhaseNet`: U-Net trained on 600,000 NCEDC waveforms; ~96% precision on P
-- **EQTransformer** {cite:p}`Mousavi2020EQT`: hierarchical attention; hundreds of microearthquakes detected with one-third of typical networks
+- **PhaseNet** {cite:p}`Zhu2019PhaseNet`: U-Net architecture; high precision on P-phase picking
+- **EQTransformer** {cite:p}`Mousavi2020EQT`: hierarchical attention; microearthquakes detected across regional networks
 - **PhaseNO** {cite:p}`Sun2023PhaseNO`: multi-station Fourier neural operator
-- **Cascadia ML catalog**: re-trained EQTransformer on 20 years of PNSN data
+- **Modern ML Catalogs**: re-processing decades of continuous waveform data
 - Not a replacement for the physics — a fast front-end that supplies the $(T_P, T_S)$ that the inverse problem consumes
 
 ---
@@ -257,24 +236,11 @@ A 25 km focal depth is consistent with a deep intra-slab event in the subducting
 ## 8. Research horizon — Distributed Acoustic Sensing
 
 - A single fibre-optic cable, interrogated by laser pulses, becomes a dense seismic array of thousands of channels
-- **Submarine fibres off Cascadia** {cite:p}`Wilcock2025`: detect offshore earthquakes invisible to onshore networks
+- **Subsea & Offshore Fibres**: detect offshore earthquakes invisible to sparse land networks
 - Crucial for **early warning of offshore megathrust ruptures**
-- Active research area at UW (Denolle group): semi-supervised picking on DAS strain-rate data {cite:p}`Zhu2023DAS`
+- Active research area: semi-supervised picking on DAS strain-rate data {cite:p}`Zhu2023DAS`
 
 *Read more → [Lecture 14 §8](../lectures/14_earthquake_phenomena_I.html#8-research-horizon)*
-
----
-
-## 7. Connecting to Cascadia — ShakeAlert
-
-- Operational across Washington and Oregon since 2021
-- Ingests data from ~1500 PNSN seismic stations + ~760 GNSS sensors
-- Real-time location and magnitude → seconds-to-minutes of warning
-- Cascadia M9: tens of seconds of warning in Seattle
-- Nisqually-style intra-slab event: ~10 s of warning typical
-- **GFAST** {cite:p}`Crowell2024GFAST`: geodetic algorithm avoids magnitude saturation at $M_w$ 7
-
-*Read more → [Lecture 14 §7](../lectures/14_earthquake_phenomena_I.html#7-connecting-to-cascadia-shakealert-and-societal-relevance)*
 
 ---
 
@@ -282,8 +248,8 @@ A 25 km focal depth is consistent with a deep intra-slab event in the subducting
 
 ML pickers achieve ~95% precision on **data that look like their training data**.
 
-- **Recall drops 30–40% across regions** {cite:p}`Munchmeyer2022`
-- Even worse on ocean-bottom, borehole, DAS, or mining data
+- **Recall drops across unfamiliar tectonic regions** {cite:p}`Munchmeyer2022`
+- Performance decreases on ocean-bottom, borehole, DAS, or noisy tropical data
 - **Three habits**:
   1. Know the training distribution
   2. Verify a sample by eye
@@ -310,11 +276,11 @@ ML pickers achieve ~95% precision on **data that look like their training data**
 NASA's **InSight** lander (2018–2022) carried a single three-component seismometer (SEIS) to Elysium Planitia.
 
 - **One station, no triangulation possible.**
-- Distance came from $T_S - T_P$ — exactly equation $D = \dfrac{V_P V_S}{V_P - V_S}(T_S - T_P)$, with a *Mars* velocity model.
-- Back-azimuth came from P-wave polarization — exactly section 3c.
+- Distance came from $T_S - T_P$ — equation $D = \dfrac{V_P V_S}{V_P - V_S}(T_S - T_P)$, with a *Mars* velocity model.
+- Back-azimuth came from P-wave polarization.
 - Depth was nearly unconstrained — a planetary-scale version of the depth–origin-time trade-off.
 
-> The same physics that locates a Puget Sound earthquake located the [InSight S1222a marsquake](https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service) ($M_w \sim 4.7$, May 2022).
+> The same fundamental physics locates both local tectonic earthquakes and distant planetary events like the [InSight S1222a marsquake](https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service) ($M_w \sim 4.7$, May 2022).
 
 ---
 
@@ -324,32 +290,5 @@ You don't need to write a phase picker from scratch. The lab uses ObsPy, a high-
 
 ```python
 from obspy.clients.fdsn import Client
-st = Client("IRIS").get_waveforms("UW", "SEP", "*", "BHZ",
-                                  t1, t1 + 600)
-```
-
-What matters for this lecture:
-
-- **Read** the S-minus-P time off a plot — by eye, not by code
-- **Apply** $D = 8.2\,(T_S - T_P)$ — on paper, with a calculator
-- **Reason** about *which* parameters are well-constrained and *which* are not
-
-The physics is what we are testing. The Python is the medium.
-
----
-
-<!-- _class: closing -->
-
-## Recap
-
-- The seismogram presents three principal phases in **P → S → surface** order
-- $T_S - T_P$ at one station gives **hypocentral distance**
-- **Three or more stations** triangulate the epicenter; **four** for depth
-- Location is a **non-linear inverse problem**, linear only in $t_0$
-- Uncertainty has a **geometric origin**: station distribution and depth-time trade-off
-- ML pickers and DAS are transforming the data flow — the physics is unchanged
-
-**Next: Earthquake Phenomena II — magnitude and seismic moment**
-
-📖 **Read the full lecture:** [Lecture 14 — Earthquake Phenomena I](../lectures/14_earthquake_phenomena_I.html)
-🌋 **Live PNSN earthquakes:** [`pnsn.org`](https://pnsn.org/)
+st = Client("IRIS").get_waveforms("IU", "ANK", "*", "BHZ",
+                                 t1, t1 + 600)
