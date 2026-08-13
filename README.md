@@ -6,7 +6,7 @@
 
 Computational labs and lecture notes for ESS 314 Introduction to Geophysics at the University of Washington by Marine Denolle.
 
-📖 **Course site**: [https://weifan-lu.github.io/es3004/](https://weifan-lu.github.io/es3004)
+📖 **Course site**: [https://weifan-lu.github.io/es3004/](https://weifan-lu.github.io/ES3004)
 
 ## Quick Start
 
