@@ -8,11 +8,11 @@
 
 ```{image} _static/images/ess314-front3.png
 :width: 100%
-:alt: ESS 314 Geophysics — marine seismic survey, coastline, subsurface structure, monitoring instruments
+:alt: ES3004 Geophysics — marine seismic survey, coastline, subsurface structure, monitoring instruments
 ```
 
 
-This is the open course companion for ESS 314. It collects lecture notes, lab notebooks, and Python demos in one place so that everything you need — derivations, figures, code, data — is reproducible and freely accessible.
+This is the open course companion for ES3004. It collects lecture notes, lab notebooks, and Python demos in one place so that everything you need — derivations, figures, code, data — is reproducible and freely accessible.
 
 Geophysics is the *physics of the inaccessible*. We cannot drill to the mantle, sample the outer core, or watch a fault slip in real time. Instead, we measure physical quantities at or near Earth's surface — the travel time of a seismic wave, the pull of gravity, the direction of a magnetic field — and use physical models to infer what lies beneath. Every chapter in this book follows that same logic: **observation → model → inference → interpretation**.
 
