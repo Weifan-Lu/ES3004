@@ -1,7 +1,7 @@
-# ESS 314 – Geophysics
-## University of Washington, Spring 2026
+# ES3004 – Introduction to Geophysics
+## Nanyang Technological University, Spring 2027
 
-**Instructor:** Marine Denolle (mdenolle@uw.edu) · **TA & Lab:** Emily Wilbur (ewilbur5@uw.edu) and Nicolas Chang (mehffin@uw.edu)  
+**Instructor:** Weifan Lu · **TA & Lab:** XXX 
 **Meets:** Mon–Thu 1:30–2:20 pm · JHN 111
 
 ---
